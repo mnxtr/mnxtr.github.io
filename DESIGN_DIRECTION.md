@@ -16,7 +16,7 @@
 
 - **Audience:** product teams and hiring managers evaluating an AI engineer.
 - **Value proposition:** turn computer-vision and LLM prototypes into production systems with reliable interfaces and clear technical decisions.
-- **Hero:** “Production AI for product teams that need more than a demo.”
+- **Hero:** “AI systems that make it past the demo.”
 - **Supporting copy:** computer vision, LLM/RAG, and full-stack systems that move from prototype to production.
 - **Primary action:** “Plan a build” continues the hero story by starting a scoped collaboration conversation.
 - **Likely hesitations:**
