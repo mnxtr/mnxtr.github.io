@@ -6,7 +6,7 @@
 import '../styles.css';
 import { initTheme } from './theme.js';
 import { initMobileMenu } from './menu.js';
-import { initScrollReveal } from './scroll-reveal.js';
+import { initScrollNavigation, initScrollProgress, initScrollReveal } from './scroll-reveal.js';
 import { initTypewriter } from './typewriter.js';
 import { initThreeScenes } from './three-scene.js';
 
@@ -174,6 +174,8 @@ function initPortfolio() {
 
     // Initialize scroll reveal animations
     initScrollReveal();
+    initScrollProgress();
+    initScrollNavigation();
 
     // Initialize command palette
     initCommandPalette();

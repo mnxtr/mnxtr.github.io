@@ -23,14 +23,14 @@ const CONFIG = {
   maxParticles: 800,
   mobileMaxParticles: 300,
 
-  // Colors — Midnight Aurora palette
+  // Colors — Obsidian Field Manual palette
   colors: {
-    primary: 0x00f5d4,
-    primaryLight: 0x4afde8,
-    accent: 0x7c3aed,
-    accentLight: 0x9d6ef8,
-    secondary: 0x2563eb,
-    darkBg: 0x080b14,
+    primary: 0x6ff7d9,
+    primaryLight: 0xa6ffe9,
+    accent: 0xff9f55,
+    accentLight: 0xffc18e,
+    secondary: 0x4695c7,
+    darkBg: 0x0b0f12,
   },
 
   // Animation settings
@@ -280,9 +280,9 @@ class HeroScene {
     ];
 
     const shapeColors = [
-      [0.0, 0.96, 0.83], // teal
-      [0.49, 0.23, 0.93], // violet
-      [0.15, 0.39, 0.92], // electric blue
+      [0.44, 0.97, 0.85], // signal mint
+      [1.0, 0.62, 0.33], // safety orange
+      [0.28, 0.58, 0.78], // cool sky
     ];
     const shapeCount = CONFIG.isMobile ? 3 : 6;
 

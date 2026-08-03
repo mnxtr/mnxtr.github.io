@@ -4,8 +4,8 @@
    Midnight Aurora Theme
    =========================== */
 
-/* Fontshare — Clash Display + Satoshi */
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap');
+/* Fontshare — Cabinet Grotesk + General Sans */
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800&f[]=general-sans@400,500,600,700&display=swap');
 /* JetBrains Mono for code */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -15,43 +15,43 @@
 
 /* ── CSS Custom Properties ── */
 :root {
-  /* Midnight Aurora Color Palette */
-  --primary: #00f5d4;
-  --primary-light: #4afde8;
-  --primary-dark: #00c4aa;
-  --accent: #7c3aed;
-  --accent-light: #9d6ef8;
-  --secondary: #2563eb;
-  --secondary-light: #60a5fa;
+  /* Obsidian Field Manual palette */
+  --primary: #6ff7d9;
+  --primary-light: #a6ffe9;
+  --primary-dark: #24caa8;
+  --accent: #ff9f55;
+  --accent-light: #ffc18e;
+  --secondary: #4695c7;
+  --secondary-light: #8ecfff;
 
   /* Neutral Colors — Deep Space */
-  --dark-bg: #080b14;
-  --dark-surface: #0d1117;
-  --dark-elevated: #111827;
-  --dark-text: #d1eef5;
-  --dark-text-muted: #7fa8bc;
-  --dark-text-subtle: #4a6a7a;
+  --dark-bg: #0b0f12;
+  --dark-surface: #111a1d;
+  --dark-elevated: #172226;
+  --dark-text: #eaf4ef;
+  --dark-text-muted: #a4b9b4;
+  --dark-text-subtle: #708682;
 
   /* Glass Effects */
-  --glass-bg: rgba(8, 11, 20, 0.82);
-  --glass-border: rgba(0, 245, 212, 0.1);
-  --glass-border-hover: rgba(0, 245, 212, 0.28);
+  --glass-bg: rgba(11, 15, 18, 0.78);
+  --glass-border: rgba(111, 247, 217, 0.14);
+  --glass-border-hover: rgba(111, 247, 217, 0.38);
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #00f5d4 0%, #7c3aed 100%);
+  --gradient-primary: linear-gradient(115deg, #6ff7d9 0%, #ffb06e 100%);
   --gradient-subtle: linear-gradient(
     135deg,
-    rgba(0, 245, 212, 0.08) 0%,
-    rgba(124, 58, 237, 0.08) 100%
+    rgba(111, 247, 217, 0.08) 0%,
+    rgba(255, 159, 85, 0.08) 100%
   );
-  --gradient-glow: linear-gradient(135deg, rgba(0, 245, 212, 0.3) 0%, rgba(124, 58, 237, 0.3) 100%);
+  --gradient-glow: linear-gradient(115deg, rgba(111, 247, 217, 0.28) 0%, rgba(255, 159, 85, 0.28) 100%);
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 40px rgba(0, 245, 212, 0.18);
-  --shadow-glow-accent: 0 0 40px rgba(124, 58, 237, 0.28);
+  --shadow-glow: 0 0 40px rgba(111, 247, 217, 0.16);
+  --shadow-glow-accent: 0 0 40px rgba(255, 159, 85, 0.2);
 
   /* Spacing & Sizing */
   --radius-sm: 0.5rem;
@@ -88,11 +88,7 @@ html {
 }
 
 body {
-  font-family:
-    'Satoshi',
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: 'General Sans', system-ui, -apple-system, sans-serif;
   background: var(--dark-bg);
   color: var(--dark-text);
   line-height: 1.6;
@@ -119,10 +115,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Clash Display', system-ui, sans-serif;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-family: 'Cabinet Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
 }
 
 code,
