@@ -1,1322 +1,772 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mohammad Mansib Newaz — AI engineer building production-grade computer vision, LLM systems, RAG pipelines, and full-stack AI applications."
+    />
+    <meta
+      name="keywords"
+      content="AI engineer, machine learning, computer vision, YOLOv8, LLM systems, RAG, FastAPI, React, PyTorch, Mohammad Mansib Nawaz"
+    />
+    <meta name="author" content="Mohammad Mansib Nawaz" />
+    <meta name="theme-color" content="#080B14" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Mohammad Mansib Newaz — AI Engineer specializing in Computer Vision, LLM Systems &amp; Full-Stack Applications. YOLOv8 traffic detection (99%+ accuracy), FastAPI production APIs, RAG pipelines." />
-  <meta name="keywords"
-    content="AI engineer, computer vision, YOLO, YOLOv8, LLM, RAG, embedded AI, PyTorch, TensorFlow, LangChain, FastAPI, React, full stack developer, Mohammad Mansib Nawaz" />
-  <meta name="author" content="Mohammad Mansib Nawaz" />
-  <meta name="theme-color" content="#080B14" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mnxtr.github.io/" />
+    <meta property="og:title" content="Mohammad Mansib Nawaz — AI Engineer" />
+    <meta
+      property="og:description"
+      content="Midnight-aurora portfolio landing page for production AI, computer vision, LLM systems, and full-stack engineering."
+    />
+    <meta property="og:site_name" content="Mohammad Mansib Nawaz" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://mnxtr.github.io/img/og-image.png" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta
+      property="og:image:alt"
+      content="Mohammad Mansib Nawaz AI engineering portfolio preview"
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mnxtr.github.io/" />
-  <meta property="og:title"
-    content="Mohammad Mansib Nawaz — AI Engineer · Computer Vision · LLM Systems · Full-Stack" />
-  <meta property="og:description"
-    content="Building intelligent systems with LLMs, RAG pipelines, neural networks, FastAPI, React, and modern cloud infrastructure." />
-  <meta property="og:site_name" content="Mohammad Mansib Nawaz" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:image" content="https://mnxtr.github.io/img/og-image.png" />
-  <meta property="og:image:width" content="1920" />
-  <meta property="og:image:height" content="1080" />
-  <meta property="og:image:alt"
-    content="Mohammad Mansib Nawaz — AI/ML Engineer & Full Stack Developer portfolio homepage preview" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Mnxtrr" />
+    <meta name="twitter:creator" content="@Mnxtrr" />
+    <meta name="twitter:title" content="Mohammad Mansib Nawaz — AI Engineer" />
+    <meta
+      name="twitter:description"
+      content="Building production AI systems with computer vision, LLMs, RAG pipelines, FastAPI, React, and modern cloud infrastructure."
+    />
+    <meta name="twitter:image" content="https://mnxtr.github.io/img/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Mohammad Mansib Nawaz AI engineering portfolio preview"
+    />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@Mnxtrr" />
-  <meta name="twitter:creator" content="@Mnxtrr" />
-  <meta name="twitter:title" content="Mohammad Mansib Nawaz — AI/ML Engineer & Full Stack Developer" />
-  <meta name="twitter:description"
-    content="Building intelligent systems with LLMs, RAG pipelines, neural networks, FastAPI, React, and modern cloud infrastructure." />
-  <meta name="twitter:image" content="https://mnxtr.github.io/img/og-image.png" />
-  <meta name="twitter:image:alt"
-    content="Mohammad Mansib Newaz — AI/ML Engineer & Full Stack Developer portfolio homepage preview" />
+    <link rel="canonical" href="https://mnxtr.github.io/" />
+    <link
+      rel="preload"
+      as="image"
+      href="img/optimized/avatar.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%2300F5D4' width='32' height='32' rx='8'/><text x='16' y='22' font-size='18' font-weight='bold' text-anchor='middle' fill='%23080B14'>M</text></svg>"
+    />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://mnxtr.github.io/" />
-
-  <!-- Preload LCP image (hero avatar) -->
-  <link rel="preload" as="image" href="img/optimized/avatar.webp" type="image/webp" fetchpriority="high" />
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Mohammad Mansib 
-    
-    Newaz",
-    "url": "https://mnxtr.github.io",
-    "jobTitle": "AI Engineer specializing in Computer Vision, LLM Systems, and Full-Stack Applications",
-    "description": "AI/ML Engineer and Full Stack Developer specializing in LLMs, RAG pipelines, neural networks, FastAPI, and React.",
-    "sameAs": [
-      "https://github.com/mnxtr",
-      "https://linkedin.com/in/mansibnewaz",
-      "https://twitter.com/Mnxtrr"
-    ]
-  }
-  </script>
-
-  <title>Mohammad Mansib Newaz — AI Engineer · Computer Vision · LLM Systems · Full-Stack</title>
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%2300F5D4' width='32' height='32' rx='8'/><text x='16' y='22' font-size='18' font-weight='bold' text-anchor='middle' fill='%23080B14'>M</text></svg>" />
-
-  <style>
-    /* ── Marquee Animation ── */
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mohammad Mansib Nawaz",
+        "url": "https://mnxtr.github.io",
+        "jobTitle": "AI Engineer",
+        "description": "AI engineer specializing in computer vision, LLM systems, RAG pipelines, and full-stack applications.",
+        "sameAs": [
+          "https://github.com/mnxtr",
+          "https://linkedin.com/in/mansibnewaz",
+          "https://twitter.com/Mnxtrr"
+        ]
       }
+    </script>
 
-      100% {
-        transform: translateX(-50%);
-      }
-    }
+    <title>Mohammad Mansib Nawaz — Midnight Aurora AI Landing Page</title>
+  </head>
 
-    .marquee-track {
-      animation: marquee 40s linear infinite;
-      will-change: transform;
-    }
+  <body class="has-3d landing-page">
+    <svg class="icon-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+      <symbol id="icon-sparkles" viewBox="0 0 24 24">
+        <path d="M12 2l1.66 5.26L19 9l-5.34 1.74L12 16l-1.66-5.26L5 9l5.34-1.74L12 2z" />
+        <path d="M19 14l.9 2.85L23 18l-3.1 1.15L19 22l-.9-2.85L15 18l3.1-1.15L19 14z" />
+        <path d="M5 13l.7 2.2L8 16l-2.3.8L5 19l-.7-2.2L2 16l2.3-.8L5 13z" />
+      </symbol>
+      <symbol id="icon-brain" viewBox="0 0 24 24">
+        <path
+          d="M8.5 3.5a3 3 0 00-3 3v.33A3.5 3.5 0 004 13.1V15a4 4 0 004 4h1V3.8a2.96 2.96 0 00-.5-.3z"
+        />
+        <path
+          d="M15.5 3.5a3 3 0 013 3v.33A3.5 3.5 0 0120 13.1V15a4 4 0 01-4 4h-1V3.8c.16-.12.33-.22.5-.3z"
+        />
+        <path d="M9 7h6M9 12h6M9 17h6" />
+      </symbol>
+      <symbol id="icon-code" viewBox="0 0 24 24">
+        <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 5l-3 14" />
+      </symbol>
+      <symbol id="icon-cube" viewBox="0 0 24 24">
+        <path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z" />
+        <path d="M4 6.5l8 4.5 8-4.5M12 11v9" />
+      </symbol>
+      <symbol id="icon-database" viewBox="0 0 24 24">
+        <path d="M4 6c0-2.2 3.58-4 8-4s8 1.8 8 4-3.58 4-8 4-8-1.8-8-4z" />
+        <path d="M4 6v6c0 2.2 3.58 4 8 4s8-1.8 8-4V6" />
+        <path d="M4 12v6c0 2.2 3.58 4 8 4s8-1.8 8-4v-6" />
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 2l7 3v6c0 5-3.05 8.68-7 10-3.95-1.32-7-5-7-10V5l7-3z" />
+        <path d="M9 12l2 2 4-5" />
+      </symbol>
+      <symbol id="icon-cloud" viewBox="0 0 24 24">
+        <path d="M7 18a4 4 0 11.78-7.92A5.5 5.5 0 0118 12a3 3 0 010 6H7z" />
+      </symbol>
+      <symbol id="icon-rocket" viewBox="0 0 24 24">
+        <path d="M13 4c3.5.33 5.67 2.5 6 6l-5 5-5-5 4-6z" />
+        <path d="M9 10l-4 1-2 5 5-2M14 15l-1 4-5 2 2-5M15 9h.01" />
+      </symbol>
+      <symbol id="icon-terminal" viewBox="0 0 24 24">
+        <path d="M4 5h16v14H4z" />
+        <path d="M7 9l3 3-3 3M12 16h5" />
+      </symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="icon-command" viewBox="0 0 24 24">
+        <path
+          d="M9 9H5.5A2.5 2.5 0 119 5.5V9zm0 0h6m0 0h3.5A2.5 2.5 0 1015 5.5V9zm0 0v6m0 0v3.5A2.5 2.5 0 1018.5 15H15zm0 0H9m0 0H5.5A2.5 2.5 0 109 18.5V15zm0 0V9"
+        />
+      </symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24">
+        <path
+          d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"
+        />
+      </symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24">
+        <path d="M21 14.5A8.5 8.5 0 119.5 3 6.5 6.5 0 0021 14.5z" />
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.41 1.02.01 2.04.14 3 .41 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.42.36.81 1.1.81 2.22 0 1.61-.02 2.9-.02 3.29 0 .32.21.69.83.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+        />
+      </symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <path
+          d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0z"
+        />
+      </symbol>
+    </svg>
 
-    .marquee-track-reverse {
-      animation: marquee 36s linear infinite reverse;
-      will-change: transform;
-    }
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    .marquee-track:hover,
-    .marquee-track-reverse:hover {
-      animation-play-state: paused;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .marquee-track,
-      .marquee-track-reverse {
-        animation: none;
-      }
-    }
-
-    /* ── Bento Card Gradient Border ── */
-    /* padding:1px creates the border gap; ::before supplies the gradient */
-    .bento-card {
-      position: relative;
-      border-radius: var(--radius-xl);
-      padding: 1px;
-      background: rgba(0, 245, 212, 0.10);
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .bento-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: var(--gradient-primary);
-      opacity: 0;
-      z-index: 0;
-      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .bento-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 245, 212, 0.12);
-    }
-
-    .bento-card:hover::before {
-      opacity: 1;
-    }
-
-    /* ── Bento card inner — sits above ::before, bg hides gradient on face ── */
-    .bento-inner {
-      position: relative;
-      z-index: 1;
-      background: var(--dark-surface);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border-radius: calc(var(--radius-xl) - 1px);
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    /* ── Dot-grid section background ── */
-    .dot-grid-bg {
-      background-image: radial-gradient(rgba(0, 245, 212, 0.06) 1px, transparent 1px);
-      background-size: 28px 28px;
-    }
-
-    /* ── Mouse scroll indicator ── */
-    .scroll-mouse {
-      width: 20px;
-      height: 32px;
-      border-radius: 10px;
-      border: 2px solid rgba(0, 245, 212, 0.3);
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 5px;
-    }
-
-    .scroll-dot {
-      width: 4px;
-      height: 6px;
-      border-radius: 2px;
-      background: var(--primary);
-      animation: scrollBounce 1.6s ease-in-out infinite;
-    }
-
-    @keyframes scrollBounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      50% {
-        transform: translateY(8px);
-        opacity: 0.3;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .scroll-dot {
-        animation: none;
-      }
-    }
-
-    /* ── Floating avatar badges ── */
-    .avatar-badge {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.4rem 0.85rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(13, 17, 23, 0.92);
-      backdrop-filter: blur(12px);
-      font-size: 0.72rem;
-      font-weight: 600;
-      white-space: nowrap;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-      z-index: 30;
-      animation: floatBadge 4s ease-in-out infinite;
-    }
-
-    @keyframes floatBadge {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-5px);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .avatar-badge {
-        animation: none;
-      }
-    }
-
-    /* ── Featured Project Card ── */
-    .project-card-premium {
-      position: relative;
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .project-card-premium:hover {
-      border-color: rgba(0, 245, 212, 0.25);
-      transform: translateY(-6px);
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 48px rgba(0, 245, 212, 0.1);
-    }
-
-    .project-card-premium .card-img {
-      overflow: hidden;
-      height: 200px;
-    }
-
-    .project-card-premium .card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .project-card-premium:hover .card-img img {
-      transform: scale(1.06);
-    }
-
-    /* ── Gradient Number Stat ── */
-    .stat-number {
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-family: 'Clash Display', system-ui, sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-    }
-
-    /* ── Section Heading Accent ── */
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--primary);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 2rem;
-      height: 2px;
-      background: var(--gradient-primary);
-      border-radius: var(--radius-full);
-    }
-
-    /* ── CTA Section ── */
-    .cta-section {
-      background: linear-gradient(135deg,
-          rgba(0, 245, 212, 0.06) 0%,
-          rgba(124, 58, 237, 0.08) 50%,
-          rgba(37, 99, 235, 0.06) 100%);
-      border: 1px solid rgba(0, 245, 212, 0.12);
-      border-radius: var(--radius-2xl);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -10%;
-      width: 60%;
-      height: 200%;
-      background: radial-gradient(ellipse, rgba(0, 245, 212, 0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-section::after {
-      content: '';
-      position: absolute;
-      bottom: -50%;
-      right: -10%;
-      width: 60%;
-      height: 200%;
-      background: radial-gradient(ellipse, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    /* ── Tech pill in marquee ── */
-    .tech-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(255, 255, 255, 0.04);
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--dark-text-muted);
-      white-space: nowrap;
-      cursor: default;
-      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .tech-pill:hover {
-      border-color: rgba(0, 245, 212, 0.3);
-      background: rgba(0, 245, 212, 0.06);
-      color: var(--dark-text);
-      transform: translateY(-1px);
-    }
-
-    .tech-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* ── Light mode overrides ── */
-    .light {
-      --tw-gradient-from: #F8FAFC;
-      --tw-gradient-via: #EEF2FF;
-      --tw-gradient-to: #E0E7FF;
-    }
-
-    .light .bg-darkBg {
-      background-color: #FFFFFF;
-    }
-
-    .light .bg-darkSurface {
-      background-color: #F8FAFC;
-    }
-
-    .light .text-darkText {
-      color: #1E293B;
-    }
-
-    .light .text-white {
-      color: #1e293b;
-    }
-
-    .light .text-gray-400 {
-      color: #64748b;
-    }
-
-    .light .text-gray-300 {
-      color: #475569;
-    }
-
-    .light .bg-gray-700 {
-      background-color: #e2e8f0;
-    }
-
-    .light .border-gray-500 {
-      border-color: #cbd5e1;
-    }
-
-    .light .glass-card {
-      background: rgba(255, 255, 255, 0.85);
-      border-color: rgba(99, 102, 241, 0.15);
-    }
-
-    .light .stat-divider {
-      background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.2), transparent);
-    }
-
-    .light .bento-card {
-      background: rgba(0, 196, 170, 0.12);
-    }
-
-    .light .bento-card::before {
-      background: linear-gradient(135deg, #00C4AA 0%, #7C3AED 100%);
-    }
-
-    .light .bento-inner {
-      background: rgba(255, 255, 255, 0.96);
-    }
-
-    .light .dot-grid-bg {
-      background-image: radial-gradient(rgba(0, 196, 170, 0.12) 1px, transparent 1px);
-      background-size: 28px 28px;
-    }
-
-    .light .tech-pill {
-      border-color: rgba(0, 0, 0, 0.08);
-      background: rgba(0, 0, 0, 0.03);
-      color: #475569;
-    }
-
-    .light .cta-section {
-      background: linear-gradient(135deg, rgba(0, 245, 212, 0.04) 0%, rgba(124, 58, 237, 0.05) 100%);
-      border-color: rgba(0, 196, 170, 0.15);
-    }
-  </style>
-</head>
-
-<body
-  class="has-3d bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col animate-fade-in">
-
-  <!-- Skip Navigation (Accessibility) -->
-  <a href="#main-content"
-    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-darkBg focus:font-semibold focus:outline-none">Skip
-    to main content</a>
-
-  <!-- 3D Hero Canvas (Three.js) -->
-  <div id="hero-canvas" aria-hidden="true"></div>
-
-  <!-- Ambient Background (CSS fallback for mobile/no WebGL) -->
-  <div class="ambient-bg" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-
-  <!-- ═══════════════════════════════════════
-       NAVIGATION
-       ═══════════════════════════════════════ -->
-  <header class="bg-darkBg bg-opacity-70 backdrop-blur-xl sticky top-0 z-50 border-b border-white border-opacity-5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <nav class="flex justify-between items-center h-16" aria-label="Main navigation">
-        <!-- Logo -->
-        <a href="index.html" class="text-primary font-bold text-xl tracking-tight font-['Clash_Display'] group"
-          aria-label="Mohammad Mansib Nawaz — Home">
-          MN<span class="text-accent group-hover:text-secondary transition-colors">.</span>
-        </a>
-
-        <!-- Desktop Nav -->
-        <div class="desktop-nav flex items-center gap-8">
-          <a href="index.html" class="nav-link active text-sm">Home</a>
-          <a href="project.html" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">Projects</a>
-          <a href="resume.html" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">Resume</a>
-          <a href="about.html" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">About</a>
-          <a href="blog/" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">Blog</a>
-          <a href="contact.html" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">Contact</a>
-          <button id="themeToggle"
-            class="p-2.5 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-300"
-            aria-label="Toggle light/dark theme">
-            <svg id="sunIcon" class="w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"
-              aria-hidden="true">
-              <path fill-rule="evenodd"
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                clip-rule="evenodd" />
-            </svg>
-            <svg id="moonIcon" class="w-5 h-5 text-darkMuted" fill="currentColor" viewBox="0 0 20 20"
-              aria-hidden="true">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Mobile controls -->
-        <div class="flex items-center gap-3">
-          <button id="themeToggleMobile"
-            class="md:hidden p-2 rounded-xl hover:bg-white hover:bg-opacity-10 transition-colors"
-            aria-label="Toggle theme">
-            <svg id="sunIconMobile" class="w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"
-              aria-hidden="true">
-              <path fill-rule="evenodd"
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                clip-rule="evenodd" />
-            </svg>
-            <svg id="moonIconMobile" class="w-5 h-5 text-darkMuted" fill="currentColor" viewBox="0 0 20 20"
-              aria-hidden="true">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-          </button>
-          <button id="menuToggle" class="hamburger md:hidden text-darkMuted" aria-label="Toggle mobile menu"
-            aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </nav>
-
-      <!-- Mobile Menu -->
-      <div id="mobileMenu" class="mobile-menu" role="navigation" aria-label="Mobile navigation">
-        <a href="index.html" class="nav-link active text-sm py-3">Home</a>
-        <a href="project.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Projects</a>
-        <a href="resume.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Resume</a>
-        <a href="about.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">About</a>
-        <a href="blog/" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Blog</a>
-        <a href="contact.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Contact</a>
-      </div>
+    <div id="hero-canvas" aria-hidden="true"></div>
+    <div class="ambient-bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
     </div>
-  </header>
 
-  <!-- ═══════════════════════════════════════
-       MAIN CONTENT
-       ═══════════════════════════════════════ -->
-  <main id="main-content" class="relative z-10 flex-grow">
+    <header class="site-header">
+      <div class="page-shell">
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html" class="brand-mark" aria-label="Mohammad Mansib Nawaz — Home">
+            <span>MN</span>
+            <span class="brand-dot">.</span>
+          </a>
 
-    <!-- ─────────────────────────────────────
-         HERO SECTION
-         ───────────────────────────────────── -->
-    <section class="relative flex items-center min-h-[calc(100dvh-64px)]" aria-label="Introduction">
-      <div class="max-w-6xl mx-auto w-full px-4 sm:px-6 py-16 md:py-24">
-
-        <!-- Two-column layout -->
-        <div class="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
-
-          <!-- Left: Text -->
-          <div class="flex-1 text-center md:text-left">
-
-            <!-- Eyebrow -->
-            <p class="section-label mb-4 reveal" style="justify-content: center;" data-md-justify="flex-start">AI
-              Engineer</p>
-
-            <!-- Badge row -->
-            <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-6 reveal reveal-delay-1">
-              <span class="badge text-teal-400 border-teal-500/30 bg-teal-500/10">Computer Vision</span>
-              <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10">LLM Systems</span>
-              <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">Embedded AI</span>
-              <span class="badge text-sky-400 border-sky-500/30 bg-sky-500/10">Full-Stack</span>
-            </div>
-
-            <!-- Heading -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-2 reveal reveal-delay-2">
-              <span class="text-white">I'm </span>
-              <span class="gradient-text">Mohammad<br class="hidden sm:block"> Mansib Nawaz</span>
-            </h1>
-            <p class="text-lg font-medium mb-4 reveal reveal-delay-2" style="color: var(--dark-text-muted);">AI Engineer
-              specializing in Computer Vision, LLM Systems &amp; Full-Stack Applications</p>
-
-            <!-- Typewriter -->
-            <div class="h-7 mb-6 reveal reveal-delay-2">
-              <span id="typewriter" class="text-primary-light font-medium text-lg typewriter-cursor"
-                aria-live="polite"></span>
-            </div>
-
-            <!-- Achievement bullets -->
-            <ul class="max-w-xl mx-auto md:mx-0 mb-8 reveal reveal-delay-3 space-y-2" style="list-style:none;">
-              <li class="flex items-start gap-2.5 text-sm" style="color: var(--dark-text-muted);">
-                <span class="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
-                  style="background:rgba(0,245,212,0.15);">
-                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                </span>
-                Built <strong class="text-white font-medium">real-time YOLOv8 traffic sign detection</strong> — 99%+
-                accuracy across 43 classes
-              </li>
-              <li class="flex items-start gap-2.5 text-sm" style="color: var(--dark-text-muted);">
-                <span class="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
-                  style="background:rgba(0,245,212,0.15);">
-                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                </span>
-                Shipped <strong class="text-white font-medium">FastAPI production APIs</strong> with JWT auth, Docker
-                &amp; CI/CD
-              </li>
-              <li class="flex items-start gap-2.5 text-sm" style="color: var(--dark-text-muted);">
-                <span class="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
-                  style="background:rgba(0,245,212,0.15);">
-                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                </span>
-                10+ AI models deployed · LLM/RAG pipelines · <strong class="text-white font-medium">Research
-                  publication</strong>
-              </li>
-              <li class="flex items-start gap-2.5 text-sm" style="color: var(--dark-text-muted);">
-                <span class="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
-                  style="background:rgba(0,245,212,0.15);">
-                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                </span>
-                Stack: Python · PyTorch · TensorFlow Lite · React · Linux · Docker
-              </li>
-            </ul>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-wrap gap-4 justify-center md:justify-start reveal reveal-delay-3">
-              <a href="contact.html"
-                class="btn-glow bg-gradient-to-r from-primary via-accent to-secondary text-white px-8 py-3.5 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-                Hire Me
-              </a>
-              <a href="project.html"
-                class="btn-outline text-primary border border-primary/60 px-8 py-3.5 rounded-full font-semibold hover:bg-primary/10 hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-                View Projects
-              </a>
-            </div>
-
-            <!-- Stats Strip -->
-            <div class="flex items-center gap-6 sm:gap-8 mt-10 justify-center md:justify-start reveal reveal-delay-4"
-              role="list" aria-label="Career statistics">
-              <div class="text-center" role="listitem">
-                <p class="stat-number text-3xl" data-counter="4" data-suffix="+">4+</p>
-                <p class="text-xs mt-1 uppercase tracking-widest" style="color: var(--dark-text-subtle);">Years Exp</p>
-              </div>
-              <div class="stat-divider" aria-hidden="true"></div>
-              <div class="text-center" role="listitem">
-                <p class="stat-number text-3xl" data-counter="15" data-suffix="+">15+</p>
-                <p class="text-xs mt-1 uppercase tracking-widest" style="color: var(--dark-text-subtle);">Projects</p>
-              </div>
-              <div class="stat-divider" aria-hidden="true"></div>
-              <div class="text-center" role="listitem">
-                <p class="stat-number text-3xl" data-counter="10" data-suffix="+">10+</p>
-                <p class="text-xs mt-1 uppercase tracking-widest" style="color: var(--dark-text-subtle);">AI Models</p>
-              </div>
-              <div class="stat-divider" aria-hidden="true"></div>
-              <div class="text-center" role="listitem">
-                <p class="stat-number text-3xl" data-counter="4">4</p>
-                <p class="text-xs mt-1 uppercase tracking-widest" style="color: var(--dark-text-subtle);">Certs</p>
-              </div>
-            </div>
+          <div class="desktop-nav">
+            <a href="#expertise-heading" class="nav-link">Expertise</a>
+            <a href="#work-heading" class="nav-link">Work</a>
+            <a href="#stack-heading" class="nav-link">Stack</a>
+            <a href="project.html" class="nav-link">Projects</a>
+            <a href="resume.html" class="nav-link">Resume</a>
+            <a href="contact.html" class="nav-link nav-cta">Contact</a>
           </div>
 
-          <!-- Right: Avatar -->
-          <div class="flex-shrink-0 reveal relative">
-            <div class="avatar-container animate-float relative w-52 h-52 md:w-72 md:h-72 mx-auto">
-              <!-- Floating tech badges — positioned relative to avatar-container -->
-              <div class="avatar-badge hidden md:flex"
-                style="top: -16px; right: -8px; color: var(--primary); animation-delay: 0s;">
-                <span class="w-2 h-2 rounded-full" style="background: var(--primary);"></span>
-                PyTorch
+          <div class="nav-actions">
+            <button
+              type="button"
+              class="command-trigger"
+              data-command-open
+              aria-label="Open command palette"
+            >
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-command"></use>
+              </svg>
+              <span>Search</span>
+              <kbd>⌘K</kbd>
+            </button>
+
+            <button
+              id="themeToggle"
+              type="button"
+              class="theme-button"
+              aria-label="Toggle light/dark theme"
+            >
+              <svg id="sunIcon" class="icon hidden" aria-hidden="true">
+                <use href="#icon-sun"></use>
+              </svg>
+              <svg id="moonIcon" class="icon" aria-hidden="true">
+                <use href="#icon-moon"></use>
+              </svg>
+            </button>
+
+            <button
+              id="themeToggleMobile"
+              type="button"
+              class="theme-button mobile-theme-toggle"
+              aria-label="Toggle light/dark theme"
+            >
+              <svg id="sunIconMobile" class="icon hidden" aria-hidden="true">
+                <use href="#icon-sun"></use>
+              </svg>
+              <svg id="moonIconMobile" class="icon" aria-hidden="true">
+                <use href="#icon-moon"></use>
+              </svg>
+            </button>
+
+            <button
+              id="menuToggle"
+              type="button"
+              class="hamburger"
+              aria-label="Toggle mobile menu"
+              aria-expanded="false"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+
+        <div
+          id="mobileMenu"
+          class="mobile-menu"
+          role="navigation"
+          aria-label="Mobile navigation"
+          tabindex="-1"
+        >
+          <a href="#expertise-heading">Expertise</a>
+          <a href="#work-heading">Work</a>
+          <a href="#stack-heading">Stack</a>
+          <a href="project.html">Projects</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+          <button type="button" class="command-mobile-trigger" data-command-open>
+            Command palette <span>⌘K</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero-section" aria-label="AI engineering landing page">
+        <div class="page-shell hero-grid">
+          <div class="hero-copy">
+            <div class="reveal aurora-eyebrow">
+              <span class="status-light" aria-hidden="true"></span>
+              Available for AI engineering work
+            </div>
+
+            <h1 class="reveal reveal-delay-1">
+              Production AI systems with a
+              <span class="gradient-text">midnight aurora edge.</span>
+            </h1>
+
+            <p class="reveal reveal-delay-2 hero-subtitle">
+              I build computer vision products, LLM/RAG systems, and full-stack AI platforms that
+              move cleanly from prototype to production.
+            </p>
+
+            <p class="reveal reveal-delay-2 typewriter-line">
+              <span id="typewriter" class="typewriter-cursor" aria-live="polite"></span>
+            </p>
+
+            <div class="reveal reveal-delay-3 hero-actions">
+              <a href="contact.html" class="btn-glow primary-action">
+                Build with me
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-arrow-right"></use>
+                </svg>
+              </a>
+              <a href="project.html" class="btn-outline secondary-action">
+                Explore work
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-cube"></use>
+                </svg>
+              </a>
+            </div>
+
+            <dl class="reveal reveal-delay-4 hero-metrics" aria-label="Portfolio metrics">
+              <div>
+                <dt><span data-counter="99" data-suffix="%+">99%+</span></dt>
+                <dd>Vision accuracy</dd>
               </div>
-              <div class="avatar-badge hidden md:flex"
-                style="top: 50%; right: -48px; color: #a78bfa; animation-delay: 1.3s;">
-                <span class="w-2 h-2 rounded-full" style="background: #a78bfa;"></span>
-                LangChain
+              <div>
+                <dt><span data-counter="10" data-suffix="+">10+</span></dt>
+                <dd>AI models</dd>
               </div>
-              <div class="avatar-badge hidden md:flex"
-                style="bottom: -12px; left: -16px; color: #60a5fa; animation-delay: 0.7s;">
-                <span class="w-2 h-2 rounded-full" style="background: #60a5fa;"></span>
-                FastAPI
+              <div>
+                <dt><span data-counter="15" data-suffix="+">15+</span></dt>
+                <dd>Projects shipped</dd>
               </div>
-              <div id="avatar-3d" aria-hidden="true"></div>
-              <div
-                class="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-secondary p-1 avatar-glow">
-                <div class="w-full h-full rounded-full overflow-hidden bg-darkBg">
+            </dl>
+          </div>
+
+          <div
+            class="reveal reveal-delay-2 hero-visual"
+            aria-label="Interactive AI system visualization"
+          >
+            <div class="aurora-device glass-card tilt-card">
+              <div class="device-toolbar" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <strong>neural-orbit.js</strong>
+              </div>
+
+              <div class="visual-stage">
+                <div id="skills-3d" class="visual-scene" aria-hidden="true"></div>
+
+                <div class="profile-orbit glass-panel">
+                  <div id="avatar-3d" aria-hidden="true"></div>
                   <picture>
                     <source srcset="img/optimized/avatar.webp" type="image/webp" />
-                    <img src="img/optimized/avatar.jpg" alt="Mohammad Mansib Nawaz — AI/ML Engineer"
-                      class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" width="288"
-                      height="288" fetchpriority="high" decoding="async" />
+                    <img
+                      src="img/optimized/avatar.jpg"
+                      alt="Mohammad Mansib Nawaz"
+                      width="144"
+                      height="144"
+                      fetchpriority="high"
+                      decoding="async"
+                    />
                   </picture>
                 </div>
-              </div>
-              <!-- Status badge -->
-              <div
-                class="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-darkSurface/90 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full text-sm whitespace-nowrap shadow-xl z-20">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span class="text-white font-medium">Open to work</span>
-              </div>
-            </div>
-          </div>
 
-        </div>
-      </div>
-
-      <!-- Scroll indicator -->
-      <div
-        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 hover:opacity-80 transition-opacity cursor-default"
-        aria-hidden="true">
-        <span class="text-xs font-medium tracking-[0.18em] uppercase"
-          style="color: var(--dark-text-subtle);">Scroll</span>
-        <div class="scroll-mouse">
-          <div class="scroll-dot"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────────────────────────────────
-         EXPERTISE BENTO GRID
-         ───────────────────────────────────── -->
-    <section class="py-16 md:py-24 dot-grid-bg" aria-labelledby="expertise-heading">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-
-        <!-- Section header -->
-        <div class="mb-10 reveal">
-          <p class="section-label mb-3">What I Build</p>
-          <h2 id="expertise-heading" class="text-3xl sm:text-4xl font-bold text-white">
-            End-to-End <span class="gradient-text">Expertise</span>
-          </h2>
-        </div>
-
-        <!-- Bento Grid -->
-        <!-- md: 3-col so [AI/ML full] + [FS|Sec|Cloud] perfectly fills two rows -->
-        <!-- lg: 5-col bento with AI/ML spanning 3×2 -->
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 lg:grid-rows-2 gap-4 reveal reveal-delay-1">
-
-          <!-- AI/ML — Full row on md, 3 cols × 2 rows on desktop -->
-          <div class="bento-card md:col-span-3 lg:col-span-3 lg:row-span-2 min-h-[300px] lg:min-h-0">
-            <div class="bento-inner p-7 sm:p-8 h-full flex flex-col">
-              <!-- Decorative neural-net dots (top-right corner) -->
-              <div class="absolute top-4 right-4 opacity-[0.07] pointer-events-none" aria-hidden="true">
-                <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
-                  <!-- Layer 1 nodes -->
-                  <circle cx="10" cy="20" r="4" fill="var(--primary)" />
-                  <circle cx="10" cy="50" r="4" fill="var(--primary)" />
-                  <circle cx="10" cy="80" r="4" fill="var(--primary)" />
-                  <!-- Layer 2 nodes -->
-                  <circle cx="55" cy="10" r="4" fill="var(--primary)" />
-                  <circle cx="55" cy="35" r="4" fill="var(--primary)" />
-                  <circle cx="55" cy="60" r="4" fill="var(--primary)" />
-                  <circle cx="55" cy="85" r="4" fill="var(--primary)" />
-                  <!-- Layer 3 nodes -->
-                  <circle cx="110" cy="30" r="4" fill="var(--accent)" />
-                  <circle cx="110" cy="70" r="4" fill="var(--accent)" />
-                  <!-- Connections -->
-                  <line x1="14" y1="20" x2="51" y2="10" stroke="var(--primary)" stroke-width="1" />
-                  <line x1="14" y1="20" x2="51" y2="35" stroke="var(--primary)" stroke-width="1" />
-                  <line x1="14" y1="50" x2="51" y2="35" stroke="var(--primary)" stroke-width="1" />
-                  <line x1="14" y1="50" x2="51" y2="60" stroke="var(--primary)" stroke-width="1" />
-                  <line x1="14" y1="80" x2="51" y2="60" stroke="var(--primary)" stroke-width="1" />
-                  <line x1="14" y1="80" x2="51" y2="85" stroke="var(--primary)" stroke-width="1" />
-                  <line x1="59" y1="10" x2="106" y2="30" stroke="var(--accent)" stroke-width="1" />
-                  <line x1="59" y1="35" x2="106" y2="30" stroke="var(--accent)" stroke-width="1" />
-                  <line x1="59" y1="60" x2="106" y2="70" stroke="var(--accent)" stroke-width="1" />
-                  <line x1="59" y1="85" x2="106" y2="70" stroke="var(--accent)" stroke-width="1" />
-                </svg>
-              </div>
-              <!-- Icon + stat row -->
-              <div class="flex items-start justify-between mb-5">
-                <div
-                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500/20 to-teal-500/5 border border-teal-500/20 flex items-center justify-center">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    style="color: var(--primary);" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                <div class="floating-chip chip-top">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#icon-brain"></use>
                   </svg>
+                  LLM/RAG
                 </div>
-                <div class="text-right">
-                  <p class="text-2xl font-bold"
-                    style="color: var(--primary); font-family: 'Clash Display', sans-serif;">10+</p>
-                  <p class="text-xs" style="color: var(--dark-text-subtle);">Models Deployed</p>
+                <div class="floating-chip chip-right">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#icon-code"></use>
+                  </svg>
+                  FastAPI
+                </div>
+                <div class="floating-chip chip-bottom">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#icon-shield"></use>
+                  </svg>
+                  Secure APIs
                 </div>
               </div>
-              <h3 class="text-xl font-bold text-white mb-3">Artificial Intelligence &amp; Machine Learning</h3>
-              <p class="text-sm leading-relaxed mb-5 flex-grow" style="color: var(--dark-text-muted);">
-                Designing and deploying intelligent systems — from LLM-powered RAG pipelines and fine-tuned
-                transformers to custom neural networks for computer vision and NLP. I build AI applications
-                that drive measurable, real-world impact at production scale.
-              </p>
-              <!-- Tech tags -->
-              <div class="flex flex-wrap gap-2">
-                <span class="badge text-teal-400 border-teal-500/25 bg-teal-500/8"
-                  style="background: rgba(20,184,166,0.08);">PyTorch</span>
-                <span class="badge text-orange-400 border-orange-500/25"
-                  style="background: rgba(249,115,22,0.08);">TensorFlow</span>
-                <span class="badge text-violet-400 border-violet-500/25"
-                  style="background: rgba(139,92,246,0.08);">LangChain</span>
-                <span class="badge text-yellow-400 border-yellow-500/25"
-                  style="background: rgba(234,179,8,0.08);">Hugging Face</span>
-                <span class="badge text-green-400 border-green-500/25" style="background: rgba(34,197,94,0.08);">OpenAI
-                  API</span>
-                <span class="badge text-sky-400 border-sky-500/25" style="background: rgba(14,165,233,0.08);">RAG</span>
+
+              <div class="device-footer">
+                <div>
+                  <span>Latency target</span>
+                  <strong>&lt;120ms</strong>
+                </div>
+                <div>
+                  <span>Pipeline</span>
+                  <strong>CI/CD ready</strong>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <!-- Full Stack — 2 cols × 1 row on desktop -->
-          <div class="bento-card lg:col-span-2 min-h-[200px]">
-            <div class="bento-inner p-6 h-full flex flex-col">
-              <div
-                class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/20 to-violet-500/5 border border-violet-500/20 flex items-center justify-center mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  style="color: var(--accent-light, #9D6EF8);" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      <section class="landing-section" aria-labelledby="expertise-heading">
+        <div class="page-shell">
+          <div class="section-heading reveal">
+            <p class="section-label">What I build</p>
+            <h2 id="expertise-heading">Glassmorphic systems for real AI products.</h2>
+            <p>
+              The visual layer is polished, but the engineering remains practical: clear
+              architecture, measurable performance, and maintainable delivery.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card glass-card reveal reveal-delay-1">
+              <span class="icon-badge">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-brain"></use>
                 </svg>
-              </div>
-              <h3 class="text-base font-bold text-white mb-2">Full Stack Development</h3>
-              <p class="text-xs leading-relaxed flex-grow" style="color: var(--dark-text-muted);">
-                End-to-end web applications — performant REST APIs and reactive frontends with modern tooling.
+              </span>
+              <h3>AI and machine learning</h3>
+              <p>
+                Computer vision, neural networks, model evaluation, and applied LLM/RAG workflows
+                for product teams.
               </p>
-              <div class="flex flex-wrap gap-1.5 mt-4">
-                <span class="badge text-green-400 border-green-500/25"
-                  style="font-size:0.7rem; background: rgba(34,197,94,0.08);">FastAPI</span>
-                <span class="badge text-sky-400 border-sky-500/25"
-                  style="font-size:0.7rem; background: rgba(14,165,233,0.08);">React</span>
-                <span class="badge text-white/70 border-white/15"
-                  style="font-size:0.7rem; background: rgba(255,255,255,0.04);">Next.js</span>
-                <span class="badge text-blue-400 border-blue-500/25"
-                  style="font-size:0.7rem; background: rgba(59,130,246,0.08);">PostgreSQL</span>
-              </div>
-            </div>
-          </div>
+              <ul>
+                <li>PyTorch and TensorFlow</li>
+                <li>YOLO-style vision systems</li>
+                <li>RAG and agentic workflows</li>
+              </ul>
+            </article>
 
-          <!-- Security — 1 col × 1 row on desktop -->
-          <div class="bento-card lg:col-span-1 min-h-[180px]">
-            <div class="bento-inner p-6 h-full flex flex-col">
-              <div
-                class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500/20 to-rose-500/5 border border-rose-500/20 flex items-center justify-center mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #fb7185;"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            <article class="feature-card glass-card reveal reveal-delay-2">
+              <span class="icon-badge violet">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-code"></use>
                 </svg>
-              </div>
-              <h3 class="text-base font-bold text-white mb-2">Security Engineering</h3>
-              <p class="text-xs leading-relaxed flex-grow" style="color: var(--dark-text-muted);">
-                API hardening, threat analysis &amp; secure-by-design system architecture.
+              </span>
+              <h3>Full-stack delivery</h3>
+              <p>
+                Production APIs, frontends, dashboards, and integrations that keep AI outputs usable
+                and observable.
               </p>
-              <div class="flex flex-wrap gap-1.5 mt-4">
-                <span class="badge text-rose-400 border-rose-500/25"
-                  style="font-size:0.7rem; background: rgba(251,113,133,0.08);">JWT/OAuth</span>
-                <span class="badge text-orange-400 border-orange-500/25"
-                  style="font-size:0.7rem; background: rgba(249,115,22,0.08);">PenTest</span>
-              </div>
-            </div>
-          </div>
+              <ul>
+                <li>FastAPI and REST APIs</li>
+                <li>React interfaces</li>
+                <li>PostgreSQL data layers</li>
+              </ul>
+            </article>
 
-          <!-- Cloud & DevOps — 1 col × 1 row on desktop -->
-          <div class="bento-card lg:col-span-1 min-h-[180px]">
-            <div class="bento-inner p-6 h-full flex flex-col">
-              <div
-                class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 border border-blue-500/20 flex items-center justify-center mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #60a5fa;"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            <article class="feature-card glass-card reveal reveal-delay-3">
+              <span class="icon-badge blue">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-cloud"></use>
                 </svg>
-              </div>
-              <h3 class="text-base font-bold text-white mb-2">Cloud &amp; DevOps</h3>
-              <p class="text-xs leading-relaxed flex-grow" style="color: var(--dark-text-muted);">
-                Scalable infra &amp; automated CI/CD pipelines for zero-downtime deployments.
+              </span>
+              <h3>Deployment and security</h3>
+              <p>
+                Containerized services, authentication, CI/CD, and practical hardening for systems
+                that need to run.
               </p>
-              <div class="flex flex-wrap gap-1.5 mt-4">
-                <span class="badge text-blue-400 border-blue-500/25"
-                  style="font-size:0.7rem; background: rgba(59,130,246,0.08);">Docker</span>
-                <span class="badge text-sky-400 border-sky-500/25"
-                  style="font-size:0.7rem; background: rgba(14,165,233,0.08);">GitHub CI</span>
-              </div>
+              <ul>
+                <li>Dockerized deployment</li>
+                <li>JWT/OAuth patterns</li>
+                <li>Cloud-ready automation</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-section section-muted" aria-labelledby="work-heading">
+        <div class="page-shell">
+          <div class="section-heading split-heading reveal">
+            <div>
+              <p class="section-label">Selected work</p>
+              <h2 id="work-heading">Proof over decoration.</h2>
             </div>
+            <a href="project.html" class="text-link">
+              All projects
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
+              </svg>
+            </a>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────────────────────────────────
-         TECH STACK MARQUEE
-         ───────────────────────────────────── -->
-    <section class="py-12 overflow-hidden" aria-label="Technology stack">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-8 reveal">
-        <p class="section-label">My Arsenal</p>
-      </div>
-
-      <!-- Row 1 — scrolls left -->
-      <div class="relative mb-3" role="list" aria-label="AI and backend technologies">
-        <!-- Fade edges -->
-        <div class="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style="background: linear-gradient(90deg, var(--dark-bg) 0%, transparent 100%);"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style="background: linear-gradient(270deg, var(--dark-bg) 0%, transparent 100%);"></div>
-        <div class="marquee-track flex gap-3" aria-hidden="true">
-          <!-- Set A -->
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#3776AB;"></span>Python</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#EE4C2C;"></span>PyTorch</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#FF6F00;"></span>TensorFlow</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#1C7ED6;"></span>LangChain</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#00A67E;"></span>OpenAI
-            API</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#FFD21E;"></span>Hugging
-            Face</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#009688;"></span>FastAPI</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#61DAFB;"></span>React</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#fff;"></span>Next.js</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#3178C6;"></span>TypeScript</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#4479A1;"></span>PostgreSQL</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#DC382D;"></span>Redis</span>
-          <!-- Set B (duplicate for seamless loop) -->
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#3776AB;"></span>Python</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#EE4C2C;"></span>PyTorch</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#FF6F00;"></span>TensorFlow</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#1C7ED6;"></span>LangChain</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#00A67E;"></span>OpenAI
-            API</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#FFD21E;"></span>Hugging
-            Face</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#009688;"></span>FastAPI</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#61DAFB;"></span>React</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#fff;"></span>Next.js</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#3178C6;"></span>TypeScript</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#4479A1;"></span>PostgreSQL</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#DC382D;"></span>Redis</span>
-        </div>
-      </div>
-
-      <!-- Row 2 — scrolls right -->
-      <div class="relative" role="list" aria-label="DevOps and infrastructure technologies">
-        <div class="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style="background: linear-gradient(90deg, var(--dark-bg) 0%, transparent 100%);"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style="background: linear-gradient(270deg, var(--dark-bg) 0%, transparent 100%);"></div>
-        <div class="marquee-track-reverse flex gap-3" aria-hidden="true">
-          <!-- Set A -->
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#2496ED;"></span>Docker</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#326CE5;"></span>Kubernetes</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#FF9900;"></span>AWS</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#2088FF;"></span>GitHub
-            Actions</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#F05032;"></span>Git</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#00A2E0;"></span>LlamaIndex</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#764ABC;"></span>RAG
-            Pipelines</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#CC6699;"></span>Computer
-            Vision</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#00897B;"></span>NLP</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#EF6C00;"></span>REST
-            APIs</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot" style="background:#00B4D8;"></span>JWT /
-            OAuth</span>
-          <span class="tech-pill" role="listitem"><span class="tech-dot"
-              style="background:#8B5CF6;"></span>Celery</span>
-          <!-- Set B (duplicate) -->
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#2496ED;"></span>Docker</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#326CE5;"></span>Kubernetes</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#FF9900;"></span>AWS</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#2088FF;"></span>GitHub
-            Actions</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#F05032;"></span>Git</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#00A2E0;"></span>LlamaIndex</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#764ABC;"></span>RAG
-            Pipelines</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#CC6699;"></span>Computer
-            Vision</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#00897B;"></span>NLP</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#EF6C00;"></span>REST
-            APIs</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot" style="background:#00B4D8;"></span>JWT /
-            OAuth</span>
-          <span class="tech-pill" aria-hidden="true"><span class="tech-dot"
-              style="background:#8B5CF6;"></span>Celery</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────────────────────────────────
-         FEATURED WORK
-         ───────────────────────────────────── -->
-    <section class="py-16 md:py-24" aria-labelledby="work-heading">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-
-        <!-- Section header -->
-        <div class="flex items-end justify-between mb-10 reveal">
-          <div>
-            <p class="section-label mb-3">Selected Work</p>
-            <h2 id="work-heading" class="text-3xl sm:text-4xl font-bold text-white">
-              Featured <span class="gradient-text">Projects</span>
-            </h2>
-          </div>
-          <a href="project.html" class="hidden sm:inline-flex items-center gap-2 text-sm font-medium transition-colors"
-            style="color: var(--primary);">
-            All projects
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-
-        <!-- Project Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          <!-- Project 1: Traffic Symbol Recognition -->
-          <article class="project-card-premium reveal reveal-delay-1" aria-label="Traffic Symbol Recognition project">
-            <div class="card-img">
+          <div class="work-grid">
+            <article class="work-card glass-card reveal reveal-delay-1">
               <picture>
                 <source srcset="img/optimized/traffic-signs.webp" type="image/webp" />
-                <img src="img/optimized/traffic-signs.jpg" alt="Traffic sign recognition system using deep learning"
-                  loading="lazy" width="400" height="200" decoding="async" />
+                <img
+                  src="img/optimized/traffic-signs.jpg"
+                  alt="Traffic sign recognition system preview"
+                  loading="lazy"
+                  width="520"
+                  height="320"
+                  decoding="async"
+                />
               </picture>
-            </div>
-            <div class="p-6">
-              <!-- Category chip -->
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-xs font-semibold px-2.5 py-1 rounded-full"
-                  style="background: rgba(0,245,212,0.1); color: var(--primary); border: 1px solid rgba(0,245,212,0.2);">
-                  Computer Vision
-                </span>
+              <div class="work-body">
+                <span class="work-tag">Computer Vision</span>
+                <h3>Traffic Symbol Recognition</h3>
+                <p>
+                  Real-time sign classification with deep CNN workflows and 99%+ reported accuracy
+                  across 43 classes.
+                </p>
+                <a href="project.html" class="text-link">View case study</a>
               </div>
-              <h3 class="text-base font-bold text-white mb-2">Traffic Symbol Recognition</h3>
-              <p class="text-xs leading-relaxed mb-4" style="color: var(--dark-text-muted);">
-                Real-time traffic sign classification with deep CNNs. Achieved 99%+ accuracy across 43 categories
-                using data augmentation and transfer learning.
-              </p>
-              <!-- Tech tags -->
-              <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="badge"
-                  style="font-size:0.68rem; color:#EE4C2C; border-color:rgba(238,76,44,0.25); background:rgba(238,76,44,0.08);">PyTorch</span>
-                <span class="badge"
-                  style="font-size:0.68rem; color:#FF6F00; border-color:rgba(255,111,0,0.25); background:rgba(255,111,0,0.08);">TensorFlow</span>
-                <span class="badge"
-                  style="font-size:0.68rem; color:#3776AB; border-color:rgba(55,118,171,0.25); background:rgba(55,118,171,0.08);">Python</span>
-                <span class="badge"
-                  style="font-size:0.68rem; color:#CC6699; border-color:rgba(204,102,153,0.25); background:rgba(204,102,153,0.08);">CNN</span>
-              </div>
-              <!-- Links -->
-              <a href="project.html" class="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors"
-                style="color: var(--primary);">
-                View Case Study
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </article>
+            </article>
 
-          <!-- Project 2: Cardiovascular ML -->
-          <article class="project-card-premium reveal reveal-delay-2"
-            aria-label="Ensemble ML for Cardiovascular Disease project">
-            <div class="card-img">
+            <article class="work-card glass-card reveal reveal-delay-2">
               <picture>
                 <source srcset="img/optimized/EKG.webp" type="image/webp" />
-                <img src="img/optimized/EKG.jpg" alt="EKG signal visualization for cardiovascular disease prediction"
-                  loading="lazy" width="400" height="200" decoding="async" />
+                <img
+                  src="img/optimized/EKG.jpg"
+                  alt="EKG machine learning visualization"
+                  loading="lazy"
+                  width="520"
+                  height="320"
+                  decoding="async"
+                />
               </picture>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-xs font-semibold px-2.5 py-1 rounded-full"
-                  style="background: rgba(124,58,237,0.1); color: #a78bfa; border: 1px solid rgba(124,58,237,0.25);">
-                  Medical AI
-                </span>
+              <div class="work-body">
+                <span class="work-tag violet">Medical AI</span>
+                <h3>Cardiovascular ML Ensemble</h3>
+                <p>
+                  Ensemble modeling for cardiac-risk prediction using explainable, testable
+                  machine-learning workflows.
+                </p>
+                <a href="project.html" class="text-link">View case study</a>
               </div>
-              <h3 class="text-base font-bold text-white mb-2">Ensemble ML · Cardiovascular Disease</h3>
-              <p class="text-xs leading-relaxed mb-4" style="color: var(--dark-text-muted);">
-                Advanced ensemble system combining Random Forest, SVM, and XGBoost for cardiac risk prediction.
-                Voting classifier achieving clinical-grade precision.
-              </p>
-              <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="badge"
-                  style="font-size:0.68rem; color:#EE4C2C; border-color:rgba(238,76,44,0.25); background:rgba(238,76,44,0.08);">PyTorch</span>
-                <span class="badge"
-                  style="font-size:0.68rem; color:#3776AB; border-color:rgba(55,118,171,0.25); background:rgba(55,118,171,0.08);">Scikit-learn</span>
-                <span class="badge"
-                  style="font-size:0.68rem; color:#009688; border-color:rgba(0,150,136,0.25); background:rgba(0,150,136,0.08);">XGBoost</span>
-                <span class="badge"
-                  style="font-size:0.68rem; color:#a78bfa; border-color:rgba(167,139,250,0.25); background:rgba(167,139,250,0.08);">Ensemble</span>
-              </div>
-              <a href="project.html" class="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors"
-                style="color: var(--primary);">
-                View Case Study
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </article>
+            </article>
 
-          <!-- Project 3: CRM Full Stack -->
-          <article class="project-card-premium reveal reveal-delay-3"
-            aria-label="Customer Relationship Management System project">
-            <div class="card-img">
+            <article class="work-card glass-card reveal reveal-delay-3">
               <picture>
                 <source srcset="img/optimized/crm.webp" type="image/webp" />
-                <img src="img/optimized/crm.jpg" alt="CRM dashboard showing analytics and customer data" loading="lazy"
-                  width="400" height="200" decoding="async" />
+                <img
+                  src="img/optimized/crm.jpg"
+                  alt="CRM dashboard and API project preview"
+                  loading="lazy"
+                  width="520"
+                  height="320"
+                  decoding="async"
+                />
               </picture>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-xs font-semibold px-2.5 py-1 rounded-full"
-                  style="background: rgba(37,99,235,0.1); color: #60a5fa; border: 1px solid rgba(37,99,235,0.25);">
-                  Full Stack
-                </span>
+              <div class="work-body">
+                <span class="work-tag blue">Full Stack</span>
+                <h3>CRM Platform</h3>
+                <p>
+                  Role-aware backend and dashboard architecture for customer data workflows and
+                  operational reporting.
+                </p>
+                <a href="project.html" class="text-link">View case study</a>
               </div>
-              <h3 class="text-base font-bold text-white mb-2">Customer Relationship Management</h3>
-              <p class="text-xs leading-relaxed mb-4" style="color: var(--dark-text-muted);">
-                Full-featured CRM with RESTful API, real-time data sync, and business analytics dashboard.
-                Secure role-based access with JWT authentication.
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-section" aria-labelledby="stack-heading">
+        <div class="page-shell">
+          <div class="section-heading reveal">
+            <p class="section-label">Icon system</p>
+            <h2 id="stack-heading">A cleaner technical stack presentation.</h2>
+            <p>
+              Icons are inline SVG symbols for crisp rendering, no layout shift, and no runtime
+              dependency on a third-party icon CDN.
+            </p>
+          </div>
+
+          <div class="stack-grid reveal reveal-delay-1" aria-label="Technology stack">
+            <span class="stack-pill">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-terminal"></use>
+              </svg>
+              Python
+            </span>
+            <span class="stack-pill">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-brain"></use>
+              </svg>
+              PyTorch
+            </span>
+            <span class="stack-pill">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-sparkles"></use>
+              </svg>
+              OpenAI API
+            </span>
+            <span class="stack-pill">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-code"></use>
+              </svg>
+              FastAPI
+            </span>
+            <span class="stack-pill">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-cube"></use>
+              </svg>
+              React
+            </span>
+            <span class="stack-pill">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-database"></use>
+              </svg>
+              PostgreSQL
+            </span>
+            <span class="stack-pill">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-cloud"></use>
+              </svg>
+              Docker
+            </span>
+            <span class="stack-pill">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-shield"></use>
+              </svg>
+              Security
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-section section-muted" aria-labelledby="current-heading">
+        <div class="page-shell insight-grid">
+          <div class="section-heading reveal">
+            <p class="section-label">Current focus</p>
+            <h2 id="current-heading">Systems that look sharp and survive production.</h2>
+            <p>
+              The page uses the same philosophy: glass surfaces, restrained neon, readable contrast,
+              and progressive enhancement for 3D.
+            </p>
+          </div>
+
+          <div class="insight-list reveal reveal-delay-1">
+            <article class="insight-card glass-card">
+              <span>01</span>
+              <h3>Model-to-product workflow</h3>
+              <p>
+                Translate trained models into APIs, dashboards, monitoring loops, and user-facing
+                flows.
               </p>
-              <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="badge"
-                  style="font-size:0.68rem; color:#009688; border-color:rgba(0,150,136,0.25); background:rgba(0,150,136,0.08);">FastAPI</span>
-                <span class="badge"
-                  style="font-size:0.68rem; color:#61DAFB; border-color:rgba(97,218,251,0.25); background:rgba(97,218,251,0.08);">React</span>
-                <span class="badge"
-                  style="font-size:0.68rem; color:#4479A1; border-color:rgba(68,121,161,0.25); background:rgba(68,121,161,0.08);">PostgreSQL</span>
-                <span class="badge"
-                  style="font-size:0.68rem; color:#2496ED; border-color:rgba(36,150,237,0.25); background:rgba(36,150,237,0.08);">Docker</span>
-              </div>
-              <a href="project.html" class="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors"
-                style="color: var(--primary);">
-                View Case Study
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </article>
-
-        </div>
-
-        <!-- Mobile "all projects" link -->
-        <div class="sm:hidden mt-8 text-center reveal">
-          <a href="project.html" class="inline-flex items-center gap-2 text-sm font-medium"
-            style="color: var(--primary);">
-            See all projects
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─────────────────────────────────────
-         HIRE ME — CTA SECTION
-         ───────────────────────────────────── -->
-    <section class="py-16 md:py-24" aria-labelledby="cta-heading">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-
-        <div class="cta-section p-10 sm:p-14 text-center reveal">
-          <!-- Floating badge -->
-          <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border text-sm font-medium"
-            style="border-color: rgba(0,245,212,0.2); background: rgba(0,245,212,0.06); color: var(--primary);">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Available for new projects
+            </article>
+            <article class="insight-card glass-card">
+              <span>02</span>
+              <h3>Useful LLM systems</h3>
+              <p>
+                Design RAG, retrieval, evaluation, and guardrail patterns that make model behavior
+                easier to trust.
+              </p>
+            </article>
+            <article class="insight-card glass-card">
+              <span>03</span>
+              <h3>Frontend polish</h3>
+              <p>
+                Use motion, 3D, and glassmorphism where they improve orientation instead of hiding
+                weak content.
+              </p>
+            </article>
           </div>
+        </div>
+      </section>
 
-          <h2 id="cta-heading" class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
-            Let's Build Something<br />
-            <span class="gradient-text">Intelligent Together</span>
-          </h2>
-
-          <p class="max-w-xl mx-auto mb-8 leading-relaxed" style="color: var(--dark-text-muted);">
-            Looking for an AI/ML engineer who also ships full-stack products?
-            I'm available for freelance projects, collaborations, and full-time opportunities.
-          </p>
-
-          <!-- CTA Buttons -->
-          <div class="flex flex-wrap gap-4 justify-center">
-            <a href="contact.html"
-              class="btn-glow bg-gradient-to-r from-primary via-accent to-secondary text-white px-8 py-3.5 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300">
-              Get In Touch
-            </a>
-            <a href="resume.html"
-              class="btn-outline text-primary border border-primary/60 px-8 py-3.5 rounded-full font-semibold hover:bg-primary/10 hover:scale-105 transition-all duration-300">
-              Download Resume
-            </a>
+      <section class="landing-section" aria-labelledby="articles-heading">
+        <div class="page-shell cta-panel glass-card reveal">
+          <div>
+            <p class="section-label">Next step</p>
+            <h2 id="articles-heading">Have an AI product to ship?</h2>
+            <p>
+              Bring the messy brief. I can help turn it into a prototype, production service, or
+              polished user-facing experience.
+            </p>
           </div>
-
-          <!-- Social links -->
-          <div class="flex items-center justify-center gap-4 mt-8">
-            <a href="https://github.com/mnxtr" target="_blank" rel="noopener noreferrer"
-              class="flex items-center gap-2 text-sm transition-colors px-4 py-2 rounded-full border border-white/8 hover:border-white/20"
-              style="color: var(--dark-text-muted);" aria-label="GitHub profile">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+          <div class="cta-actions">
+            <a href="contact.html" class="btn-glow primary-action">
+              Start a conversation
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
               </svg>
-              GitHub
             </a>
-            <a href="https://linkedin.com/in/mansibnewaz" target="_blank" rel="noopener noreferrer"
-              class="flex items-center gap-2 text-sm transition-colors px-4 py-2 rounded-full border border-white/8 hover:border-white/20"
-              style="color: var(--dark-text-muted);" aria-label="LinkedIn profile">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-              LinkedIn
-            </a>
+            <a href="resume.html" class="btn-outline secondary-action"> View resume </a>
           </div>
         </div>
+      </section>
+    </main>
 
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ═══════════════════════════════════════
-       FOOTER
-       ═══════════════════════════════════════ -->
-  <footer class="relative z-10 bg-darkBg/80 backdrop-blur-xl border-t border-white/5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="text-center sm:text-left">
-          <p class="text-sm" style="color: var(--dark-text-muted);">
-            &copy; 2026 <span class="font-medium" style="color: var(--primary);">Mohammad Mansib Nawaz</span>.
-            All rights reserved.
-          </p>
-          <p class="text-xs mt-1" style="color: var(--dark-text-subtle);">AI/ML Engineering &amp; Full Stack
-            Development.</p>
+    <footer class="site-footer">
+      <div class="page-shell footer-grid">
+        <p>
+          &copy; 2026 <span>Mohammad Mansib Nawaz</span>. AI engineering, computer vision, LLM
+          systems, and full-stack delivery.
+        </p>
+        <div class="footer-social" aria-label="Social media links">
+          <a
+            href="https://github.com/mnxtr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-github"></use>
+            </svg>
+          </a>
+          <a
+            href="https://linkedin.com/in/mansibnewaz"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-linkedin"></use>
+            </svg>
+          </a>
         </div>
-        <div class="footer-social flex items-center gap-3" aria-label="Social media links">
-          <a href="https://github.com/mnxtr" target="_blank" rel="noopener noreferrer"
-            style="color: var(--dark-text-muted);" aria-label="GitHub">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
-            </svg>
-          </a>
-          <a href="https://linkedin.com/in/mansibnewaz" target="_blank" rel="noopener noreferrer"
-            style="color: var(--dark-text-muted);" aria-label="LinkedIn">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-          <a href="https://twitter.com/Mnxtrr" target="_blank" rel="noopener noreferrer"
-            style="color: var(--dark-text-muted);" aria-label="Twitter / X">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-            </svg>
-          </a>
+      </div>
+    </footer>
+
+    <div
+      id="commandPalette"
+      class="command-palette"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Command palette"
+    >
+      <button
+        type="button"
+        class="command-backdrop"
+        data-command-close
+        aria-label="Close command palette"
+      ></button>
+      <div class="command-panel">
+        <div class="command-search-row">
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-command"></use>
+          </svg>
+          <input
+            id="commandSearch"
+            type="search"
+            placeholder="Search pages, projects, and articles..."
+            aria-label="Search commands"
+            autocomplete="off"
+          />
+          <button type="button" data-command-close>Esc</button>
+        </div>
+        <div class="command-content">
+          <p class="command-title">Navigate</p>
+          <p class="command-hint">Use arrow keys and Enter, or click a result.</p>
+          <div id="commandResults" class="command-results" role="listbox"></div>
         </div>
       </div>
     </div>
-  </footer>
 
-  <!-- Page-specific config + counter animation (runs before module) -->
-  <script>
-    window.typewriterPhrases = [
-      "Computer Vision · YOLOv8 · Embedded AI.",
-      "LLM Systems · RAG Pipelines · Fine-tuning.",
-      "FastAPI · React · Docker · Production APIs.",
-      "Research · Python · PyTorch · TensorFlow."
-    ];
+    <script>
+      window.typewriterPhrases = [
+        'Computer Vision · YOLOv8 · Embedded AI.',
+        'LLM Systems · RAG Pipelines · Fine-tuning.',
+        'FastAPI · React · Docker · Production APIs.',
+        'Midnight Aurora UI · Three.js · Glassmorphism.',
+      ];
 
-    // Animate stats from 0 → target when section enters viewport (fires once)
-    document.addEventListener('DOMContentLoaded', function () {
-      var els = document.querySelectorAll('[data-counter]');
-      if (!els.length) return;
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          var el = entry.target;
-          var target = parseInt(el.dataset.counter, 10);
-          var suffix = el.dataset.suffix || '';
-          io.unobserve(el);
-          var startTime = null;
-          var duration = 1600;
-          function step(now) {
-            if (!startTime) startTime = now;
-            var p = Math.min((now - startTime) / duration, 1);
-            var eased = 1 - Math.pow(1 - p, 3);
-            el.textContent = Math.floor(eased * target) + suffix;
-            if (p < 1) requestAnimationFrame(step);
-          }
-          requestAnimationFrame(step);
+      document.addEventListener('DOMContentLoaded', function () {
+        var counters = document.querySelectorAll('[data-counter]');
+        if (!counters.length) return;
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+
+              var el = entry.target;
+              var target = parseInt(el.dataset.counter, 10);
+              var suffix = el.dataset.suffix || '';
+              var startTime = null;
+              var duration = 1300;
+
+              observer.unobserve(el);
+
+              function step(now) {
+                if (!startTime) startTime = now;
+                var progress = Math.min((now - startTime) / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target) + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+              }
+
+              requestAnimationFrame(step);
+            });
+          },
+          { threshold: 0.45 },
+        );
+
+        counters.forEach(function (counter) {
+          observer.observe(counter);
         });
-      }, { threshold: 0.6 });
-      els.forEach(function (el) { io.observe(el); });
-    });
-  </script>
-
-  <!-- Main JS (Vite module) -->
-  <script type="module" src="./js/main.js"></script>
-
-</body>
-
+      });
+    </script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
 </html>

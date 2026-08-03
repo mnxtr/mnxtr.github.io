@@ -989,6 +989,8 @@ class AmbientOrbs {
 // ============================================
 // Initialize on DOM Ready
 // ============================================
+let threeScenesInitialized = false;
+
 /**
  * Check if WebGL is supported by the browser
  * @returns {boolean} True if WebGL is supported
@@ -1008,6 +1010,12 @@ function isWebGLSupported() {
  * Initialize all Three.js scenes with error handling
  */
 export function initThreeScenes() {
+  if (threeScenesInitialized) {
+    return;
+  }
+
+  threeScenesInitialized = true;
+
   try {
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1078,12 +1086,10 @@ export function initThreeScenes() {
   }
 }
 
-// Auto-initialize when DOM is ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initThreeScenes);
+  document.addEventListener('DOMContentLoaded', initThreeScenes, { once: true });
 } else {
   initThreeScenes();
 }
 
-// Export for manual initialization
 export { HeroScene, AvatarRing, TiltCards, Skills3D, AmbientOrbs };
