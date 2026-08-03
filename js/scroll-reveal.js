@@ -52,7 +52,9 @@ export function initScrollReveal() {
  */
 export function initScrollProgress() {
   const progress = document.querySelector('.scroll-progress');
-  if (!progress) return;
+  if (!progress) {
+    return;
+  }
 
   let scheduled = false;
   const update = () => {
@@ -77,23 +79,32 @@ export function initScrollProgress() {
  * Keeps section navigation oriented as visitors move through the portfolio.
  */
 export function initScrollNavigation() {
-  if (typeof IntersectionObserver === 'undefined') return;
+  if (typeof IntersectionObserver === 'undefined') {
+    return;
+  }
 
   const links = [...document.querySelectorAll('.desktop-nav a[href^="#"]')];
   const pairs = links
     .map((link) => ({ link, section: document.querySelector(link.getAttribute('href')) }))
     .filter(({ section }) => section);
-  if (!pairs.length) return;
+  if (!pairs.length) {
+    return;
+  }
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+        if (!entry.isIntersecting) {
+          return;
+        }
         pairs.forEach(({ link, section }) => {
           const isCurrent = section === entry.target;
           link.classList.toggle('active', isCurrent);
-          if (isCurrent) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
+          if (isCurrent) {
+            link.setAttribute('aria-current', 'location');
+          } else {
+            link.removeAttribute('aria-current');
+          }
         });
       });
     },
