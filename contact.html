@@ -246,33 +246,34 @@
                 <div class="glass-card p-8 reveal reveal-delay-2">
                     <h2 class="text-lg font-semibold text-white mb-6">Send a Message</h2>
                     <form action="https://formsubmit.co/mohammad.newaz1@northsouth.edu" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="New portfolio contact message">
                         <div>
                             <label class="block text-xs font-semibold mb-2 text-gray-400 uppercase tracking-widest"
                                 for="name">Name</label>
                             <input type="text" id="name" name="name"
                                 class="w-full p-3 rounded-xl bg-gray-800 bg-opacity-60 text-white border border-white border-opacity-10 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-30 outline-none transition-all duration-300 text-sm"
-                                required placeholder="Your name">
+                                required maxlength="120" placeholder="Your name">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold mb-2 text-gray-400 uppercase tracking-widest"
                                 for="email">Email</label>
                             <input type="email" id="email" name="email"
                                 class="w-full p-3 rounded-xl bg-gray-800 bg-opacity-60 text-white border border-white border-opacity-10 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-30 outline-none transition-all duration-300 text-sm"
-                                required placeholder="your@email.com">
+                                required maxlength="320" placeholder="your@email.com">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold mb-2 text-gray-400 uppercase tracking-widest"
                                 for="subject">Subject</label>
                             <input type="text" id="subject" name="subject"
                                 class="w-full p-3 rounded-xl bg-gray-800 bg-opacity-60 text-white border border-white border-opacity-10 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-30 outline-none transition-all duration-300 text-sm"
-                                placeholder="Project inquiry">
+                                maxlength="200" placeholder="Project inquiry">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold mb-2 text-gray-400 uppercase tracking-widest"
                                 for="message">Message</label>
                             <textarea id="message" name="message" rows="4"
                                 class="w-full p-3 rounded-xl bg-gray-800 bg-opacity-60 text-white border border-white border-opacity-10 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-30 outline-none transition-all duration-300 resize-none text-sm"
-                                required placeholder="Tell me about your project..."></textarea>
+                                required maxlength="5000" placeholder="Tell me about your project..."></textarea>
                         </div>
                         <button type="submit"
                             class="w-full btn-glow bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-accent hover:scale-[1.02] transition-all duration-300"

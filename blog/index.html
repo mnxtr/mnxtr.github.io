@@ -319,14 +319,15 @@
         <p class="text-darkMuted mb-6 max-w-2xl">
           Get notified when new articles are published. Learn about FastAPI, AI/ML engineering, and backend development.
         </p>
-        <form class="flex gap-3 flex-col sm:flex-row">
-          <input type="email" placeholder="your@email.com"
+        <form data-supabase-form="newsletter" class="flex gap-3 flex-col sm:flex-row">
+          <input type="email" name="email" placeholder="your@email.com"
             class="flex-1 px-4 py-3 rounded-lg bg-darkSurface/50 border border-white/10 text-white placeholder-darkMuted focus:border-primary/50 focus:outline-none"
-            required>
+            required maxlength="320">
           <button type="submit"
             class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-light transition-colors whitespace-nowrap">
             Subscribe
           </button>
+          <p data-form-status class="basis-full text-sm text-darkMuted" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -370,6 +371,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script type="module" src="../js/forms.js"></script>
   <script>
     // Theme Toggle
     function setupTheme(toggleId, sunId, moonId) {

@@ -11,8 +11,6 @@ Production-focused portfolio covering computer vision, LLM/RAG systems, FastAPI 
 
 [Open the portfolio](https://mnxtr.github.io)
 
-![Portfolio preview](https://github.com/user-attachments/assets/59e53e2b-7dd1-4952-a67f-c9a4974ed996)
-
 ## Stack
 
 | Area | Technologies |
@@ -21,7 +19,8 @@ Production-focused portfolio covering computer vision, LLM/RAG systems, FastAPI 
 | Visuals | Three.js, responsive animations, reduced-motion support |
 | Build | Vite 6, PostCSS, Autoprefixer |
 | Quality | ESLint, Prettier, Jest, Testing Library |
-| Deployment | GitHub Actions and GitHub Pages |
+| Backend | FormSubmit contact delivery and Supabase newsletter storage |
+| Deployment | GitHub Actions and GitHub Pages; Vercel-compatible |
 
 ## Main pages
 
@@ -29,8 +28,8 @@ Production-focused portfolio covering computer vision, LLM/RAG systems, FastAPI 
 - `project.html` — selected projects and case studies
 - `resume.html` — experience and skills
 - `about.html` — background and working approach
-- `contact.html` — contact information and working submission form
-- `blog/` — technical writing
+- `contact.html` — contact form delivered through FormSubmit
+- `blog/` — technical writing and newsletter signup
 
 ## Local development
 
@@ -47,6 +46,19 @@ npm run dev
 ```
 
 The development server runs at `http://localhost:3000`.
+
+### Supabase setup
+
+The blog newsletter signup uses Supabase. The browser only uses the project URL
+and publishable/anon key; never expose a secret/service-role key.
+
+1. Create a Supabase project and copy `.env.example` to `.env.local`.
+2. Fill in `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
+3. Run `supabase/migrations/20260805000000_initial_portfolio.sql` in the Supabase SQL Editor.
+4. Restart Vite after changing environment variables, then test the newsletter form.
+
+The contact form submits directly to FormSubmit at the configured email address.
+See [SUPABASE_SETUP.md](./SUPABASE_SETUP.md) for deployment secrets and security recommendations.
 
 ### Quality checks
 
@@ -70,6 +82,10 @@ A push to `main` triggers `.github/workflows/deploy.yml`:
 2. Build the multi-page Vite site into `dist/`.
 3. Upload the Pages artifact.
 4. Deploy through GitHub Pages.
+
+Add the Supabase URL and publishable key as GitHub Actions secrets before
+deploying the newsletter. Vercel is also supported for previews and custom
+domains; see [SUPABASE_SETUP.md](./SUPABASE_SETUP.md).
 
 Do not commit `dist/`; deployment artifacts are produced by GitHub Actions.
 
