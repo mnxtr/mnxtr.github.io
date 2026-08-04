@@ -19,6 +19,7 @@
     "compress-images": "node scripts/compress-images.js"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "three": "^0.162.0"
   },
   "devDependencies": {

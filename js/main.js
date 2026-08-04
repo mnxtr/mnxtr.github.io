@@ -4,11 +4,15 @@
  */
 
 import '../styles.css';
+import { inject } from '@vercel/analytics';
 import { initTheme } from './theme.js';
 import { initMobileMenu } from './menu.js';
 import { initScrollNavigation, initScrollProgress, initScrollReveal } from './scroll-reveal.js';
 import { initTypewriter } from './typewriter.js';
 import { initThreeScenes } from './three-scene.js';
+
+// Initialize Vercel Web Analytics
+inject();
 
 // Command Palette
 const commandItems = [
