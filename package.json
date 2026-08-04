@@ -1,8 +1,11 @@
 {
   "name": "mnxtr-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio website for Mohammad Mansib Nawaz",
+  "description": "Portfolio website for Mohammad Mansib Newaz",
   "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
