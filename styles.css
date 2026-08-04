@@ -2438,6 +2438,7 @@ body {
   font-size: clamp(3.5rem, 5.6vw, 5.75rem);
   font-weight: 800;
   letter-spacing: -0.068em;
+  text-shadow: 0 10px 36px rgba(3, 8, 10, 0.42);
 }
 
 .gradient-text {
@@ -2451,6 +2452,11 @@ body {
 .insight-card p,
 .cta-panel p {
   font-size: clamp(1rem, 1.2vw, 1.1rem);
+}
+
+.hero-subtitle {
+  color: #c7d8d2;
+  text-shadow: 0 3px 18px rgba(3, 8, 10, 0.85);
 }
 
 .section-label,
