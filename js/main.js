@@ -15,17 +15,17 @@ const commandItems = [
   { title: 'Home', description: 'Return to the top of the homepage', url: 'index.html' },
   {
     title: 'Featured Traffic Sign Project',
-    description: 'Open the flagship computer vision case study',
+    description: 'Open selected full-stack and AI-enabled case studies',
     url: '#work-heading',
   },
   {
     title: 'Currently Working On',
-    description: 'See active AI engineering focus areas',
+    description: 'See active full-stack development focus areas',
     url: '#current-heading',
   },
   {
     title: 'Latest Articles',
-    description: 'Read recent FastAPI and AI engineering writing',
+    description: 'Read recent full-stack and FastAPI writing',
     url: '#articles-heading',
   },
   { title: 'Projects', description: 'Browse the full project archive', url: 'project.html' },
@@ -46,8 +46,8 @@ const commandItems = [
     url: '/blog/posts/secure-fastapi.html',
   },
   {
-    title: 'Full Stack AI Project',
-    description: 'Article · Idea to production',
+    title: 'Full-Stack AI Integration',
+    description: 'Article · Web product with an AI feature',
     url: '/blog/posts/full-stack-ai.html',
   },
 ];
@@ -202,10 +202,10 @@ window.addEventListener('load', () => {
       const typeWriter = initTypewriter(
         typewriterEl,
         window.typewriterPhrases || [
-          'Building Intelligent AI Systems.',
-          'LLMs · RAG · Neural Networks.',
-          'Full Stack Development.',
-          'Python · FastAPI · PyTorch · React.',
+          'Building Complete Web Products.',
+          'React · JavaScript · Responsive UI.',
+          'FastAPI · PostgreSQL · Secure APIs.',
+          'Practical AI Integration.',
         ],
       );
 

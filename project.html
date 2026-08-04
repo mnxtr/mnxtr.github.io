@@ -1,459 +1,711 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Project portfolio - Full Stack development, AI/ML deployment, secure FastAPI backends, and machine learning systems. See case studies and technical implementations.">
-    <meta name="keywords" content="projects, portfolio, FastAPI, machine learning, AI/ML projects, backend systems, secure APIs, Python, full stack development">
-    <meta name="author" content="Mohammad Mansib Newaz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Full-stack project portfolio featuring responsive web applications, secure FastAPI backends, PostgreSQL data systems, and practical AI integrations."
+    />
+    <meta
+      name="keywords"
+      content="projects, portfolio, full-stack development, React, JavaScript, FastAPI, PostgreSQL, backend systems, secure APIs, AI integration"
+    />
+    <meta name="author" content="Mohammad Mansib Newaz" />
     <meta name="theme-color" content="#080B14" />
-    
+
     <!-- Open Graph Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mnxtr.github.io/project.html" />
-    <meta property="og:title" content="Projects - Full Stack & AI/ML Engineering" />
-    <meta property="og:description"
-        content="Portfolio of full stack, AI/ML, and backend projects. Secure APIs, ML deployment, and modern web applications." />
+    <meta property="og:title" content="Projects - Full-Stack Web Development" />
+    <meta
+      property="og:description"
+      content="Portfolio of full-stack web applications, backend systems, secure APIs, data-driven products, and selected AI-enabled features."
+    />
     <meta property="og:site_name" content="Mohammad Mansib Newaz" />
     <meta property="og:locale" content="en_US" />
-    
+
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Mnxtrr" />
     <meta name="twitter:creator" content="@Mnxtrr" />
-    <meta name="twitter:title" content="Projects - Full Stack & AI/ML Engineering" />
-    <meta name="twitter:description"
-        content="Portfolio of full stack, AI/ML, and backend projects showing expertise in FastAPI, ML deployment, and secure systems." />
-    
+    <meta name="twitter:title" content="Projects - Full-Stack Web Development" />
+    <meta
+      name="twitter:description"
+      content="Full-stack portfolio showing responsive web applications, FastAPI services, PostgreSQL data systems, and practical AI integration."
+    />
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mnxtr.github.io/project.html" />
-    
+
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Portfolio - Full Stack & AI/ML Projects",
-      "description": "Portfolio of full stack, AI/ML, and backend projects demonstrating expertise in FastAPI, machine learning deployment, and secure system architecture.",
-      "url": "https://mnxtr.github.io/project.html",
-      "creator": {
-        "@type": "Person",
-        "name": "Mohammad Mansib Newaz",
-        "url": "https://mnxtr.github.io"
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Portfolio - Full-Stack Web Development Projects",
+        "description": "Portfolio of full-stack web applications, FastAPI backends, data-driven systems, and practical AI integrations.",
+        "url": "https://mnxtr.github.io/project.html",
+        "creator": {
+          "@type": "Person",
+          "name": "Mohammad Mansib Newaz",
+          "url": "https://mnxtr.github.io"
+        }
       }
-    }
     </script>
-    
-    <title>Projects - Full Stack Developer & AI/ML Engineer | Mohammad Mansib Newaz</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+
+    <title>Projects - Full-Stack Developer | Mohammad Mansib Newaz</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Three.js Import Map for ES Modules -->
     <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.162.0/build/three.module.js"
-            }
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.162.0/build/three.module.js"
         }
+      }
     </script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#00F5D4",
-                        "primary-light": "#4AFDE8",
-                        accent: "#7C3AED",
-                        secondary: "#2563EB",
-                        darkBg: "#080B14",
-                        darkSurface: "#0D1117",
-                        darkText: "#D1EEF5",
-                        darkMuted: "#7FA8BC",
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.4s cubic-bezier(0.16,1,0.3,1)',
-                        'slide-up': 'slideUp 0.4s cubic-bezier(0.16,1,0.3,1)'
-                    },
-                    keyframes: {
-                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-                        slideUp: { '0%': { opacity: '0', transform: 'translateY(32px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
-                    }
-                }
-            }
-        };
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#00F5D4',
+              'primary-light': '#4AFDE8',
+              accent: '#7C3AED',
+              secondary: '#2563EB',
+              darkBg: '#080B14',
+              darkSurface: '#0D1117',
+              darkText: '#D1EEF5',
+              darkMuted: '#7FA8BC',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.4s cubic-bezier(0.16,1,0.3,1)',
+              'slide-up': 'slideUp 0.4s cubic-bezier(0.16,1,0.3,1)',
+            },
+            keyframes: {
+              fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(32px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+          },
+        },
+      };
     </script>
     <style>
-        * {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
+      * {
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          border-color 0.3s ease;
+      }
 
-        .light .bg-darkBg {
-            background-color: #ffffff;
-        }
+      .light .bg-darkBg {
+        background-color: #ffffff;
+      }
 
-        .light .text-darkText {
-            color: #1E293B;
-        }
+      .light .text-darkText {
+        color: #1e293b;
+      }
 
-        .light .text-white {
-            color: #1e293b;
-        }
+      .light .text-white {
+        color: #1e293b;
+      }
 
-        .light .text-gray-400,
-        .light .text-darkMuted {
-            color: #64748b;
-        }
+      .light .text-gray-400,
+      .light .text-darkMuted {
+        color: #64748b;
+      }
 
-        .light .text-gray-300 {
-            color: #475569;
-        }
+      .light .text-gray-300 {
+        color: #475569;
+      }
 
-        .light .glass-card,
-        .light .project-card {
-            background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(99, 102, 241, 0.15);
-        }
+      .light .glass-card,
+      .light .project-card {
+        background: rgba(255, 255, 255, 0.85);
+        border-color: rgba(99, 102, 241, 0.15);
+      }
     </style>
-</head>
+  </head>
 
-<body
-    class="has-3d bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col animate-fade-in">
-
+  <body
+    class="has-3d bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col animate-fade-in"
+  >
     <!-- 3D Hero Canvas (Three.js) -->
     <div id="hero-canvas" aria-hidden="true"></div>
 
     <!-- Ambient Background (CSS fallback) -->
     <div class="ambient-bg" aria-hidden="true">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
     </div>
 
     <!-- Navigation -->
-    <header class="bg-darkBg bg-opacity-70 backdrop-blur-xl sticky top-0 z-50 border-b border-white border-opacity-5">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <nav class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-primary font-bold text-xl tracking-tight font-['Clash_Display'] group">
-                    MN<span class="text-accent group-hover:text-secondary transition-colors">.</span>
-                </a>
-                <div class="desktop-nav flex items-center gap-8">
-                    <a href="index.html" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">Home</a>
-                    <a href="project.html" class="nav-link active text-sm">Projects</a>
-                    <a href="resume.html" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">Resume</a>
-                    <a href="about.html" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">About</a>
-                    <a href="blog/" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">Blog</a>
-                    <a href="contact.html" class="nav-link text-darkMuted hover:text-white text-sm transition-colors">Contact</a>
-                    <button id="themeToggle"
-                        class="p-2.5 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all"
-                        title="Toggle theme">
-                        <svg id="sunIcon" class="w-5 h-5 text-amber-400 hidden" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <svg id="moonIcon" class="w-5 h-5 text-darkMuted" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                        </svg>
-                    </button>
-                </div>
-                <button id="menuToggle" class="hamburger md:hidden text-darkMuted" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </nav>
-            <div id="mobileMenu" class="mobile-menu">
-                 <a href="index.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Home</a>
-                 <a href="project.html" class="nav-link active text-sm py-3">Projects</a>
-                 <a href="resume.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Resume</a>
-                 <a href="about.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">About</a>
-                 <a href="blog/" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Blog</a>
-                 <a href="contact.html" class="text-darkMuted hover:text-white text-sm py-3 transition-colors">Contact</a>
-            </div>
+    <header
+      class="bg-darkBg bg-opacity-70 backdrop-blur-xl sticky top-0 z-50 border-b border-white border-opacity-5"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <nav class="flex justify-between items-center h-16">
+          <a
+            href="index.html"
+            class="text-primary font-bold text-xl tracking-tight font-['Clash_Display'] group"
+          >
+            MN<span class="text-accent group-hover:text-secondary transition-colors">.</span>
+          </a>
+          <div class="desktop-nav flex items-center gap-8">
+            <a
+              href="index.html"
+              class="nav-link text-darkMuted hover:text-white text-sm transition-colors"
+              >Home</a
+            >
+            <a href="project.html" class="nav-link active text-sm">Projects</a>
+            <a
+              href="resume.html"
+              class="nav-link text-darkMuted hover:text-white text-sm transition-colors"
+              >Resume</a
+            >
+            <a
+              href="about.html"
+              class="nav-link text-darkMuted hover:text-white text-sm transition-colors"
+              >About</a
+            >
+            <a
+              href="blog/"
+              class="nav-link text-darkMuted hover:text-white text-sm transition-colors"
+              >Blog</a
+            >
+            <a
+              href="contact.html"
+              class="nav-link text-darkMuted hover:text-white text-sm transition-colors"
+              >Contact</a
+            >
+            <button
+              id="themeToggle"
+              class="p-2.5 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all"
+              title="Toggle theme"
+            >
+              <svg
+                id="sunIcon"
+                class="w-5 h-5 text-amber-400 hidden"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <svg
+                id="moonIcon"
+                class="w-5 h-5 text-darkMuted"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            </button>
+          </div>
+          <button
+            id="menuToggle"
+            class="hamburger md:hidden text-darkMuted"
+            aria-label="Toggle menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+        <div id="mobileMenu" class="mobile-menu">
+          <a
+            href="index.html"
+            class="text-darkMuted hover:text-white text-sm py-3 transition-colors"
+            >Home</a
+          >
+          <a href="project.html" class="nav-link active text-sm py-3">Projects</a>
+          <a
+            href="resume.html"
+            class="text-darkMuted hover:text-white text-sm py-3 transition-colors"
+            >Resume</a
+          >
+          <a
+            href="about.html"
+            class="text-darkMuted hover:text-white text-sm py-3 transition-colors"
+            >About</a
+          >
+          <a href="blog/" class="text-darkMuted hover:text-white text-sm py-3 transition-colors"
+            >Blog</a
+          >
+          <a
+            href="contact.html"
+            class="text-darkMuted hover:text-white text-sm py-3 transition-colors"
+            >Contact</a
+          >
         </div>
+      </div>
     </header>
 
     <!-- Projects Section -->
     <main class="relative z-10 flex-grow container mx-auto py-16 px-4">
-        <div class="text-center mb-12 reveal">
-            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-3">My Projects</h1>
-            <p class="text-darkMuted text-lg">Explore my work across machine learning, backend, and web development</p>
+      <div class="text-center mb-12 reveal">
+        <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-3">My Projects</h1>
+        <p class="text-darkMuted text-lg">
+          Web applications and backend systems first, with AI integrated where it adds value
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12 reveal reveal-delay-1">
+        <button
+          class="filter-btn active px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-accent text-white border border-transparent font-medium transition-all"
+          data-filter="all"
+        >
+          All
+        </button>
+        <button
+          class="filter-btn px-6 py-2.5 rounded-full bg-darkSurface/50 text-darkMuted border border-white/10 hover:border-primary hover:text-white font-medium transition-all"
+          data-filter="ml"
+        >
+          AI Integration
+        </button>
+        <button
+          class="filter-btn px-6 py-2.5 rounded-full bg-darkSurface/50 text-darkMuted border border-white/10 hover:border-primary hover:text-white font-medium transition-all"
+          data-filter="web"
+        >
+          Web Development
+        </button>
+        <button
+          class="filter-btn px-6 py-2.5 rounded-full bg-darkSurface/50 text-darkMuted border border-white/10 hover:border-primary hover:text-white font-medium transition-all"
+          data-filter="backend"
+        >
+          Backend
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+        <!-- Project 1: EKG ML -->
+        <div
+          class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal"
+          data-category="ml"
+        >
+          <div class="relative overflow-hidden group">
+            <picture>
+              <source srcset="img/optimized/EKG.webp" type="image/webp" />
+              <img
+                src="img/optimized/EKG.jpg"
+                alt="Ensemble ML approach to predict Cardiovascular Disease"
+                class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="400"
+              />
+            </picture>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80"
+            ></div>
+            <div class="absolute top-4 right-4">
+              <span
+                class="px-3 py-1.5 bg-violet-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm"
+                >ML</span
+              >
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2 text-white">
+              Ensemble ML for Cardiovascular Disease
+            </h3>
+            <p class="mb-4 text-darkMuted text-sm leading-relaxed">
+              Using multiple models to classify cardiovascular disorders by analyzing EKG waves.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10"
+                >Python</span
+              >
+              <span class="badge text-emerald-400 border-emerald-500/30 bg-emerald-500/10"
+                >Scikit-learn</span
+              >
+              <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10"
+                >TensorFlow</span
+              >
+            </div>
+            <a
+              href="#"
+              class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group"
+            >
+              View Project
+              <svg
+                class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap justify-center gap-3 mb-12 reveal reveal-delay-1">
-            <button
-                class="filter-btn active px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-accent text-white border border-transparent font-medium transition-all"
-                data-filter="all">All</button>
-            <button
-                class="filter-btn px-6 py-2.5 rounded-full bg-darkSurface/50 text-darkMuted border border-white/10 hover:border-primary hover:text-white font-medium transition-all"
-                data-filter="ml">Machine Learning</button>
-            <button
-                class="filter-btn px-6 py-2.5 rounded-full bg-darkSurface/50 text-darkMuted border border-white/10 hover:border-primary hover:text-white font-medium transition-all"
-                data-filter="web">Web Development</button>
-            <button
-                class="filter-btn px-6 py-2.5 rounded-full bg-darkSurface/50 text-darkMuted border border-white/10 hover:border-primary hover:text-white font-medium transition-all"
-                data-filter="backend">Backend</button>
+        <!-- Project 2: Traffic Symbol Recognition -->
+        <div
+          class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal reveal-delay-1"
+          data-category="ml"
+        >
+          <div class="relative overflow-hidden group">
+            <picture>
+              <source srcset="img/optimized/traffic-signs.webp" type="image/webp" />
+              <img
+                src="img/optimized/traffic-signs.jpg"
+                alt="Traffic Symbol Recognition using YOLOv11n"
+                class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="400"
+              />
+            </picture>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80"
+            ></div>
+            <div class="absolute top-4 right-4">
+              <span
+                class="px-3 py-1.5 bg-violet-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm"
+                >ML</span
+              >
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2 text-white">Traffic Symbol Recognition</h3>
+            <p class="mb-4 text-darkMuted text-sm leading-relaxed">
+              Real-time traffic sign detection using YOLOv11n for autonomous driving and road safety
+              applications.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10"
+                >Python</span
+              >
+              <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10"
+                >YOLOv11n</span
+              >
+              <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10"
+                >PyTorch</span
+              >
+              <span class="badge text-cyan-400 border-cyan-500/30 bg-cyan-500/10">OpenCV</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <a
+                href="https://github.com/mnxtr/bd-traffic-signs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group"
+              >
+                View Project
+                <svg
+                  class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/mnxtr/bd-traffic-signs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium group"
+              >
+                Live Demo
+                <svg
+                  class="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- Projects Grid -->
-        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-
-            <!-- Project 1: EKG ML -->
-            <div class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal"
-                data-category="ml">
-                <div class="relative overflow-hidden group">
-                    <picture>
-                        <source srcset="img/optimized/EKG.webp" type="image/webp">
-                        <img src="img/optimized/EKG.jpg" alt="Ensemble ML approach to predict Cardiovascular Disease"
-                            class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
-                            loading="lazy" decoding="async" width="800" height="400">
-                    </picture>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80">
-                    </div>
-                    <div class="absolute top-4 right-4">
-                        <span
-                            class="px-3 py-1.5 bg-violet-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">ML</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold mb-2 text-white">Ensemble ML for Cardiovascular Disease</h3>
-                    <p class="mb-4 text-darkMuted text-sm leading-relaxed">Using multiple models to classify
-                        cardiovascular disorders by analyzing EKG waves.</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">Python</span>
-                        <span class="badge text-emerald-400 border-emerald-500/30 bg-emerald-500/10">Scikit-learn</span>
-                        <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">TensorFlow</span>
-                    </div>
-                    <a href="#"
-                        class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group">
-                        View Project 
-                        <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </a>
-                </div>
+        <!-- Project 3: Manufacturing DBMS -->
+        <div
+          class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal reveal-delay-2"
+          data-category="web backend"
+        >
+          <div class="relative overflow-hidden group">
+            <picture>
+              <source srcset="img/optimized/manufactureDBMS.webp" type="image/webp" />
+              <img
+                src="img/optimized/manufactureDBMS.jpg"
+                alt="Manufacturing Database Management System"
+                class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="400"
+              />
+            </picture>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80"
+            ></div>
+            <div class="absolute top-4 right-4 flex gap-2">
+              <span
+                class="px-3 py-1.5 bg-indigo-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm"
+                >Web</span
+              >
+              <span
+                class="px-3 py-1.5 bg-emerald-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm"
+                >Backend</span
+              >
             </div>
-
-            <!-- Project 2: Traffic Symbol Recognition -->
-            <div class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal reveal-delay-1"
-                data-category="ml">
-                <div class="relative overflow-hidden group">
-                    <picture>
-                        <source srcset="img/optimized/traffic-signs.webp" type="image/webp">
-                        <img src="img/optimized/traffic-signs.jpg" alt="Traffic Symbol Recognition using YOLOv11n"
-                            class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
-                            loading="lazy" decoding="async" width="800" height="400">
-                    </picture>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80">
-                    </div>
-                    <div class="absolute top-4 right-4">
-                        <span
-                            class="px-3 py-1.5 bg-violet-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">ML</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold mb-2 text-white">Traffic Symbol Recognition</h3>
-                    <p class="mb-4 text-darkMuted text-sm leading-relaxed">Real-time traffic sign detection using
-                        YOLOv11n for autonomous driving and road safety applications.</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">Python</span>
-                        <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10">YOLOv11n</span>
-                        <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">PyTorch</span>
-                        <span class="badge text-cyan-400 border-cyan-500/30 bg-cyan-500/10">OpenCV</span>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <a href="https://github.com/mnxtr/bd-traffic-signs" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group">
-                            View Project 
-                            <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </a>
-                        <a href="https://github.com/mnxtr/bd-traffic-signs" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium group">
-                            Live Demo 
-                            <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2 text-white">Manufacturing Database System</h3>
+            <p class="mb-4 text-darkMuted text-sm leading-relaxed">
+              MDBMS-HTML is a front-end for a Manufacturing DBMS - interactive and fully responsive.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">HTML</span>
+              <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">CSS</span>
+              <span class="badge text-amber-400 border-amber-500/30 bg-amber-500/10"
+                >JavaScript</span
+              >
             </div>
-
-            <!-- Project 3: Manufacturing DBMS -->
-            <div class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal reveal-delay-2"
-                data-category="web backend">
-                <div class="relative overflow-hidden group">
-                    <picture>
-                        <source srcset="img/optimized/manufactureDBMS.webp" type="image/webp">
-                        <img src="img/optimized/manufactureDBMS.jpg" alt="Manufacturing Database Management System"
-                            class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
-                            loading="lazy" decoding="async" width="800" height="400">
-                    </picture>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80">
-                    </div>
-                    <div class="absolute top-4 right-4 flex gap-2">
-                        <span
-                            class="px-3 py-1.5 bg-indigo-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">Web</span>
-                        <span
-                            class="px-3 py-1.5 bg-emerald-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">Backend</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold mb-2 text-white">Manufacturing Database System</h3>
-                    <p class="mb-4 text-darkMuted text-sm leading-relaxed">MDBMS-HTML is a front-end for a Manufacturing
-                        DBMS - interactive and fully responsive.</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">HTML</span>
-                        <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">CSS</span>
-                        <span class="badge text-amber-400 border-amber-500/30 bg-amber-500/10">JavaScript</span>
-                    </div>
-                    <a href="https://github.com/mnxtr/mdbms-html" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group">
-                        View Project 
-                        <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Project 4: CRM System -->
-            <div class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal"
-                data-category="backend web">
-                <div class="relative overflow-hidden group">
-                    <picture>
-                        <source srcset="img/optimized/crm.webp" type="image/webp">
-                        <img src="img/optimized/crm.jpg" alt="Customer Relationship Management System"
-                            class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
-                            loading="lazy" decoding="async" width="800" height="400">
-                    </picture>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80">
-                    </div>
-                    <div class="absolute top-4 right-4">
-                        <span
-                            class="px-3 py-1.5 bg-emerald-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm">Backend</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold mb-2 text-white">Customer Relationship Management</h3>
-                    <p class="mb-4 text-darkMuted text-sm leading-relaxed">A CRM system to streamline how organizations
-                        interact with their customers. Built with FastAPI.</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">Python</span>
-                        <span class="badge text-emerald-400 border-emerald-500/30 bg-emerald-500/10">FastAPI</span>
-                        <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10">PostgreSQL</span>
-                    </div>
-                    <a href="https://github.com/mnxtr/Customer-Relationship-Management-System" target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group">
-                        View Project 
-                        <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
+            <a
+              href="https://github.com/mnxtr/mdbms-html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group"
+            >
+              View Project
+              <svg
+                class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
+
+        <!-- Project 4: CRM System -->
+        <div
+          class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal"
+          data-category="backend web"
+        >
+          <div class="relative overflow-hidden group">
+            <picture>
+              <source srcset="img/optimized/crm.webp" type="image/webp" />
+              <img
+                src="img/optimized/crm.jpg"
+                alt="Customer Relationship Management System"
+                class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="400"
+              />
+            </picture>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent opacity-80"
+            ></div>
+            <div class="absolute top-4 right-4">
+              <span
+                class="px-3 py-1.5 bg-emerald-500/90 text-white text-xs rounded-full font-medium backdrop-blur-sm"
+                >Backend</span
+              >
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2 text-white">Customer Relationship Management</h3>
+            <p class="mb-4 text-darkMuted text-sm leading-relaxed">
+              A CRM system to streamline how organizations interact with their customers. Built with
+              FastAPI.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10"
+                >Python</span
+              >
+              <span class="badge text-emerald-400 border-emerald-500/30 bg-emerald-500/10"
+                >FastAPI</span
+              >
+              <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10"
+                >PostgreSQL</span
+              >
+            </div>
+            <a
+              href="https://github.com/mnxtr/Customer-Relationship-Management-System"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group"
+            >
+              View Project
+              <svg
+                class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="relative z-10 bg-darkBg/80 backdrop-blur-xl border-t border-white/5 mt-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-darkMuted">&copy; 2026 <span class="text-primary font-medium">Mohammad Mansib
-                        Newaz</span>. All rights reserved.</p>
-                <div class="footer-social flex items-center gap-3">
-                    <a href="https://github.com/mnxtr" target="_blank" rel="noopener noreferrer" class="text-darkMuted hover:text-primary"
-                        title="GitHub"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
-                        </svg></a>
-                    <a href="https://linkedin.com/in/mansibnewaz" target="_blank" rel="noopener noreferrer"
-                        class="text-darkMuted hover:text-primary" title="LinkedIn"><svg class="w-5 h-5" fill="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg></a>
-                    <a href="https://twitter.com/Mnxtrr" target="_blank" rel="noopener noreferrer" class="text-darkMuted hover:text-primary"
-                        title="Twitter / X"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                        </svg></a>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-darkMuted">
+            &copy; 2026 <span class="text-primary font-medium">Mohammad Mansib Newaz</span>. All
+            rights reserved.
+          </p>
+          <div class="footer-social flex items-center gap-3">
+            <a
+              href="https://github.com/mnxtr"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-darkMuted hover:text-primary"
+              title="GitHub"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"
+                /></svg
+            ></a>
+            <a
+              href="https://linkedin.com/in/mansibnewaz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-darkMuted hover:text-primary"
+              title="LinkedIn"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                /></svg
+            ></a>
+            <a
+              href="https://twitter.com/Mnxtrr"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-darkMuted hover:text-primary"
+              title="Twitter / X"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                /></svg
+            ></a>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script>
-        // Scroll Reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+      // Scroll Reveal
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add('visible');
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-        // Theme Toggle
-        const savedTheme = localStorage.getItem("theme") || "dark";
-        if (savedTheme === "light") {
-            document.body.classList.add("light");
-            document.getElementById("sunIcon").classList.remove("hidden");
-            document.getElementById("moonIcon").classList.add("hidden");
-        }
-        document.getElementById("themeToggle").addEventListener("click", () => {
-            document.body.classList.toggle("light");
-            const isLight = document.body.classList.contains("light");
-            localStorage.setItem("theme", isLight ? "light" : "dark");
-            document.getElementById("sunIcon").classList.toggle("hidden", !isLight);
-            document.getElementById("moonIcon").classList.toggle("hidden", isLight);
-        });
+      // Theme Toggle
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.body.classList.add('light');
+        document.getElementById('sunIcon').classList.remove('hidden');
+        document.getElementById('moonIcon').classList.add('hidden');
+      }
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        document.body.classList.toggle('light');
+        const isLight = document.body.classList.contains('light');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        document.getElementById('sunIcon').classList.toggle('hidden', !isLight);
+        document.getElementById('moonIcon').classList.toggle('hidden', isLight);
+      });
 
-        // Mobile Menu
-        document.getElementById("menuToggle").addEventListener("click", () => {
-            document.getElementById("menuToggle").classList.toggle("open");
-            document.getElementById("mobileMenu").classList.toggle("open");
-        });
+      // Mobile Menu
+      document.getElementById('menuToggle').addEventListener('click', () => {
+        document.getElementById('menuToggle').classList.toggle('open');
+        document.getElementById('mobileMenu').classList.toggle('open');
+      });
 
-        // Filter
-        document.querySelectorAll(".filter-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                document.querySelectorAll(".filter-btn").forEach(b => {
-                    b.classList.remove("active");
-                    b.classList.remove("bg-gradient-to-r", "from-primary", "to-accent", "text-white", "border-transparent");
-                    b.classList.add("bg-darkSurface/50", "text-darkMuted", "border-white/10");
-                });
-                btn.classList.add("active");
-                btn.classList.add("bg-gradient-to-r", "from-primary", "to-accent", "text-white", "border-transparent");
-                btn.classList.remove("bg-darkSurface/50", "text-darkMuted", "border-white/10");
-                
-                const filter = btn.dataset.filter;
-                document.querySelectorAll(".project-card").forEach(card => {
-                    const cats = card.dataset.category.split(" ");
-                    if (filter === "all" || cats.includes(filter)) {
-                        card.classList.remove("hidden-card");
-                        card.style.position = "relative";
-                    } else {
-                        card.classList.add("hidden-card");
-                    }
-                });
-            });
+      // Filter
+      document.querySelectorAll('.filter-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach((b) => {
+            b.classList.remove('active');
+            b.classList.remove(
+              'bg-gradient-to-r',
+              'from-primary',
+              'to-accent',
+              'text-white',
+              'border-transparent',
+            );
+            b.classList.add('bg-darkSurface/50', 'text-darkMuted', 'border-white/10');
+          });
+          btn.classList.add('active');
+          btn.classList.add(
+            'bg-gradient-to-r',
+            'from-primary',
+            'to-accent',
+            'text-white',
+            'border-transparent',
+          );
+          btn.classList.remove('bg-darkSurface/50', 'text-darkMuted', 'border-white/10');
+
+          const filter = btn.dataset.filter;
+          document.querySelectorAll('.project-card').forEach((card) => {
+            const cats = card.dataset.category.split(' ');
+            if (filter === 'all' || cats.includes(filter)) {
+              card.classList.remove('hidden-card');
+              card.style.position = 'relative';
+            } else {
+              card.classList.add('hidden-card');
+            }
+          });
         });
+      });
     </script>
-    
+
     <!-- Three.js 3D Scene Module -->
     <script type="module" src="js/three-scene.js"></script>
-</body>
-
+  </body>
 </html>

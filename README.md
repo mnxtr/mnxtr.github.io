@@ -1,11 +1,11 @@
-# Mohammad Mansib Newaz — AI Engineering Portfolio
+# Mohammad Mansib Newaz — Full-Stack Development Portfolio
 
 [![Live site](https://img.shields.io/badge/Live-mnxtr.github.io-0B0F12?style=for-the-badge&logo=github)](https://mnxtr.github.io)
 [![CI](https://github.com/mnxtr/mnxtr.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/mnxtr/mnxtr.github.io/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/mnxtr/mnxtr.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/mnxtr/mnxtr.github.io/actions/workflows/deploy.yml)
 [![Vite](https://img.shields.io/badge/Vite-6.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev)
 
-Production-focused portfolio covering computer vision, LLM/RAG systems, FastAPI services, modern frontend work, and deployment engineering.
+Full-stack portfolio covering responsive frontend work, FastAPI services, data-driven backends, secure deployment, and practical AI integrations.
 
 ## Live preview
 
@@ -13,14 +13,14 @@ Production-focused portfolio covering computer vision, LLM/RAG systems, FastAPI 
 
 ## Stack
 
-| Area | Technologies |
-|---|---|
-| Frontend | Semantic HTML, CSS, JavaScript, Tailwind CSS |
-| Visuals | Three.js, responsive animations, reduced-motion support |
-| Build | Vite 6, PostCSS, Autoprefixer |
-| Quality | ESLint, Prettier, Jest, Testing Library |
-| Backend | FormSubmit contact delivery and Supabase newsletter storage |
-| Deployment | GitHub Actions and GitHub Pages; Vercel-compatible |
+| Area       | Technologies                                                |
+| ---------- | ----------------------------------------------------------- |
+| Frontend   | Semantic HTML, CSS, JavaScript, Tailwind CSS                |
+| Visuals    | Three.js, responsive animations, reduced-motion support     |
+| Build      | Vite 6, PostCSS, Autoprefixer                               |
+| Quality    | ESLint, Prettier, Jest, Testing Library                     |
+| Backend    | FormSubmit contact delivery and Supabase newsletter storage |
+| Deployment | GitHub Actions and GitHub Pages; Vercel-compatible          |
 
 ## Main pages
 
