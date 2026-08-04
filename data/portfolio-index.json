@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-04",
+  "description": "Curated public knowledge used by the portfolio retrieval interface.",
+  "documents": [
+    {
+      "id": "profile-ai-engineer",
+      "title": "AI Engineering Profile",
+      "description": "Production-focused AI engineering across computer vision, LLM systems, RAG pipelines, APIs, interfaces, and deployment.",
+      "content": "Mohammad Mansib Newaz builds production-oriented AI systems by combining applied machine learning with backend APIs, usable interfaces, deployment practices, and security considerations.",
+      "sourceType": "profile",
+      "sourceLabel": "Homepage · Profile",
+      "url": "index.html",
+      "tags": ["AI engineer", "machine learning", "LLM", "RAG", "FastAPI", "React", "deployment", "security"]
+    },
+    {
+      "id": "project-traffic-sign-recognition",
+      "title": "Traffic Symbol Recognition",
+      "description": "Real-time traffic-sign detection and classification using YOLO-style computer-vision workflows.",
+      "content": "A computer-vision project focused on traffic signs, real-time inference, object detection, model evaluation, PyTorch, OpenCV, and deployment-oriented optimization.",
+      "sourceType": "project",
+      "sourceLabel": "Project · Computer Vision",
+      "url": "project.html",
+      "tags": ["computer vision", "YOLO", "PyTorch", "OpenCV", "real time", "edge AI", "object detection", "traffic signs"]
+    },
+    {
+      "id": "project-cardiovascular-ensemble",
+      "title": "Cardiovascular ML Ensemble",
+      "description": "Machine-learning ensemble for cardiovascular-risk prediction using EKG data.",
+      "content": "A healthcare machine-learning project using multiple models to classify cardiovascular conditions from EKG signals with explainable and testable workflows.",
+      "sourceType": "project",
+      "sourceLabel": "Project · Medical AI",
+      "url": "project.html",
+      "tags": ["healthcare", "medical AI", "EKG", "ensemble learning", "Scikit-learn", "TensorFlow", "classification"]
+    },
+    {
+      "id": "project-crm",
+      "title": "Customer Relationship Management System",
+      "description": "CRM platform built around Python, FastAPI, PostgreSQL, and secure backend design.",
+      "content": "A backend and full-stack project for managing organization-customer interactions using REST APIs, relational data, authentication patterns, and production-minded application structure.",
+      "sourceType": "project",
+      "sourceLabel": "Project · Backend",
+      "url": "project.html",
+      "tags": ["backend", "FastAPI", "Python", "PostgreSQL", "REST API", "database", "authentication", "full stack"]
+    },
+    {
+      "id": "project-manufacturing-dbms",
+      "title": "Manufacturing Database Management System",
+      "description": "Responsive web interface for a manufacturing database-management workflow.",
+      "content": "A web-development and database project using HTML, CSS, JavaScript, responsive interface design, and structured manufacturing information.",
+      "sourceType": "project",
+      "sourceLabel": "Project · Web and Database",
+      "url": "project.html",
+      "tags": ["web development", "database", "DBMS", "HTML", "CSS", "JavaScript", "responsive design"]
+    },
+    {
+      "id": "article-fastapi-ml-deployment",
+      "title": "Deploying ML Models with FastAPI",
+      "description": "Technical article about exposing machine-learning inference through FastAPI services.",
+      "content": "Covers the path from a trained model to an API-backed application, including request handling, inference services, validation, and production deployment concerns.",
+      "sourceType": "article",
+      "sourceLabel": "Article · AI Deployment",
+      "url": "blog/posts/fastapi-ml-deployment.html",
+      "tags": ["FastAPI", "machine learning deployment", "inference API", "Python", "production AI", "backend"]
+    },
+    {
+      "id": "article-secure-fastapi",
+      "title": "Building Secure FastAPI Applications",
+      "description": "Technical article covering security practices for FastAPI applications.",
+      "content": "Discusses secure API development, authentication, authorization, request validation, secret handling, and practical backend hardening.",
+      "sourceType": "article",
+      "sourceLabel": "Article · Backend Security",
+      "url": "blog/posts/secure-fastapi.html",
+      "tags": ["FastAPI", "API security", "authentication", "authorization", "JWT", "OAuth", "backend", "secure APIs"]
+    },
+    {
+      "id": "article-full-stack-ai",
+      "title": "Full Stack AI Project: Idea to Production",
+      "description": "Technical article connecting model development, APIs, interfaces, and deployment.",
+      "content": "Explores how an AI idea becomes a usable product through data and model work, backend services, frontend delivery, testing, deployment, and operational feedback.",
+      "sourceType": "article",
+      "sourceLabel": "Article · Full-Stack AI",
+      "url": "blog/posts/full-stack-ai.html",
+      "tags": ["full stack AI", "frontend", "backend", "machine learning", "deployment", "product engineering", "React", "FastAPI"]
+    },
+    {
+      "id": "resume-experience-skills",
+      "title": "Resume and Technical Skills",
+      "description": "Experience, technical skills, credentials, and engineering background.",
+      "content": "The resume summarizes engineering experience and skills across Python, FastAPI, machine learning, computer vision, backend development, databases, security, and deployment.",
+      "sourceType": "resume",
+      "sourceLabel": "Resume · Skills and Experience",
+      "url": "resume.html",
+      "tags": ["resume", "experience", "skills", "Python", "FastAPI", "AI", "backend", "security", "employment"]
+    },
+    {
+      "id": "contact-collaboration",
+      "title": "Contact and Collaboration",
+      "description": "Contact options for internships, engineering roles, projects, and technical collaboration.",
+      "content": "Visitors can use the contact page to discuss employment, internships, software projects, AI systems, backend work, and collaboration opportunities.",
+      "sourceType": "contact",
+      "sourceLabel": "Contact · Opportunities",
+      "url": "contact.html",
+      "tags": ["contact", "hire", "internship", "job", "collaboration", "project", "opportunity"]
+    }
+  ]
+}
