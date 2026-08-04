@@ -47,8 +47,9 @@ describe('portfolio retrieval', () => {
   test('ranks backend evidence first for API queries', () => {
     const results = searchPortfolio(documents, 'secure backend API with a database');
 
-    expect(results[0].id).toBe('crm');
-    expect(results[0].score).toBeGreaterThan(results[1].score);
+    expect(results).toHaveLength(1);
+    expect(results[0]).toMatchObject({ id: 'crm', confidence: 'Strong match' });
+    expect(results[0].score).toBeGreaterThan(20);
   });
 
   test('maps edge and real-time intent to the vision project', () => {
