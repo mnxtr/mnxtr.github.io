@@ -131,7 +131,15 @@ function confidenceLabel(score) {
   return 'Possible match';
 }
 
-async function loadPortfolioIndex(indexUrl = new URL('../data/portfolio-index.json', import.meta.url)) {
+function defaultIndexUrl() {
+  if (typeof document !== 'undefined' && document.baseURI) {
+    return new URL('data/portfolio-index.json', document.baseURI);
+  }
+
+  return 'data/portfolio-index.json';
+}
+
+async function loadPortfolioIndex(indexUrl = defaultIndexUrl()) {
   const response = await fetch(indexUrl);
   if (!response.ok) {
     throw new Error(`Unable to load portfolio index (${response.status})`);
