@@ -19,7 +19,7 @@ const textExtensions = new Set([
 ]);
 
 const replacements = [
-  [/Nawaz/g, 'Newaz'],
+  [/Newaz/g, 'Newaz'],
   [/https:\/\/formspree\.io\/f\/your-form-id/g, 'https://formsubmit.co/mohammad.newaz1@northsouth.edu'],
   [/https:\/\/mnxtr\.github\.io\/website\/?/g, 'https://github.com/mnxtr/bd-traffic-signs'],
   [/href=["'](?:\.\/)?website\/?(?:index\.html)?["']/g, 'href="https://github.com/mnxtr/bd-traffic-signs"'],

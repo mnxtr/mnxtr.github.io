@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
-const FORM_PLACEHOLDER = 'https://formspree.io/f/your-form-id';
+const FORM_PLACEHOLDER = 'https://formsubmit.co/mohammad.newaz1@northsouth.edu';
 const FORM_ENDPOINT = 'https://formsubmit.co/mohammad.newaz1@northsouth.edu';
 
 /**
@@ -13,7 +13,7 @@ const FORM_ENDPOINT = 'https://formsubmit.co/mohammad.newaz1@northsouth.edu';
  * @returns {string} Normalized HTML
  */
 function normalizePortfolioHtml(html) {
-  return html.replaceAll('Nawaz', 'Newaz').replaceAll(FORM_PLACEHOLDER, FORM_ENDPOINT);
+  return html.replaceAll('Newaz', 'Newaz').replaceAll(FORM_PLACEHOLDER, FORM_ENDPOINT);
 }
 
 const portfolioContentPlugin = {
@@ -30,7 +30,7 @@ const portfolioContentPlugin = {
       }
 
       const html = String(output.source);
-      if (html.includes('Nawaz')) {
+      if (html.includes('Newaz')) {
         throw new Error(`Non-canonical surname found in ${output.fileName}`);
       }
 
