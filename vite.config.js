@@ -1,10 +1,49 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
 import { readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
+const FORM_PLACEHOLDER = 'https://formspree.io/f/your-form-id';
+const FORM_ENDPOINT = 'https://formsubmit.co/mohammad.newaz1@northsouth.edu';
+
 /**
- * Recursively find all HTML files for multi-page build
+ * Normalize public-facing content without changing page layout or behavior.
+ * The output guard below prevents accidental regressions from being deployed.
+ *
+ * @param {string} html - HTML being processed by Vite
+ * @returns {string} Normalized HTML
+ */
+function normalizePortfolioHtml(html) {
+  return html.replaceAll('Nawaz', 'Newaz').replaceAll(FORM_PLACEHOLDER, FORM_ENDPOINT);
+}
+
+const portfolioContentPlugin = {
+  name: 'portfolio-content-normalization',
+
+  transformIndexHtml(html) {
+    return normalizePortfolioHtml(html);
+  },
+
+  generateBundle(_options, bundle) {
+    for (const output of Object.values(bundle)) {
+      if (output.type !== 'asset' || !output.fileName.endsWith('.html')) {
+        continue;
+      }
+
+      const html = String(output.source);
+      if (html.includes('Nawaz')) {
+        throw new Error(`Non-canonical surname found in ${output.fileName}`);
+      }
+
+      if (html.includes('your-form-id')) {
+        throw new Error(`Placeholder contact endpoint found in ${output.fileName}`);
+      }
+    }
+  },
+};
+
+/**
+ * Recursively find all HTML files for the multi-page build.
+ *
  * @param {string} dir - Directory to search
  * @param {Object} files - Accumulator for found files
  * @param {string} base - Base path for relative paths
@@ -41,7 +80,8 @@ function findHtmlFiles(dir, files = {}, base = '') {
 const htmlFiles = findHtmlFiles(__dirname);
 
 export default defineConfig({
-  base: '/',
+  base: process.env.VITE_BASE_PATH || '/',
+  plugins: [portfolioContentPlugin],
 
   build: {
     outDir: 'dist',
@@ -52,7 +92,7 @@ export default defineConfig({
       input: htmlFiles,
       output: {
         manualChunks: {
-          'three': ['three'],
+          three: ['three'],
         },
       },
     },
