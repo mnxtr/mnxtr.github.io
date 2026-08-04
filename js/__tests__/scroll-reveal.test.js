@@ -1,8 +1,4 @@
-import {
-  initScrollNavigation,
-  initScrollProgress,
-  initScrollReveal,
-} from '../scroll-reveal.js';
+import { initScrollNavigation, initScrollProgress, initScrollReveal } from '../scroll-reveal.js';
 
 describe('Scroll interaction modules', () => {
   let observerInstances;
@@ -27,7 +23,7 @@ describe('Scroll interaction modules', () => {
       return 1;
     });
 
-    global.IntersectionObserver = jest.fn().mockImplementation((callback) => {
+    globalThis.IntersectionObserver = jest.fn().mockImplementation((callback) => {
       const instance = {
         callback,
         observe: jest.fn(),
@@ -66,12 +62,12 @@ describe('Scroll interaction modules', () => {
     document.querySelectorAll('.reveal').forEach((element) => {
       expect(element).toHaveClass('visible');
     });
-    expect(global.IntersectionObserver).not.toHaveBeenCalled();
+    expect(globalThis.IntersectionObserver).not.toHaveBeenCalled();
   });
 
   test('uses a visible fallback when IntersectionObserver is unavailable', () => {
     const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
-    global.IntersectionObserver = undefined;
+    globalThis.IntersectionObserver = undefined;
 
     initScrollReveal();
 
@@ -85,7 +81,7 @@ describe('Scroll interaction modules', () => {
     document.querySelectorAll('.reveal').forEach((element) => element.remove());
 
     expect(() => initScrollReveal()).not.toThrow();
-    expect(global.IntersectionObserver).not.toHaveBeenCalled();
+    expect(globalThis.IntersectionObserver).not.toHaveBeenCalled();
   });
 
   test('calculates and updates scroll progress', () => {
@@ -105,7 +101,7 @@ describe('Scroll interaction modules', () => {
     initScrollProgress();
 
     expect(document.documentElement.style.getPropertyValue('--scroll-progress')).toBe('0.5000');
-    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new window.Event('scroll'));
     expect(window.requestAnimationFrame).toHaveBeenCalled();
   });
 
@@ -131,7 +127,7 @@ describe('Scroll interaction modules', () => {
   });
 
   test('skips scroll navigation when IntersectionObserver is unavailable', () => {
-    global.IntersectionObserver = undefined;
+    globalThis.IntersectionObserver = undefined;
     expect(() => initScrollNavigation()).not.toThrow();
   });
 });
