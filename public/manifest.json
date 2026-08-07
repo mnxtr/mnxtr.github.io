@@ -1,13 +1,19 @@
 {
-  "name": "Mohammad Mansib Newaz - Full Stack Developer & AI/ML Engineer",
-  "short_name": "Mansib Portfolio",
-  "description": "Professional portfolio of Mohammad Mansib Newaz - Full Stack Developer, AI/ML Engineer with expertise in FastAPI, Python, and machine learning",
+  "name": "Mohammad Mansib Newaz - Full-Stack Developer in Bangladesh",
+  "short_name": "MNXTR Portfolio",
+  "description": "Portfolio of Mohammad Mansib Newaz, a Bangladesh-based full-stack developer building React interfaces, FastAPI backends, PostgreSQL systems, and practical AI integrations for remote teams.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0F172A",
-  "theme_color": "#6366F1",
+  "background_color": "#030507",
+  "theme_color": "#030507",
   "orientation": "portrait-primary",
   "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
     {
       "src": "/img/avatar.jpg",
       "sizes": "192x192",
@@ -21,7 +27,7 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["portfolio", "technology", "education"],
+  "categories": ["portfolio", "technology", "software-development"],
   "lang": "en-US",
   "dir": "ltr",
   "scope": "/",
