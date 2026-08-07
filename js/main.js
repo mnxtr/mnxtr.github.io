@@ -31,6 +31,11 @@ const commandItems = [
   { title: 'Projects', description: 'Browse the full project archive', url: 'project.html' },
   { title: 'Resume', description: 'View experience, skills, and credentials', url: 'resume.html' },
   {
+    title: 'Resume PDF',
+    description: 'Open the one-page ATS-friendly resume',
+    url: 'mohammad-mansib-newaz-resume.pdf',
+  },
+  {
     title: 'Contact',
     description: 'Start a collaboration or hiring conversation',
     url: 'contact.html',
