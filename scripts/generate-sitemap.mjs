@@ -10,6 +10,7 @@ const EXCLUDED_DIRS = new Set([
   '.github',
   '.serena',
   '.vscode',
+  'coverage',
   'dist',
   'node_modules',
   'scripts',

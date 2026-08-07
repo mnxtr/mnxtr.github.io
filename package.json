@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run sitemap:generate && vite build && npm run seo:enhance",
+    "build": "node scripts/prepare-build.mjs && npm run sitemap:generate && vite build && npm run seo:enhance",
     "preview": "vite preview",
     "lint": "eslint js/ --ext .js",
     "lint:fix": "eslint js/ --ext .js --fix",
