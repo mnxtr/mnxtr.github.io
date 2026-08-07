@@ -472,6 +472,7 @@ class AvatarRing {
     this.renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
+      powerPreference: 'high-performance',
     });
     this.renderer.setSize(size, size);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -691,6 +692,7 @@ class Skills3D {
     this.renderer = new THREE.WebGLRenderer({
       antialias: !CONFIG.isMobile,
       alpha: true,
+      powerPreference: 'high-performance',
     });
     this.renderer.setSize(width, height);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -885,6 +887,7 @@ class AmbientOrbs {
     this.renderer = new THREE.WebGLRenderer({
       antialias: false,
       alpha: true,
+      powerPreference: 'high-performance',
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
