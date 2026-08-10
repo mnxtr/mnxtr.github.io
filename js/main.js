@@ -11,6 +11,7 @@ import { initMobileMenu } from './menu.js';
 import { initScrollNavigation, initScrollProgress, initScrollReveal } from './scroll-reveal.js';
 import { initTypewriter } from './typewriter.js';
 import { initThreeScenes } from './three-scene.js';
+import { createPortfolioRetriever } from './rag-search.js';
 
 // Command Palette
 const commandItems = [
@@ -73,47 +74,108 @@ function initCommandPalette() {
   const palette = document.getElementById('commandPalette');
   const input = document.getElementById('commandSearch');
   const results = document.getElementById('commandResults');
+  const title = palette?.querySelector('.command-title');
+  const hint = palette?.querySelector('.command-hint');
   const openers = document.querySelectorAll('[data-command-open]');
   const closers = document.querySelectorAll('[data-command-close]');
   if (!palette || !input || !results) {
     return;
   }
 
-  let filteredItems = [...commandItems];
+  const portfolioRetriever = createPortfolioRetriever();
+  let filteredItems = commandItems.map((item) => ({ ...item, kind: 'navigation' }));
   let activeIndex = 0;
+  let currentQuery = '';
+
+  results.setAttribute('aria-live', 'polite');
 
   const navigateToCommand = (item) => {
     close();
     window.location.href = item.url;
   };
 
+  const updateStatusText = () => {
+    if (!currentQuery) {
+      if (title) title.textContent = 'Navigate';
+      if (hint) hint.textContent = 'Search the portfolio or use arrow keys and Enter.';
+      return;
+    }
+
+    if (title) title.textContent = 'Portfolio retrieval';
+
+    if (portfolioRetriever.status === 'loading') {
+      if (hint) hint.textContent = 'Loading the portfolio knowledge index…';
+    } else if (portfolioRetriever.status === 'error') {
+      if (hint) hint.textContent = 'Knowledge search is unavailable; navigation search still works.';
+    } else if (hint) {
+      hint.textContent = `${filteredItems.length} relevant result${filteredItems.length === 1 ? '' : 's'} found.`;
+    }
+  };
+
   const render = () => {
-    results.innerHTML = '';
+    results.replaceChildren();
+    updateStatusText();
+
     if (!filteredItems.length) {
       const empty = document.createElement('p');
       empty.className = 'command-item';
-      empty.textContent = 'No matching commands.';
+      empty.textContent = 'No supported portfolio evidence matched this search.';
       results.appendChild(empty);
       return;
     }
 
     filteredItems.forEach((item, index) => {
       const button = document.createElement('button');
+      const itemTitle = document.createElement('strong');
+      const itemDescription = document.createElement('span');
+
       button.type = 'button';
       button.className = `command-item${index === activeIndex ? ' active' : ''}`;
       button.setAttribute('role', 'option');
       button.setAttribute('aria-selected', String(index === activeIndex));
-      button.innerHTML = `<strong>${item.title}</strong><span>${item.description}</span>`;
+      button.dataset.resultType = item.kind;
+
+      itemTitle.textContent = item.title;
+      itemDescription.textContent =
+        item.kind === 'knowledge'
+          ? `${item.sourceLabel} · ${item.confidence} · ${item.description}`
+          : item.description;
+
+      button.append(itemTitle, itemDescription);
       button.addEventListener('click', () => navigateToCommand(item));
       results.appendChild(button);
     });
   };
 
   const filter = () => {
-    const query = input.value.trim().toLowerCase();
-    filteredItems = commandItems.filter((item) =>
-      `${item.title} ${item.description}`.toLowerCase().includes(query),
-    );
+    currentQuery = input.value.trim();
+    const normalizedQuery = currentQuery.toLowerCase();
+
+    if (!currentQuery) {
+      filteredItems = commandItems.map((item) => ({ ...item, kind: 'navigation' }));
+      activeIndex = 0;
+      render();
+      return;
+    }
+
+    const navigationResults = commandItems
+      .filter((item) => `${item.title} ${item.description}`.toLowerCase().includes(normalizedQuery))
+      .map((item) => ({ ...item, kind: 'navigation' }));
+
+    const knowledgeResults =
+      portfolioRetriever.status === 'ready'
+        ? portfolioRetriever.search(currentQuery).map((item) => ({
+            ...item,
+            kind: 'knowledge',
+          }))
+        : [];
+
+    const knowledgeUrls = new Set(knowledgeResults.map((item) => item.url));
+    filteredItems = [
+      ...knowledgeResults,
+      ...navigationResults.filter((item) => !knowledgeUrls.has(item.url)),
+    ];
+
     activeIndex = 0;
     render();
   };
@@ -123,6 +185,7 @@ function initCommandPalette() {
     palette.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     input.value = '';
+    currentQuery = '';
     filter();
     requestAnimationFrame(() => input.focus());
   }
@@ -136,6 +199,15 @@ function initCommandPalette() {
   openers.forEach((opener) => opener.addEventListener('click', open));
   closers.forEach((closer) => closer.addEventListener('click', close));
   input.addEventListener('input', filter);
+
+  portfolioRetriever.ready
+    .then(() => {
+      if (currentQuery) filter();
+    })
+    .catch((error) => {
+      console.warn('Portfolio retrieval index could not be loaded:', error);
+      if (currentQuery) render();
+    });
 
   document.addEventListener('keydown', (event) => {
     const isShortcut = (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k';
@@ -155,14 +227,14 @@ function initCommandPalette() {
       return;
     }
 
-    if (event.key === 'ArrowDown') {
+    if (event.key === 'ArrowDown' && filteredItems.length) {
       event.preventDefault();
       activeIndex = Math.min(activeIndex + 1, filteredItems.length - 1);
       render();
       return;
     }
 
-    if (event.key === 'ArrowUp') {
+    if (event.key === 'ArrowUp' && filteredItems.length) {
       event.preventDefault();
       activeIndex = Math.max(activeIndex - 1, 0);
       render();
@@ -200,7 +272,7 @@ function initPortfolio() {
     initScrollProgress();
     initScrollNavigation();
 
-    // Initialize command palette
+    // Initialize command palette and portfolio retrieval
     initCommandPalette();
 
     // Treat Three.js as progressive enhancement, not required content.
