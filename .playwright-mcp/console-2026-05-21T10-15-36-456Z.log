@@ -1,5 +1,0 @@
-[    1063ms] ReferenceError: tailwind is not defined
-    at https://mnxtr.github.io/:16:5
-[    1165ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://mnxtr.github.io/styles.css:0
-[    1170ms] Failed to resolve module specifier "three". Relative references must start with either "/", "./", or "../".
-[    2216ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://mnxtr.github.io/favicon.ico:0

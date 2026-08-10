@@ -36,7 +36,7 @@ Update HTML to use multiple formats with fallback:
   <source srcset="img/optimized/avatar.jpg" type="image/jpeg" />
   <img 
     src="img/optimized/avatar.jpg" 
-    alt="Mohammad Mansib Nawaz - AI Engineer"
+    alt="Mohammad Mansib Newaz - AI Engineer"
     loading="lazy"
     decoding="async"
     width="200"
@@ -86,7 +86,7 @@ For hero images, provide multiple sizes:
   />
   <img 
     src="img/optimized/avatar-600w.jpg"
-    alt="Mohammad Mansib Nawaz"
+    alt="Mohammad Mansib Newaz"
     loading="eager"
     fetchpriority="high"
   />

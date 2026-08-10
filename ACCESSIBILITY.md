@@ -96,7 +96,7 @@ All images should have descriptive alt text:
 ```html
 <img 
   src="avatar.webp" 
-  alt="Mohammad Mansib Nawaz - AI Engineer" 
+  alt="Mohammad Mansib Newaz - AI Engineer" 
   loading="lazy"
 />
 ```

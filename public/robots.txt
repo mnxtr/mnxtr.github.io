@@ -1,22 +1,13 @@
 # Robots.txt for Mohammad Mansib Newaz Portfolio
-# Updated: March 12, 2026
+# Updated: August 8, 2026
 
 User-agent: *
 Allow: /
 
-# Disallow certain directories
 Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /.github/
 Disallow: /.vscode/
 Disallow: /vite-project/
 
-# Allow CSS and JS for better crawling
-Allow: /*.css$
-Allow: /*.js$
-
-# Sitemap location
 Sitemap: https://mnxtr.github.io/sitemap.xml
-
-# Crawl-delay (be nice to bots)
-Crawl-delay: 1

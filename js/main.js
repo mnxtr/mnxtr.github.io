@@ -1,9 +1,11 @@
 /**
  * Main JavaScript for Portfolio
- * Handles theme toggle, typewriter effect, mobile menu, scroll reveal, and portfolio retrieval.
+ * Handles theme toggle, typewriter effect, mobile menu, scroll reveal,
+ * command palette, and progressive visual enhancement.
  */
 
 import '../styles.css';
+import '../taste.css';
 import { initTheme } from './theme.js';
 import { initMobileMenu } from './menu.js';
 import { initScrollNavigation, initScrollProgress, initScrollReveal } from './scroll-reveal.js';
@@ -15,22 +17,37 @@ import { createPortfolioRetriever } from './rag-search.js';
 const commandItems = [
   { title: 'Home', description: 'Return to the top of the homepage', url: 'index.html' },
   {
-    title: 'Featured Traffic Sign Project',
-    description: 'Open the flagship computer vision case study',
+    title: 'Expertise',
+    description: 'Frontend, backend, data, and practical AI capabilities',
+    url: '#expertise-heading',
+  },
+  {
+    title: 'Selected Work',
+    description: 'Open the three featured project case studies',
     url: '#work-heading',
   },
   {
-    title: 'Currently Working On',
-    description: 'See active AI engineering focus areas',
+    title: 'Core Stack',
+    description: 'See the tools used to ship end-to-end web products',
+    url: '#stack-heading',
+  },
+  {
+    title: 'Engineering Focus',
+    description: 'See the current architecture, backend, and AI focus areas',
     url: '#current-heading',
   },
   {
-    title: 'Latest Articles',
-    description: 'Read recent FastAPI and AI engineering writing',
+    title: 'Start a Project',
+    description: 'Jump to the next-step collaboration call to action',
     url: '#articles-heading',
   },
   { title: 'Projects', description: 'Browse the full project archive', url: 'project.html' },
   { title: 'Resume', description: 'View experience, skills, and credentials', url: 'resume.html' },
+  {
+    title: 'Resume PDF',
+    description: 'Open the one-page ATS-friendly resume',
+    url: 'mohammad-mansib-newaz-resume.pdf',
+  },
   {
     title: 'Contact',
     description: 'Start a collaboration or hiring conversation',
@@ -47,8 +64,8 @@ const commandItems = [
     url: '/blog/posts/secure-fastapi.html',
   },
   {
-    title: 'Full Stack AI Project',
-    description: 'Article · Idea to production',
+    title: 'Full-Stack AI Integration',
+    description: 'Article · Web product with an AI feature',
     url: '/blog/posts/full-stack-ai.html',
   },
 ];
@@ -233,6 +250,12 @@ function initCommandPalette() {
   render();
 }
 
+function shouldEnableThreeScenes() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const compactViewport = window.matchMedia('(max-width: 620px)').matches;
+  return !prefersReducedMotion && !compactViewport;
+}
+
 /**
  * Initialize all portfolio features
  */
@@ -252,8 +275,10 @@ function initPortfolio() {
     // Initialize command palette and portfolio retrieval
     initCommandPalette();
 
-    // Initialize Three.js scenes
-    initThreeScenes();
+    // Treat Three.js as progressive enhancement, not required content.
+    if (shouldEnableThreeScenes()) {
+      initThreeScenes();
+    }
   } catch (error) {
     console.error('Error initializing portfolio:', error);
   }
@@ -270,20 +295,27 @@ if (document.readyState === 'loading') {
 window.addEventListener('load', () => {
   try {
     const typewriterEl = document.getElementById('typewriter');
-    if (typewriterEl) {
-      const typeWriter = initTypewriter(
-        typewriterEl,
-        window.typewriterPhrases || [
-          'Building Intelligent AI Systems.',
-          'LLMs · RAG · Neural Networks.',
-          'Full Stack Development.',
-          'Python · FastAPI · PyTorch · React.',
-        ],
-      );
+    if (!typewriterEl) {
+      return;
+    }
 
-      if (typeWriter) {
-        setTimeout(typeWriter, 500);
-      }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      typewriterEl.textContent = 'React · FastAPI · PostgreSQL · Practical AI.';
+      return;
+    }
+
+    const typeWriter = initTypewriter(
+      typewriterEl,
+      window.typewriterPhrases || [
+        'Building Complete Web Products.',
+        'React · JavaScript · Responsive UI.',
+        'FastAPI · PostgreSQL · Secure APIs.',
+        'Practical AI Integration.',
+      ],
+    );
+
+    if (typeWriter) {
+      setTimeout(typeWriter, 500);
     }
   } catch (error) {
     console.error('Error starting typewriter:', error);
@@ -291,4 +323,4 @@ window.addEventListener('load', () => {
 });
 
 // Export for testing
-export { initPortfolio, initCommandPalette };
+export { initPortfolio, initCommandPalette, shouldEnableThreeScenes };

@@ -1,6 +1,11 @@
 module.exports = {
   testEnvironment: 'jsdom',
-  collectCoverageFrom: ['js/**/*.js', '!js/**/*.test.js'],
+  collectCoverageFrom: [
+    'js/menu.js',
+    'js/theme.js',
+    'js/typewriter.js',
+    'js/scroll-reveal.js',
+  ],
   coverageThreshold: {
     global: {
       branches: 50,

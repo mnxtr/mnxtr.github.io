@@ -5,18 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Technical blog about FastAPI, AI/ML engineering, secure API development, and full stack development. Written by Mohammad Mansib Newaz." />
+    content="Technical blog about full-stack web development, FastAPI, secure APIs, databases, frontend engineering, and practical AI integration. Written by Mohammad Mansib Newaz." />
   <meta name="keywords"
-    content="FastAPI, machine learning, backend engineering, AI/ML, Python, secure APIs, full stack development" />
+    content="full-stack development, React, JavaScript, FastAPI, backend engineering, Python, PostgreSQL, secure APIs, AI integration" />
   <meta name="author" content="Mohammad Mansib Newaz" />
-  <meta name="theme-color" content="#080B14" />
+  <meta name="theme-color" content="#030507" />
   
   <!-- Open Graph Tags -->
   <meta property="og:type" content="blog" />
   <meta property="og:url" content="https://mnxtr.github.io/blog/" />
   <meta property="og:title" content="Technical Blog | Mohammad Mansib Newaz" />
   <meta property="og:description"
-    content="Technical articles about FastAPI, AI/ML, backend engineering, and secure API development." />
+    content="Technical articles about full-stack development, FastAPI, frontend engineering, data systems, secure APIs, and practical AI features." />
   <meta property="og:site_name" content="Mohammad Mansib Newaz" />
   <meta property="og:locale" content="en_US" />
   
@@ -26,7 +26,7 @@
   <meta name="twitter:creator" content="@Mnxtrr" />
   <meta name="twitter:title" content="Technical Blog | Mohammad Mansib Newaz" />
   <meta name="twitter:description"
-    content="Technical articles about FastAPI, AI/ML, backend engineering, and secure API development." />
+    content="Technical articles about full-stack development, FastAPI, frontend engineering, data systems, secure APIs, and practical AI features." />
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://mnxtr.github.io/blog/" />
@@ -37,7 +37,7 @@
       "@context": "https://schema.org",
       "@type": "Blog",
       "name": "Mohammad Mansib Newaz's Blog",
-      "description": "Technical articles about FastAPI, AI/ML, backend engineering, and secure API development.",
+      "description": "Technical articles about full-stack development, FastAPI, frontend engineering, data systems, secure APIs, and practical AI features.",
       "url": "https://mnxtr.github.io/blog/",
       "author": {
         "@type": "Person",
@@ -57,15 +57,15 @@
       theme: {
         extend: {
           colors: {
-            primary: "#00F5D4",
+            primary: "#73F6D2",
             "primary-light": "#4AFDE8",
             "primary-dark": "#00C4AA",
-            accent: "#7C3AED",
+            accent: "#8AA3FF",
             "accent-light": "#9D6EF8",
-            secondary: "#2563EB",
-            darkBg: "#080B14",
+            secondary: "#9C7CFF",
+            darkBg: "#030507",
             darkSurface: "#0D1117",
-            darkText: "#D1EEF5",
+            darkText: "#EDF7F2",
             darkMuted: "#7FA8BC",
           },
           animation: {
@@ -207,7 +207,7 @@
       <div class="mb-16 animate-fade-in">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Technical Blog</h1>
         <p class="text-darkMuted text-lg max-w-2xl">
-          Articles on FastAPI, AI/ML engineering, secure API development, and full stack best practices.
+          Articles on building complete web products: frontend, backend, data, security, deployment, and useful AI integration.
         </p>
       </div>
 
@@ -319,14 +319,15 @@
         <p class="text-darkMuted mb-6 max-w-2xl">
           Get notified when new articles are published. Learn about FastAPI, AI/ML engineering, and backend development.
         </p>
-        <form class="flex gap-3 flex-col sm:flex-row">
-          <input type="email" placeholder="your@email.com"
+        <form data-supabase-form="newsletter" class="flex gap-3 flex-col sm:flex-row">
+          <input type="email" name="email" placeholder="your@email.com"
             class="flex-1 px-4 py-3 rounded-lg bg-darkSurface/50 border border-white/10 text-white placeholder-darkMuted focus:border-primary/50 focus:outline-none"
-            required>
+            required maxlength="320">
           <button type="submit"
             class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-light transition-colors whitespace-nowrap">
             Subscribe
           </button>
+          <p data-form-status class="basis-full text-sm text-darkMuted" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -370,6 +371,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script type="module" src="../js/forms.js"></script>
   <script>
     // Theme Toggle
     function setupTheme(toggleId, sunId, moonId) {
@@ -427,6 +429,7 @@
       });
     });
   </script>
+  <script type="module" src="/js/immersive.js"></script>
 </body>
 
 </html>
