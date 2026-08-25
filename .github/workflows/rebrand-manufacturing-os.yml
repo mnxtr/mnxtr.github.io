@@ -24,7 +24,6 @@ jobs:
 
           project = Path('project.html')
           text = project.read_text()
-
           replacements = {
               '<!-- Project 3: Manufacturing DBMS -->': '<!-- Project 3: Manufacturing Intelligence OS -->',
               'data-category="web backend"': 'data-category="ml web backend"',
@@ -34,12 +33,10 @@ jobs:
               'MDBMS-HTML is a front-end for a Manufacturing DBMS - interactive and fully responsive.': 'An AI-native manufacturing intelligence platform for factories, combining operational data, analytics, and natural-language access to factory information.',
               '<span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10">HTML</span>\n              <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10">CSS</span>\n              <span class="badge text-amber-400 border-amber-500/30 bg-amber-500/10"\n                >JavaScript</span': '<span class="badge text-blue-400 border-blue-500/30 bg-blue-500/10">PostgreSQL</span>\n              <span class="badge text-emerald-400 border-emerald-500/30 bg-emerald-500/10">Supabase</span>\n              <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10"\n                >RAG / LLM</span',
           }
-
           for old, new in replacements.items():
               if old not in text:
                   raise SystemExit(f'Missing expected text: {old[:80]!r}')
               text = text.replace(old, new, 1)
-
           project.write_text(text)
 
           index = Path('data/portfolio-index.json')
@@ -57,11 +54,11 @@ jobs:
           index.write_text(json.dumps(data, indent=2) + '\n')
           PY
 
-      - name: Commit changes and remove temporary workflow
+      - name: Commit changes to a review branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add project.html data/portfolio-index.json
           git rm .github/workflows/rebrand-manufacturing-os.yml
           git commit -m "Rebrand manufacturing project as Manufacturing Intelligence OS"
-          git push
+          git push origin HEAD:rebrand/manufacturing-intelligence-os
