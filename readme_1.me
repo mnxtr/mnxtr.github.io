@@ -1,0 +1,319 @@
+# Implementable RAG Architecture
+
+This document defines a practical, production-oriented Retrieval-Augmented Generation (RAG) architecture that can be implemented as a separate backend/demo and integrated with the MNXTR portfolio or Manufacturing Intelligence OS.
+
+## 1. Architecture
+
+```text
+Documents (PDF / DOCX / TXT / HTML)
+        |
+        v
+Document Parser
+        |
+        v
+Clean + Chunk (400-800 tokens)
+        |
+        v
+Embedding Model
+        |
+        v
+PostgreSQL + pgvector
+        |
+        |                         User Query
+        |                              |
+        |                              v
+        |                       Query Embedding
+        |                              |
+        |                              v
+        +----------------------> Vector Search
+                                       |
+                                       v
+                                  Reranking
+                                       |
+                                       v
+                                  LLM Answer
+                                       |
+                                       v
+                              Answer + Citations
+```
+
+## 2. Recommended stack
+
+| Layer | Technology |
+|---|---|
+| API | FastAPI |
+| Database | PostgreSQL |
+| Vector search | pgvector |
+| Embeddings | OpenAI `text-embedding-3-small` or equivalent |
+| LLM | Configurable provider |
+| PDF parsing | PyMuPDF |
+| DOCX parsing | python-docx |
+| Frontend | React |
+| Authentication | Supabase Auth |
+| File storage | Supabase Storage |
+
+PostgreSQL + pgvector is preferred for the initial implementation because relational data, permissions, metadata, and vector embeddings can remain in one system.
+
+## 3. Data model
+
+```sql
+create extension if not exists vector;
+
+create table documents (
+    id uuid primary key default gen_random_uuid(),
+    tenant_id uuid not null,
+    filename text not null,
+    document_type text,
+    storage_path text,
+    created_at timestamptz default now()
+);
+
+create table document_chunks (
+    id uuid primary key default gen_random_uuid(),
+    document_id uuid references documents(id) on delete cascade,
+    tenant_id uuid not null,
+    chunk_index integer not null,
+    content text not null,
+    embedding vector(1536),
+    metadata jsonb default '{}',
+    created_at timestamptz default now()
+);
+
+create index document_chunks_embedding_idx
+on document_chunks
+using ivfflat (embedding vector_cosine_ops)
+with (lists = 100);
+```
+
+> If a different embedding model is selected, change the vector dimension to match that model.
+
+## 4. Document ingestion
+
+```text
+POST /api/documents/upload
+```
+
+Pipeline:
+
+1. Validate file type and size.
+2. Store the original document.
+3. Extract text.
+4. Normalize text and preserve useful metadata such as page numbers.
+5. Split text into approximately 400-800 token chunks with modest overlap.
+6. Generate embeddings.
+7. Store chunks, embeddings, document IDs, page metadata, and tenant IDs.
+8. Return an indexing status and document ID.
+
+Example response:
+
+```json
+{
+  "document_id": "8c...",
+  "filename": "machine-m102-maintenance.pdf",
+  "chunks": 37,
+  "status": "indexed"
+}
+```
+
+## 5. Retrieval API
+
+```text
+POST /api/rag/query
+```
+
+Request:
+
+```json
+{
+  "query": "What maintenance procedure applies to Machine M102?",
+  "top_k": 5
+}
+```
+
+Core flow:
+
+```python
+query_embedding = embed(query)
+
+results = vector_search(
+    embedding=query_embedding,
+    tenant_id=current_tenant,
+    top_k=10
+)
+
+context = rerank(results, query)[:5]
+
+answer = generate_answer(
+    question=query,
+    context=context
+)
+```
+
+## 6. Grounded generation
+
+The LLM should be explicitly constrained to the retrieved evidence.
+
+```text
+You are a manufacturing knowledge assistant.
+
+Answer using only the supplied context.
+
+If the context does not contain enough information,
+say that the available documents do not provide
+sufficient evidence.
+
+Never invent:
+- maintenance procedures
+- machine specifications
+- production figures
+- safety instructions
+- inventory quantities
+
+For every factual answer, provide the source document
+and relevant section/page when available.
+```
+
+The application should return structured evidence alongside the answer:
+
+```json
+{
+  "answer": "Machine M102 requires ...",
+  "sources": [
+    {
+      "document": "machine-m102-maintenance.pdf",
+      "page": 12,
+      "chunk_id": "..."
+    }
+  ]
+}
+```
+
+## 7. Manufacturing Intelligence use case
+
+The RAG layer becomes significantly more useful when it can retrieve across operational knowledge:
+
+```text
+User
+  |
+  | "Why did production fall last month?"
+  v
+Retriever
+  |
+  +--> Production reports
+  +--> Machine downtime logs
+  +--> Maintenance records
+  +--> Quality reports
+  +--> SOPs / manuals
+  |
+  v
+Reranker
+  |
+  v
+LLM
+  |
+  v
+Evidence-backed explanation
+```
+
+Example answer shape:
+
+```text
+Production decreased 8.4% compared with the previous month.
+
+The largest contributing events were associated with machine
+M102 downtime and the maintenance events recorded during the
+period.
+
+Evidence:
+[Production Report - p.14]
+[Downtime Log - M102]
+[Maintenance Report - August]
+```
+
+The exact figures must always come from retrieved records; the model must not invent them.
+
+## 8. Multi-tenant security
+
+For a SaaS manufacturing system, tenant isolation is mandatory.
+
+Every document and chunk should carry a `tenant_id`, and retrieval must filter by the authenticated tenant before context reaches the LLM.
+
+Conceptually:
+
+```sql
+where tenant_id = :authenticated_tenant_id
+```
+
+Use database-level Row Level Security where supported rather than relying only on application code.
+
+## 9. Implementation phases
+
+### Phase 1 — MVP retrieval
+
+- PostgreSQL
+- pgvector
+- document upload
+- PDF/DOCX extraction
+- chunking
+- embeddings
+- cosine similarity search
+- basic retrieval endpoint
+
+### Phase 2 — RAG application
+
+- FastAPI query endpoint
+- LLM integration
+- grounded prompting
+- source citations
+- React chat interface
+- conversation history
+
+### Phase 3 — Production retrieval
+
+- tenant isolation and RLS
+- hybrid keyword + vector retrieval
+- reranking
+- metadata filtering
+- background ingestion jobs
+- retry handling
+- document versioning
+
+### Phase 4 — Evaluation and operations
+
+- curated question/answer evaluation set
+- retrieval precision/recall checks
+- groundedness checks
+- latency monitoring
+- token/cost monitoring
+- caching
+- audit logging
+- failure handling
+
+## 10. Definition of done
+
+The RAG implementation is ready for an MVP when it can:
+
+- ingest a real manufacturing document;
+- preserve document and page metadata;
+- retrieve relevant chunks for a natural-language question;
+- answer only from retrieved evidence;
+- provide traceable source citations;
+- prevent cross-tenant retrieval;
+- gracefully say when evidence is insufficient; and
+- expose the workflow through a documented API.
+
+## 11. Portfolio presentation
+
+The portfolio should not merely claim "RAG-powered AI". Demonstrate the actual pipeline:
+
+```text
+QUESTION
+   -> RETRIEVAL
+   -> RERANKING
+   -> CONTEXT
+   -> LLM
+   -> ANSWER
+   -> SOURCES
+```
+
+This makes the project technically credible while keeping the portfolio focused on engineering outcomes rather than AI buzzwords.
