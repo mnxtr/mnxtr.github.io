@@ -61,6 +61,7 @@ function findHtmlFiles(dir, files = {}, base = '') {
       '..',
       'node_modules',
       'dist',
+      'tanvora-app',
       'vite-project',
       'website',
       'scripts',

@@ -1,0 +1,12 @@
+:root {
+  --canvas: #faf8f4;
+  --paper: #fffefa;
+  --ink: #201a18;
+  --muted: #706a65;
+  --cognac: #782b24;
+  --line: #dfd9d2;
+  --display: 'Bodoni Moda Variable', Georgia, serif;
+  --body: 'Manrope Variable', Arial, sans-serif;
+  --gutter: clamp(20px, 4.4vw, 80px);
+  --section: clamp(80px, 10vw, 170px);
+}

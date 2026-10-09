@@ -46,6 +46,15 @@ jobs:
       - name: Verify production SEO
         run: npm run seo:check
 
+      - name: Build Tanvora preview
+        working-directory: tanvora-app
+        run: |
+          npm ci
+          VITE_BASE_PATH=/tanvora/ npm run build
+
+      - name: Include Tanvora preview
+        run: mkdir -p dist/tanvora && cp -R tanvora-app/dist/. dist/tanvora/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

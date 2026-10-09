@@ -16,6 +16,7 @@ const EXCLUDED_DIRS = new Set([
   'scripts',
   'src',
   'supabase',
+  'tanvora-app',
   'vite-project',
   'website',
   'public',
