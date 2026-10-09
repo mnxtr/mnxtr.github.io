@@ -14,7 +14,7 @@ export function SiteShell() {
   const location = useLocation()
 
   return <>
-    <a className="skip-link" href="#main">Skip to content</a>
+    <a className="skip-link" href="#main" onClick={event => { event.preventDefault(); document.getElementById('main')?.focus() }}>Skip to content</a>
     <header className="site-header">
       <div className="header-inner container-wide">
         <button className="icon-button mobile-menu-button" type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
@@ -25,7 +25,7 @@ export function SiteShell() {
         <div className="header-actions"><Link to="/collections" aria-label="Search collection" className="icon-button"><Search size={19} strokeWidth={1.6} /></Link><span className="header-tagline">TIMELESS LEATHER GOODS<br/>FOR A MORE MEANINGFUL EVERYDAY</span></div>
       </div>
     </header>
-    <main id="main" key={location.pathname}><Outlet /></main>
+    <main id="main" tabIndex={-1} key={location.pathname}><Outlet /></main>
     <footer className="site-footer">
       <div className="container-wide footer-top">
         <div className="footer-brand"><div className="stamp" aria-label="Tanvora leather goods emblem"><span className="stamp-top">TANVORA</span><span className="stamp-t">T</span><span className="stamp-bottom">LEATHER GOODS</span></div><p>Objects for the way you move.</p></div>
