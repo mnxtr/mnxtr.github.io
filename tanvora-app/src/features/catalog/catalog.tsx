@@ -7,14 +7,16 @@ type CatalogState = { products: Product[]; loading: boolean; error: string | nul
 const CatalogContext = createContext<CatalogState>({ products: [], loading: true, error: null, demo: true })
 
 type DbVariant = { id: string; sku: string; colour: string; hex: string; price_bdt: number; available: boolean; is_active: boolean }
-type DbImage = { url: string; sort_order: number }
+type DbImage = { url: string; alt: string; variant_id: string | null; sort_order: number }
 type DbProduct = { id: string; slug: string; name: string; category_slug: Category; material: string; description: string; dimensions: string; features: string[]; image_index: number; is_featured: boolean; product_variants: DbVariant[]; product_images: DbImage[] }
 
 function mapProduct(row: DbProduct): Product {
   return {
     id: row.id, slug: row.slug, name: row.name, category: row.category_slug, material: row.material,
     description: row.description, dimensions: row.dimensions, features: row.features ?? [],
-    imageIndex: row.image_index ?? 0, imageUrl: row.product_images?.sort((a, b) => a.sort_order - b.sort_order)[0]?.url,
+    imageIndex: row.image_index ?? 0,
+    images: (row.product_images ?? []).sort((a, b) => a.sort_order - b.sort_order)
+      .map(image => ({ url: image.url, alt: image.alt, variantId: image.variant_id })),
     featured: row.is_featured,
     variants: (row.product_variants ?? []).filter(v => v.is_active).map(v => ({ id: v.id, sku: v.sku, colour: v.colour, hex: v.hex, priceBdt: v.price_bdt, available: v.available })),
   }
@@ -27,7 +29,7 @@ export function CatalogProvider({ children }: { children: ReactNode }) {
     if (!supabase) return
     let cancelled = false
     supabase.from('products')
-      .select('id,slug,name,category_slug,material,description,dimensions,features,image_index,is_featured,product_variants(id,sku,colour,hex,price_bdt,available,is_active),product_images(url,sort_order)')
+      .select('id,slug,name,category_slug,material,description,dimensions,features,image_index,is_featured,product_variants(id,sku,colour,hex,price_bdt,available,is_active),product_images(url,alt,variant_id,sort_order)')
       .eq('is_published', true)
       .order('created_at', { ascending: false })
       .then(({ data, error }) => {
