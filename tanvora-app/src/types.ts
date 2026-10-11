@@ -9,6 +9,12 @@ export interface Variant {
   available: boolean
 }
 
+export interface ProductImage {
+  url: string
+  alt: string
+  variantId: string | null
+}
+
 export interface Product {
   id: string
   slug: string
@@ -19,7 +25,7 @@ export interface Product {
   dimensions: string
   features: string[]
   imageIndex: number
-  imageUrl?: string
+  images?: ProductImage[]
   featured: boolean
   variants: Variant[]
 }

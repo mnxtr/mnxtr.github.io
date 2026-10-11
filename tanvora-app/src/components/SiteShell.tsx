@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Menu, Search, X } from 'lucide-react'
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLocation, useNavigationType } from 'react-router-dom'
 
 const links = [
   { label: 'Shop', to: '/collections' },
@@ -12,6 +12,25 @@ const links = [
 export function SiteShell() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const navigationType = useNavigationType()
+  const previousPath = useRef(location.pathname)
+  const scrollPositions = useRef(new Map<string, number>())
+
+  useEffect(() => {
+    const previous = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+    return () => { window.history.scrollRestoration = previous }
+  }, [])
+
+  useLayoutEffect(() => {
+    if (previousPath.current !== location.pathname) {
+      const top = navigationType === 'POP' ? scrollPositions.current.get(location.key) ?? 0 : 0
+      window.scrollTo({ top, behavior: 'instant' })
+      document.getElementById('main')?.focus({ preventScroll: true })
+    }
+    previousPath.current = location.pathname
+    return () => { scrollPositions.current.set(location.key, window.scrollY) }
+  }, [location.key, location.pathname, navigationType])
 
   return <>
     <a className="skip-link" href="#main" onClick={event => { event.preventDefault(); document.getElementById('main')?.focus() }}>Skip to content</a>
