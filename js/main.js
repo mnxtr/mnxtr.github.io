@@ -42,6 +42,7 @@ const commandItems = [
     url: '#articles-heading',
   },
   { title: 'Projects', description: 'Browse the full project archive', url: 'project.html' },
+  { title: 'Security Radar', description: 'Track vulnerability advisories and exploited CVEs', url: '/security/' },
   { title: 'Resume', description: 'View experience, skills, and credentials', url: 'resume.html' },
   {
     title: 'Resume PDF',
