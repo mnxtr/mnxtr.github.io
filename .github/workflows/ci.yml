@@ -1,45 +1,13 @@
 name: CI
-
 on:
   push:
     branches: [main, develop]
   pull_request:
-    branches: [main, develop]
-
 permissions:
   contents: read
-
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
-  build-test-lint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Use Node.js 24
-        uses: actions/setup-node@v6
-        with:
-          node-version: '24'
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run ESLint
-        run: npm run lint
-
-      - name: Run tests with coverage
-        run: npm run test:coverage -- --runInBand
-
-      - name: Build production site
-        run: npm run build
-
-      - name: Run SEO regression checks
-        run: npm run seo:check
+  quality:
+    uses: ./.github/workflows/quality.yml

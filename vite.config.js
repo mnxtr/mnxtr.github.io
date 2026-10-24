@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
-import { readdirSync, statSync } from 'fs';
-import { join } from 'path';
+import { resolve } from 'node:path';
+import { sourcePages } from './scripts/html.mjs';
 
 const FORM_PLACEHOLDER = 'https://formsubmit.co/mohammad.newaz1@northsouth.edu';
 const FORM_ENDPOINT = 'https://formsubmit.co/mohammad.newaz1@northsouth.edu';
@@ -37,44 +37,7 @@ const portfolioContentPlugin = {
   },
 };
 
-/**
- * Recursively find all HTML files for the multi-page build.
- *
- * @param {string} dir - Directory to search
- * @param {Object} files - Accumulator for found files
- * @param {string} base - Base path for relative paths
- * @returns {Object} Object with filename: filepath mappings
- */
-function findHtmlFiles(dir, files = {}, base = '') {
-  const items = readdirSync(dir);
-
-  for (const item of items) {
-    const fullPath = join(dir, item);
-    const relativePath = base ? `${base}/${item}` : item;
-    const isDir = statSync(fullPath).isDirectory();
-    const isExcludedDir = [
-      '.',
-      '..',
-      'node_modules',
-      'dist',
-      'tanvora-app',
-      'vite-project',
-      'website',
-      'scripts',
-    ].includes(item);
-
-    if (isDir && !isExcludedDir) {
-      findHtmlFiles(fullPath, files, relativePath);
-    } else if (item.endsWith('.html')) {
-      const name = relativePath.replace(/\//g, '-').replace('.html', '') || 'main';
-      files[name] = fullPath;
-    }
-  }
-
-  return files;
-}
-
-const htmlFiles = findHtmlFiles(__dirname);
+const htmlFiles = Object.fromEntries(sourcePages().map((file) => [file, resolve(file)]));
 
 export default defineConfig({
   base: process.env.VITE_BASE_PATH || '/',

@@ -11,6 +11,8 @@ export default [
       sourceType: 'module',
       globals: {
         // Browser globals
+        URL: 'readonly',
+        fetch: 'readonly',
         window: 'readonly',
         document: 'readonly',
         navigator: 'readonly',
@@ -44,14 +46,14 @@ export default [
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'prefer-const': 'error',
       'no-var': 'error',
-      'eqeqeq': ['error', 'always'],
-      'curly': 'error',
+      eqeqeq: ['error', 'always'],
+      curly: 'error',
       'brace-style': ['error', '1tbs'],
       'comma-dangle': ['error', 'always-multiline'],
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single', { avoidEscape: true }],
+      semi: ['error', 'always'],
+      quotes: ['error', 'single', { avoidEscape: true }],
       'no-trailing-spaces': 'error',
-      'indent': ['error', 2],
+      indent: 'off', // Prettier owns indentation.
       'prettier/prettier': 'warn',
     },
   },

@@ -1,7 +1,4 @@
-import {
-  initImmersiveInteractions,
-  shouldUseCustomCursor,
-} from '../immersive.js';
+import { initImmersiveInteractions, shouldUseCustomCursor } from '../immersive.js';
 
 describe('Signal Trace interaction safeguards', () => {
   test('only enables the custom cursor for fine pointers without reduced motion', () => {
