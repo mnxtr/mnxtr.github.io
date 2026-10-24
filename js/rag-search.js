@@ -69,7 +69,8 @@ function expandQuery(query) {
   SYNONYM_GROUPS.forEach((group) => {
     const normalizedGroup = group.map(normalizeText);
     const isRelated = normalizedGroup.some(
-      (term) => normalizedQuery.includes(term) || tokenize(term).some((token) => expanded.has(token)),
+      (term) =>
+        normalizedQuery.includes(term) || tokenize(term).some((token) => expanded.has(token)),
     );
 
     if (isRelated) {
@@ -88,15 +89,21 @@ function countMatches(text, terms) {
   const textTokens = new Set(tokenize(normalizedText));
 
   return terms.reduce((score, term) => {
-    if (textTokens.has(term)) return score + 1;
-    if (term.length >= 4 && normalizedText.includes(term)) return score + 0.55;
+    if (textTokens.has(term)) {
+      return score + 1;
+    }
+    if (term.length >= 4 && normalizedText.includes(term)) {
+      return score + 0.55;
+    }
     return score;
   }, 0);
 }
 
 function scoreDocument(document, query) {
   const { normalizedQuery, terms } = expandQuery(query);
-  if (!terms.length) return 0;
+  if (!terms.length) {
+    return 0;
+  }
 
   const title = normalizeText(document.title);
   const tags = normalizeText((document.tags || []).join(' '));
@@ -106,10 +113,18 @@ function scoreDocument(document, query) {
 
   let score = 0;
 
-  if (title.includes(normalizedQuery)) score += 18;
-  if (tags.includes(normalizedQuery)) score += 12;
-  if (description.includes(normalizedQuery)) score += 8;
-  if (content.includes(normalizedQuery)) score += 5;
+  if (title.includes(normalizedQuery)) {
+    score += 18;
+  }
+  if (tags.includes(normalizedQuery)) {
+    score += 12;
+  }
+  if (description.includes(normalizedQuery)) {
+    score += 8;
+  }
+  if (content.includes(normalizedQuery)) {
+    score += 5;
+  }
 
   score += countMatches(title, terms) * 5;
   score += countMatches(tags, terms) * 4;
@@ -126,8 +141,12 @@ function scoreDocument(document, query) {
 }
 
 function confidenceLabel(score) {
-  if (score >= 24) return 'Strong match';
-  if (score >= 13) return 'Relevant match';
+  if (score >= 24) {
+    return 'Strong match';
+  }
+  if (score >= 13) {
+    return 'Relevant match';
+  }
   return 'Possible match';
 }
 
@@ -154,7 +173,9 @@ async function loadPortfolioIndex(indexUrl = defaultIndexUrl()) {
 }
 
 function searchPortfolio(documents, query, { limit = 6, minimumScore = 3 } = {}) {
-  if (!Array.isArray(documents) || !query.trim()) return [];
+  if (!Array.isArray(documents) || !query.trim()) {
+    return [];
+  }
 
   return documents
     .map((document) => ({

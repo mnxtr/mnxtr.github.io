@@ -1,0 +1,43 @@
+name: Validate production artifact
+on:
+  workflow_call:
+    inputs:
+      upload_pages:
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            tanvora-app/package-lock.json
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - run: npm run lint
+      - run: npm run test:coverage -- --runInBand
+      - run: npm run test:build
+      - run: npm run build
+      - run: npm run seo:check
+      - name: Validate Tanvora preview
+        working-directory: tanvora-app
+        run: |
+          npm ci
+          npm audit --audit-level=moderate
+          VITE_BASE_PATH=/tanvora/ npm run build
+      - name: Include validated Tanvora preview
+        run: mkdir -p dist/tanvora && cp -R tanvora-app/dist/. dist/tanvora/
+      - uses: actions/upload-pages-artifact@v3
+        if: inputs.upload_pages
+        with:
+          path: ./dist

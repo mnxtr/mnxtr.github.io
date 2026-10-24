@@ -42,7 +42,11 @@ const commandItems = [
     url: '#articles-heading',
   },
   { title: 'Projects', description: 'Browse the full project archive', url: 'project.html' },
-  { title: 'Security Radar', description: 'Track vulnerability advisories and exploited CVEs', url: '/security/' },
+  {
+    title: 'Security Radar',
+    description: 'Track vulnerability advisories and exploited CVEs',
+    url: '/security/',
+  },
   { title: 'Resume', description: 'View experience, skills, and credentials', url: 'resume.html' },
   {
     title: 'Resume PDF',
@@ -97,17 +101,27 @@ function initCommandPalette() {
 
   const updateStatusText = () => {
     if (!currentQuery) {
-      if (title) title.textContent = 'Navigate';
-      if (hint) hint.textContent = 'Search the portfolio or use arrow keys and Enter.';
+      if (title) {
+        title.textContent = 'Navigate';
+      }
+      if (hint) {
+        hint.textContent = 'Search the portfolio or use arrow keys and Enter.';
+      }
       return;
     }
 
-    if (title) title.textContent = 'Portfolio retrieval';
+    if (title) {
+      title.textContent = 'Portfolio retrieval';
+    }
 
     if (portfolioRetriever.status === 'loading') {
-      if (hint) hint.textContent = 'Loading the portfolio knowledge index…';
+      if (hint) {
+        hint.textContent = 'Loading the portfolio knowledge index…';
+      }
     } else if (portfolioRetriever.status === 'error') {
-      if (hint) hint.textContent = 'Knowledge search is unavailable; navigation search still works.';
+      if (hint) {
+        hint.textContent = 'Knowledge search is unavailable; navigation search still works.';
+      }
     } else if (hint) {
       hint.textContent = `${filteredItems.length} relevant result${filteredItems.length === 1 ? '' : 's'} found.`;
     }
@@ -203,11 +217,15 @@ function initCommandPalette() {
 
   portfolioRetriever.ready
     .then(() => {
-      if (currentQuery) filter();
+      if (currentQuery) {
+        filter();
+      }
     })
     .catch((error) => {
       console.warn('Portfolio retrieval index could not be loaded:', error);
-      if (currentQuery) render();
+      if (currentQuery) {
+        render();
+      }
     });
 
   document.addEventListener('keydown', (event) => {

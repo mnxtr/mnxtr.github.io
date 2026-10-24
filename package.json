@@ -19,7 +19,8 @@
     "sitemap:generate": "node scripts/generate-sitemap.mjs",
     "seo:enhance": "node scripts/seo-postbuild.mjs",
     "seo:check": "node scripts/seo-check.mjs dist",
-    "compress-images": "node scripts/compress-images.js"
+    "compress-images": "node scripts/compress-images.js",
+    "test:build": "node --test scripts/__tests__/*.test.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",
