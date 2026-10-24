@@ -1,42 +1,39 @@
-/**
- * Mobile menu management module
- * Handles mobile navigation toggle and accessibility
- */
-
-/**
- * Initialize mobile menu functionality
- */
 export function initMobileMenu() {
-  try {
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    if (!menuToggle || !mobileMenu) {
-      console.warn('Mobile menu elements not found');
-      return;
-    }
-
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      const isOpen = menuToggle.classList.contains('open');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-
-      // Trap focus in mobile menu when open
-      if (isOpen) {
-        mobileMenu.focus();
-      }
-    });
-
-    // Close menu on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-        menuToggle.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  } catch (error) {
-    console.error('Error initializing mobile menu:', error);
+  const toggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('mobileMenu');
+  if (!toggle || !menu) {
+    return;
   }
+  toggle.hidden = false;
+  toggle.closest('header')?.classList.add('nav-enhanced');
+  const close = (restoreFocus = false) => {
+    toggle.classList.remove('open');
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) {
+      toggle.focus();
+    }
+  };
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.classList.toggle('open', open);
+    menu.classList.toggle('open', open);
+  });
+  menu.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      close();
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('open')) {
+      close(true);
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+      close();
+    }
+  });
+  window.matchMedia?.('(min-width: 701px)').addEventListener?.('change', () => close());
 }

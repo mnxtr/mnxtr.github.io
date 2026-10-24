@@ -1,26 +1,17 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
+import { readFileSync } from 'node:fs';
 import { sourcePages } from './scripts/html.mjs';
 
-const FORM_PLACEHOLDER = 'https://formsubmit.co/mohammad.newaz1@northsouth.edu';
-const FORM_ENDPOINT = 'https://formsubmit.co/mohammad.newaz1@northsouth.edu';
-
-/**
- * Normalize public-facing content without changing page layout or behavior.
- * The output guard below prevents accidental regressions from being deployed.
- *
- * @param {string} html - HTML being processed by Vite
- * @returns {string} Normalized HTML
- */
-function normalizePortfolioHtml(html) {
-  return html.replaceAll(FORM_PLACEHOLDER, FORM_ENDPOINT);
-}
-
 const portfolioContentPlugin = {
-  name: 'portfolio-content-normalization',
-
-  transformIndexHtml(html) {
-    return normalizePortfolioHtml(html);
+  name: 'portfolio-shared-shell',
+  transformIndexHtml: {
+    order: 'pre',
+    handler(html) {
+      return html.replace(/<!-- portfolio:(header|footer) -->/g, (_match, name) =>
+        readFileSync(resolve(`partials/${name}.html`), 'utf8'),
+      );
+    },
   },
 
   generateBundle(_options, bundle) {

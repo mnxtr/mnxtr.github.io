@@ -152,7 +152,7 @@ function confidenceLabel(score) {
 
 function defaultIndexUrl() {
   if (typeof document !== 'undefined' && document.baseURI) {
-    return new URL('data/portfolio-index.json', document.baseURI);
+    return new URL('/data/portfolio-index.json', document.baseURI);
   }
 
   return 'data/portfolio-index.json';

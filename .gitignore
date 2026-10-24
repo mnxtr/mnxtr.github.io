@@ -30,3 +30,8 @@ tablet-768x1024.png
 # OS
 .DS_Store
 Thumbs.db
+
+# Validation artifacts
+coverage/
+playwright-report/
+test-results/

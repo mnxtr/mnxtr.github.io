@@ -20,7 +20,11 @@
     "seo:enhance": "node scripts/seo-postbuild.mjs",
     "seo:check": "node scripts/seo-check.mjs dist",
     "compress-images": "node scripts/compress-images.js",
-    "test:build": "node --test scripts/__tests__/*.test.mjs"
+    "test:build": "node --test scripts/__tests__/*.test.mjs",
+    "test:browser": "playwright test",
+    "check:links": "node scripts/check-links.mjs",
+    "social:generate": "node scripts/generate-social-image.mjs",
+    "resume:export": "node scripts/export-resume.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",

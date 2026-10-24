@@ -35,7 +35,7 @@ export function enhanceHtml(html, file) {
     title,
     description,
     url: canonical,
-    image: `${SITE_URL}/img/og-image.png`,
+    image: `${SITE_URL}/img/portfolio-social.png`,
     type: file.startsWith('blog/') && !file.endsWith('index.html') ? 'article' : 'website',
     site_name: 'MNXTR · Mohammad Mansib Newaz',
   })) {
@@ -45,7 +45,7 @@ export function enhanceHtml(html, file) {
     card: 'summary_large_image',
     title,
     description,
-    image: `${SITE_URL}/img/og-image.png`,
+    image: `${SITE_URL}/img/portfolio-social.png`,
   }))
     upsertMeta(head, `twitter:${key}`, value);
   const schemaNodes = elements(head, 'script').filter(
@@ -72,7 +72,7 @@ export function enhanceHtml(html, file) {
     });
   for (const schema of schemas) {
     if (schema['@type'] === 'BlogPosting') {
-      schema.image ||= [`${SITE_URL}/img/og-image.png`];
+      schema.image ||= [`${SITE_URL}/img/portfolio-social.png`];
       schema.description ||= description;
       schema.mainEntityOfPage ||= { '@type': 'WebPage', '@id': canonical };
     }

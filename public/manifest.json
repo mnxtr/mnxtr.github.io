@@ -1,7 +1,7 @@
 {
-  "name": "Mohammad Mansib Newaz - Full-Stack Developer in Bangladesh",
+  "name": "Mohammad Mansib Newaz \u2014 AI & Automation",
   "short_name": "MNXTR Portfolio",
-  "description": "Portfolio of Mohammad Mansib Newaz, a Bangladesh-based full-stack developer building React interfaces, FastAPI backends, PostgreSQL systems, and practical AI integrations for remote teams.",
+  "description": "Practical AI, workflow automation, and useful integrations. Public project evidence and a clear path to a project brief.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#030507",
@@ -13,21 +13,13 @@
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
-    },
-    {
-      "src": "/img/avatar.jpg",
-      "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/img/avatar.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
     }
   ],
-  "categories": ["portfolio", "technology", "software-development"],
+  "categories": [
+    "portfolio",
+    "technology",
+    "software-development"
+  ],
   "lang": "en-US",
   "dir": "ltr",
   "scope": "/",

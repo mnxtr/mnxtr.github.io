@@ -1,3 +1,5 @@
+> Historical implementation notes. See [README.md](README.md) for the current architecture, checks, and operational status.
+
 # 🎉 Codebase Improvements - Complete Implementation Summary
 
 **Date**: July 7, 2026  
