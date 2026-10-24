@@ -355,8 +355,9 @@
           </div>
         </div>
 
-        <!-- Project 2: Traffic Symbol Recognition -->
+        <!-- Project 2: Traffic Sign Detection -->
         <div
+          id="traffic-sign-detection"
           class="project-card bg-darkSurface/60 backdrop-blur-xl text-darkText rounded-2xl overflow-hidden reveal reveal-delay-1"
           data-category="ml"
         >
@@ -365,7 +366,7 @@
               <source srcset="img/optimized/traffic-signs.webp" type="image/webp" />
               <img
                 src="img/optimized/traffic-signs.jpg"
-                alt="Traffic Symbol Recognition using YOLOv11n"
+                alt="Traffic Sign Detection using YOLO11 Nano"
                 class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
                 loading="lazy"
                 decoding="async"
@@ -384,17 +385,23 @@
             </div>
           </div>
           <div class="p-6">
-            <h3 class="text-lg font-semibold mb-2 text-white">Traffic Symbol Recognition</h3>
+            <h3 class="text-lg font-semibold mb-2 text-white">Traffic Sign Detection</h3>
             <p class="mb-4 text-darkMuted text-sm leading-relaxed">
-              Real-time traffic sign detection using YOLOv11n for autonomous driving and road safety
-              applications.
+              Traffic-sign detection using YOLO11 Nano, with augmentation tooling for brightness,
+              contrast, horizontal flips, rotations, and Gaussian-noise injection. The documented
+              training pipeline also includes random spatial translation (±10%).
+            </p>
+            <p class="mb-4 text-darkMuted text-sm leading-relaxed">
+              A Gradio interface implements image, video, and webcam inference. The project explores
+              lightweight detection under resource constraints, with source code available for
+              inspecting the preprocessing, training, and inference workflows.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
               <span class="badge text-indigo-400 border-indigo-500/30 bg-indigo-500/10"
                 >Python</span
               >
               <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10"
-                >YOLOv11n</span
+                >YOLO11 Nano</span
               >
               <span class="badge text-orange-400 border-orange-500/30 bg-orange-500/10"
                 >PyTorch</span
@@ -403,7 +410,7 @@
             </div>
             <div class="flex items-center gap-4">
               <a
-                href="https://github.com/mnxtr/bd-traffic-signs"
+                href="https://github.com/mnxtr/CSE499B"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center text-primary hover:text-accent transition-colors text-sm font-medium group"
@@ -424,12 +431,12 @@
                 </svg>
               </a>
               <a
-                href="https://github.com/mnxtr/bd-traffic-signs"
+                href="https://github.com/mnxtr/CSE499B/blob/main/app.py"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium group"
               >
-                Live Demo
+                Inference app code
                 <svg
                   class="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                   fill="none"
@@ -484,13 +491,18 @@
             </div>
           </div>
           <div class="p-6">
-            <h3 class="text-lg font-semibold mb-2 text-white">Manufacturing Intelligence OS for Factories</h3>
+            <h3 class="text-lg font-semibold mb-2 text-white">
+              Manufacturing Intelligence OS for Factories
+            </h3>
             <p class="mb-4 text-darkMuted text-sm leading-relaxed">
-              An AI-native manufacturing intelligence platform for factories, combining operational data, analytics, and natural-language access to factory information.
+              An AI-native manufacturing intelligence platform for factories, combining operational
+              data, analytics, and natural-language access to factory information.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
               <span class="badge text-blue-400 border-blue-500/30 bg-blue-500/10">PostgreSQL</span>
-              <span class="badge text-emerald-400 border-emerald-500/30 bg-emerald-500/10">Supabase</span>
+              <span class="badge text-emerald-400 border-emerald-500/30 bg-emerald-500/10"
+                >Supabase</span
+              >
               <span class="badge text-violet-400 border-violet-500/30 bg-violet-500/10"
                 >RAG / LLM</span
               >
