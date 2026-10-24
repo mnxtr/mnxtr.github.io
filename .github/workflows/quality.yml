@@ -29,6 +29,9 @@ jobs:
       - run: npm run test:build
       - run: npm run build
       - run: npm run seo:check
+      - run: npm run check:links
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
       - name: Validate Tanvora preview
         working-directory: tanvora-app
         run: |
@@ -37,6 +40,12 @@ jobs:
           VITE_BASE_PATH=/tanvora/ npm run build
       - name: Include validated Tanvora preview
         run: mkdir -p dist/tanvora && cp -R tanvora-app/dist/. dist/tanvora/
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-failures
+          path: test-results/
+          retention-days: 7
       - uses: actions/upload-pages-artifact@v3
         if: inputs.upload_pages
         with:

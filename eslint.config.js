@@ -12,6 +12,10 @@ export default [
       globals: {
         // Browser globals
         URL: 'readonly',
+        FormData: 'readonly',
+        AbortController: 'readonly',
+        ResizeObserver: 'readonly',
+        cancelAnimationFrame: 'readonly',
         fetch: 'readonly',
         window: 'readonly',
         document: 'readonly',

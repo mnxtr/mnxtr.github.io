@@ -3,7 +3,7 @@ name: RAG checks
 on:
   pull_request:
     paths:
-      - 'data/portfolio-index.json'
+      - 'public/data/portfolio-index.json'
       - 'js/main.js'
       - 'js/rag-search.js'
       - 'js/rag-search.test.js'
@@ -15,7 +15,7 @@ on:
     branches:
       - feature/rag-semantic-search
     paths:
-      - 'data/portfolio-index.json'
+      - 'public/data/portfolio-index.json'
       - 'js/main.js'
       - 'js/rag-search.js'
       - 'js/rag-search.test.js'

@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "updated": "2026-10-24",
+  "documents": [
+    {
+      "id": "services",
+      "title": "AI and automation services",
+      "description": "Workflow automation, knowledge assistants, and AI integrations.",
+      "content": "Prototyping, retrieval, evaluation, documentation, handover, tools, business workflows.",
+      "sourceType": "page",
+      "sourceLabel": "Services",
+      "url": "/#services",
+      "tags": [
+        "automation",
+        "AI",
+        "RAG",
+        "integration"
+      ]
+    },
+    {
+      "id": "traffic-sign-detection",
+      "title": "Traffic Sign Detection",
+      "description": "Connecting a YOLO11 Nano detection model to an interface for image, video, and webcam inference.",
+      "content": "The public repository contains Python training and augmentation tooling, model evaluation materials, and a Gradio inference application. The interface accepts images, video, and webcam input. This is a research prototype. Benchmark numbers, performance improvements, and suitability for road use have not been independently verified for this case study. A production deployment would need representative evaluation, model and dependency checks, monitoring, and a separate safety assessment.",
+      "sourceType": "project",
+      "sourceLabel": "Computer vision / Research prototype",
+      "url": "/projects/traffic-sign-detection.html",
+      "tags": [
+        "project",
+        "prototype",
+        "computer vision",
+        "YOLO",
+        "OpenCV"
+      ]
+    },
+    {
+      "id": "crm-interface",
+      "title": "Customer relationship management",
+      "description": "Exploring customer, sales, and support workflows through a collection of connected interface screens.",
+      "content": "The reviewed repository contains HTML interface files, including contact, sales, marketing, support, and ticket-detail views. It is a frontend prototype. The README identifies backend integration as future work. The public code does not establish a working FastAPI or PostgreSQL backend, server-side authentication, persistent customer records, or a deployed client CRM. Login and registration screens alone do not provide authentication.",
+      "sourceType": "project",
+      "sourceLabel": "Business workflow / Interface prototype",
+      "url": "/projects/crm-interface.html",
+      "tags": [
+        "project",
+        "prototype",
+        "workflow",
+        "interface"
+      ]
+    },
+    {
+      "id": "manufacturing-interface",
+      "title": "Manufacturing management",
+      "description": "An interface prototype for exploring products, orders, and manufacturing operations in one place.",
+      "content": "The public repository includes HTML, CSS, and JavaScript interfaces for a dashboard, products, and orders, plus a PHP processing file and architecture documentation. The available artifacts demonstrate the interface direction; they do not establish a complete production system. Production authentication, backend behavior, deployment readiness, and an end-to-end database system have not been verified. RAG and AI assistant capabilities described in planning material are future work. No operational efficiency gains are claimed.",
+      "sourceType": "project",
+      "sourceLabel": "Operations / Interface prototype",
+      "url": "/projects/manufacturing-interface.html",
+      "tags": [
+        "project",
+        "prototype",
+        "workflow",
+        "interface"
+      ]
+    },
+    {
+      "id": "technical-documentation",
+      "title": "Writing Technical Documentation That Developers Love",
+      "description": "Engineering note by Mohammad Mansib Newaz.",
+      "content": "Writing Technical Documentation That Developers Love",
+      "sourceType": "article",
+      "sourceLabel": "Engineering notes",
+      "url": "/blog/posts/technical-documentation.html",
+      "tags": [
+        "article",
+        "engineering"
+      ]
+    },
+    {
+      "id": "full-stack-ai",
+      "title": "Full Stack AI Project: From Idea to Production",
+      "description": "Engineering note by Mohammad Mansib Newaz.",
+      "content": "Full Stack AI Project: From Idea to Production",
+      "sourceType": "article",
+      "sourceLabel": "Engineering notes",
+      "url": "/blog/posts/full-stack-ai.html",
+      "tags": [
+        "article",
+        "engineering"
+      ]
+    },
+    {
+      "id": "secure-fastapi",
+      "title": "Building Secure FastAPI Applications: Best Practices",
+      "description": "Engineering note by Mohammad Mansib Newaz.",
+      "content": "Building Secure FastAPI Applications: Best Practices",
+      "sourceType": "article",
+      "sourceLabel": "Engineering notes",
+      "url": "/blog/posts/secure-fastapi.html",
+      "tags": [
+        "article",
+        "engineering"
+      ]
+    },
+    {
+      "id": "fastapi-ml-deployment",
+      "title": "Deploying Machine Learning Models with FastAPI",
+      "description": "Engineering note by Mohammad Mansib Newaz.",
+      "content": "Deploying Machine Learning Models with FastAPI",
+      "sourceType": "article",
+      "sourceLabel": "Engineering notes",
+      "url": "/blog/posts/fastapi-ml-deployment.html",
+      "tags": [
+        "article",
+        "engineering"
+      ]
+    },
+    {
+      "id": "postgres-optimization",
+      "title": "PostgreSQL Optimization for AI/ML Applications",
+      "description": "Engineering note by Mohammad Mansib Newaz.",
+      "content": "PostgreSQL Optimization for AI/ML Applications",
+      "sourceType": "article",
+      "sourceLabel": "Engineering notes",
+      "url": "/blog/posts/postgres-optimization.html",
+      "tags": [
+        "article",
+        "engineering"
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Send a project brief",
+      "description": "Discuss a workflow, tools, timeframe, and goals.",
+      "content": "Discuss a workflow, tools, timeframe, and goals.",
+      "sourceType": "page",
+      "sourceLabel": "Portfolio",
+      "url": "/contact.html",
+      "tags": [
+        "contact"
+      ]
+    },
+    {
+      "id": "about",
+      "title": "About Mohammad Mansib Newaz",
+      "description": "Developer based in Bangladesh, focused on AI and automation.",
+      "content": "Developer based in Bangladesh, focused on AI and automation.",
+      "sourceType": "page",
+      "sourceLabel": "Portfolio",
+      "url": "/about.html",
+      "tags": [
+        "about"
+      ]
+    },
+    {
+      "id": "resume",
+      "title": "R\u00e9sum\u00e9 and experience",
+      "description": "Education, experience, and printable PDF.",
+      "content": "Education, experience, and printable PDF.",
+      "sourceType": "page",
+      "sourceLabel": "Portfolio",
+      "url": "/resume.html",
+      "tags": [
+        "resume"
+      ]
+    }
+  ]
+}

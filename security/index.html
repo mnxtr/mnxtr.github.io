@@ -1,77 +1,232 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090f18"><meta name="description" content="MNXTR Security Radar: public software advisories and CISA known exploited vulnerabilities.">
-<title>Security Radar · MNXTR</title><link rel="canonical" href="https://mnxtr.github.io/security/">
-<style>
-:root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#080d16;color:#e9f1f8}
-*{box-sizing:border-box}body{margin:0}a{color:inherit}a:hover{color:#83f3ce}button,input,select{font:inherit}button,select,input{color:inherit}
-.wrap{width:min(1240px,calc(100% - 40px));margin:auto}.topbar{border-bottom:1px solid #263443;background:#0d1420}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:70px;gap:18px}
-.brand{font-size:14px;font-weight:800;letter-spacing:.18em;text-decoration:none}.brand span{color:#78e9c0}
-.topbar nav{display:flex;gap:22px;font-size:13px;color:#a0afbf}.topbar nav a{text-decoration:none}
-.hero{padding:65px 0 34px}.eyebrow{font-size:12px;letter-spacing:.19em;color:#80efc6;text-transform:uppercase;font-weight:700}
-h1{font-size:clamp(36px,5.5vw,68px);line-height:1.05;letter-spacing:-.05em;margin:14px 0 16px;font-weight:740}
-.hero p{color:#a2b0c1;max-width:720px;font-size:16px;line-height:1.75;margin:0}
-.meta{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:24px;font-size:12px;color:#aab9cb}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#80efc6;margin-right:8px}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:20px 0 27px}.metric,.panel{border:1px solid #283646;background:linear-gradient(160deg,#131f2e,#101723);border-radius:15px}
-.metric{padding:21px}.metric strong{display:block;font-size:30px;letter-spacing:-.04em;margin-top:12px}.metric span{font-size:12px;color:#a6b8ca}
-.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:15px;margin:34px 0 14px}.section-head h2{font-size:24px;letter-spacing:-.025em;margin:0}.section-head p{color:#9badc0;font-size:12px;margin:7px 0 0}
-.action{background:#78e9c0;color:#071411;border:0;padding:11px 18px;border-radius:9px;font-size:13px;font-weight:750;cursor:pointer}.action:disabled{opacity:.5;cursor:wait}
-.filters{display:grid;grid-template-columns:minmax(180px,2fr) repeat(3,minmax(120px,1fr));gap:12px;margin:18px 0}.field{width:100%;background:#131e2b;border:1px solid #344456;padding:12px 13px;border-radius:9px;outline-offset:3px}.field:focus{outline:2px solid #78e9c0}
-.panel{overflow:hidden}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;min-width:740px}th{background:#162331;color:#9bafc2;font-size:11px;text-transform:uppercase;letter-spacing:.09em}th,td{padding:16px;border-bottom:1px solid #253545;vertical-align:top}td{font-size:13px;color:#c2d0dd}td strong{display:block;font-size:13px;color:#edf5fd;margin-bottom:6px;max-width:500px;line-height:1.5}td small{color:#90a6b7;font-size:11px;line-height:1.5;display:block}.id{font-weight:700;color:#8beccc;text-decoration:none}
-.severity{font-size:10px;font-weight:800;border:1px solid;padding:5px 8px;border-radius:20px;text-transform:uppercase;display:inline-block}
-.critical{color:#ff939f;border-color:#8f384a;background:#43202c}.high{color:#ffca82;border-color:#83512a;background:#402918}.medium{color:#ffed99;border-color:#7a6a31;background:#38321b}.low,.unknown{color:#a6bbcf;border-color:#435267;background:#253241}
-.notice{font-size:13px;color:#a8b8c8;line-height:1.7}.notice a{color:#83eac8}.state{padding:26px;color:#a9b9c9;font-size:14px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #293442;margin-top:50px;padding:25px 0 45px;font-size:12px;color:#8194aa}
-.audit{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.audit article{padding:22px;border:1px solid #283849;border-radius:14px;background:#111d2b}.audit h3{font-size:16px;margin:0 0 10px}.audit p{font-size:13px;color:#a5b4c3;line-height:1.7;margin:0}.pill{display:inline-block;padding:4px 7px;border-radius:6px;background:#233846;color:#a2f3d5;font-size:11px}
-@media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr 1fr}.audit{grid-template-columns:1fr}.hero{padding-top:40px}}
-@media(max-width:490px){.wrap{width:min(100% - 28px,1240px)}.filters{grid-template-columns:1fr}.grid{gap:10px}.metric{padding:16px}.metric strong{font-size:25px}.topbar nav{gap:12px}.section-head{align-items:flex-start;flex-direction:column}}
-@media(prefers-reduced-motion:no-preference){button{transition:filter .15s}button:hover{filter:brightness(1.07)}}
-</style>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090f18" />
+    <meta
+      name="description"
+      content="MNXTR Security Radar: public software advisories and CISA known exploited vulnerabilities."
+    />
+    <title>Security Radar · MNXTR</title>
+    <link rel="canonical" href="https://mnxtr.github.io/security/" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/security/styles.css" />
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light')
+          document.documentElement.classList.add('light');
+      } catch {}
+    </script>
+  <link rel="manifest" href="/manifest.json">
 </head>
-<body>
-<header class="topbar"><div class="wrap"><a href="/" class="brand">MNXTR<span> / SECURITY</span></a><nav aria-label="Navigation"><a href="/">Portfolio</a><a href="https://github.com/mnxtr/mnxtr.github.io" target="_blank" rel="noopener noreferrer">Source ↗</a></nav></div></header>
-<main class="wrap">
-<section class="hero"><div class="eyebrow">Vulnerability intelligence / public sources</div><h1>Security <span style="color:#78e9c0">Radar.</span></h1><p>Track published software security advisories and vulnerabilities known to be exploited. Public intelligence is not proof that your portfolio is affected: verify installed versions and reachable attack surfaces before taking action.</p><div class="meta"><span><span class="dot"></span><span id="stateLabel" role="status" aria-live="polite">Connecting to public feeds</span></span><span id="lastUpdated">Not yet refreshed</span><span>Read-only · No credentials stored</span></div></section>
-<section class="grid" aria-label="Current feed summary">
-<div class="metric"><span>Fetched advisories</span><strong id="total">—</strong></div>
-<div class="metric"><span>Critical + high advisories</span><strong id="urgent">—</strong></div>
-<div class="metric"><span>Newly added exploited CVEs</span><strong id="kevTotal">—</strong></div>
-<div class="metric"><span>Selected feed</span><strong id="feedLabel" style="font-size:22px">GitHub</strong></div>
-</section>
-<section aria-labelledby="feedHeading">
-<div class="section-head"><div><h2 id="feedHeading">Vulnerability feed</h2><p>GitHub global advisories or CISA KEV · each source has its own coverage and timestamps.</p></div><button id="refresh" class="action" type="button">↻ Refresh feed</button></div>
-<div class="filters"><label><span class="visually-hidden" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">Search CVEs, packages and descriptions</span><input id="search" class="field" type="search" placeholder="Search CVE, package, description…" autocomplete="off"></label>
-<label><span class="visually-hidden" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">Source</span><select id="source" class="field"><option value="github">GitHub advisories</option><option value="kev">CISA exploited (KEV)</option></select></label>
-<label><span class="visually-hidden" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">Severity</span><select id="severity" class="field"><option value="">All severities</option><option value="critical">Critical</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></label>
-<label><span class="visually-hidden" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">Ecosystem</span><select id="ecosystem" class="field"><option value="">All ecosystems</option><option>npm</option><option>pip</option><option>composer</option><option>go</option><option>maven</option><option>rubygems</option><option>rust</option><option>actions</option><option>other</option></select></label>
-</div><div class="panel"><div class="tablewrap"><table><thead><tr><th>Advisory / CVE</th><th>Severity</th><th>Package / product</th><th>Published / added</th><th>Reference</th></tr></thead><tbody id="entries"><tr><td colspan="5" class="state">Loading…</td></tr></tbody></table></div><div id="resultCount" class="state" aria-live="polite" style="padding:14px 16px"></div></div>
-<p class="notice">GitHub feed lists the latest 100 reviewed advisories returned by its API, not all known vulnerabilities. The CISA view shows up to 100 most recently added KEV entries; its severity values are not supplied by CISA and therefore display as “Not rated.” Search and filters operate on the fetched subset. Public APIs may be rate-limited or unavailable. <a href="https://docs.github.com/en/rest/security-advisories/global-advisories" target="_blank" rel="noopener noreferrer">GitHub API documentation ↗</a> · <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA catalog ↗</a></p>
-</section>
-<section aria-labelledby="auditHeading"><div class="section-head"><div><h2 id="auditHeading">MNXTR portfolio posture</h2><p>Repository inspection notes, not a live vulnerability scanner or attestation of safety.</p></div></div>
-<div class="audit"><article><h3>PHP <span class="pill">Not identified</span></h3><p>The reviewed repository tree and source searches did not reveal a PHP application. Hosting is built around static GitHub Pages and Vite, not a PHP runtime.</p></article><article><h3>JavaScript dependencies <span class="pill">Review required</span></h3><p>Node/Vite, Three.js and Supabase packages are present. Run <code>npm ci &amp;&amp; npm audit</code> and audit the separate Tanvora app before asserting package safety.</p></article><article><h3>Contact &amp; third parties <span class="pill">Verify configuration</span></h3><p>Contact submissions go to FormSubmit. Review spam protection and its data handling. Check Supabase row-level security and never ship privileged server keys in browser assets.</p></article></div>
-</section>
-<footer class="foot"><span>MNXTR Security Radar · Informational, read-only intelligence</span><span>Feeds are refreshed only while this page is open or when you press Refresh.</span></footer>
-</main>
-<script type="module">
-const $ = id => document.getElementById(id);
-const GH = 'https://api.github.com/advisories?type=reviewed&per_page=100&sort=published&direction=desc';
-const KEV = 'https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json';
-const feeds = {github:[],kev:[]};
-const statuses = {github:'',kev:''};
-let loadedAt = {};
-function validHttps(url, host) { try { const x = new URL(url); return x.protocol === 'https:' && (x.hostname === host || x.hostname.endsWith('.'+host)); } catch { return false; } }
-function cell(text, tag='td') {const node=document.createElement(tag);node.textContent=text??'—';return node;}
-function when(value){if(!value)return'—';const date=new Date(value);return Number.isNaN(date.valueOf())?'—':date.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});}
-function toGitHub(a){return {id:a.cve_id||a.ghsa_id||'Unidentified',title:String(a.summary||'Untitled advisory'),severity:String(a.severity||'unknown').toLowerCase(),package:[...new Set((a.vulnerabilities||[]).map(v=>[v.package?.ecosystem,v.package?.name].filter(Boolean).join(' / ')))].slice(0,3).join(', ')||'Not specified',ecosystems:(a.vulnerabilities||[]).map(v=>v.package?.ecosystem).filter(Boolean),date:a.published_at,url:validHttps(a.html_url,'github.com')?a.html_url:null};}
-function toKEV(a){return {id:a.cveID||'Unidentified',title:String(a.vulnerabilityName||a.shortDescription||'Untitled vulnerability'),severity:'unknown',package:[a.vendorProject,a.product].filter(Boolean).join(' / ')||'Not specified',ecosystems:[],date:a.dateAdded,url:/^CVE-\d{4}-\d{4,}$/.test(a.cveID||'')?'https://www.cisa.gov/known-exploited-vulnerabilities-catalog':null};}
-async function getJson(url){const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),12000);try{const response=await fetch(url,{headers:{Accept:'application/json'},signal:controller.signal,cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);return await response.json();}finally{clearTimeout(timeout);}}
-async function load(source){if(statuses[source]==='loading')return;statuses[source]='loading';$('refresh').disabled=true;$('stateLabel').textContent='Loading '+(source==='github'?'GitHub advisories':'CISA KEV')+'…';render();try{const json=await getJson(source==='github'?GH:KEV);if(source==='github'){if(!Array.isArray(json))throw new Error('Unexpected API response');feeds.github=json.filter(a=>!a.withdrawn_at).map(toGitHub);}else{if(!Array.isArray(json.vulnerabilities))throw new Error('Unexpected catalog response');feeds.kev=json.vulnerabilities.map(toKEV).sort((a,b)=>String(b.date).localeCompare(String(a.date))).slice(0,100);}statuses[source]='ready';loadedAt[source]=new Date();$('stateLabel').textContent='Live feed loaded';}catch(error){statuses[source]='error';$('stateLabel').textContent='Feed unavailable — '+(error.name==='AbortError'?'timeout':error.message); }finally{$('refresh').disabled=false;render();}}
-function render(){const source=$('source').value;const items=feeds[source];const query=$('search').value.trim().toLowerCase();const severity=$('severity').value;const ecosystem=$('ecosystem').value.toLowerCase();$('severity').disabled=source==='kev';$('ecosystem').disabled=source==='kev';$('feedLabel').textContent=source==='github'?'GitHub':'CISA KEV';$('lastUpdated').textContent=loadedAt[source]?'Fetched '+loadedAt[source].toLocaleTimeString():'Not yet fetched';$('total').textContent=feeds.github.length||'—';$('urgent').textContent=feeds.github.length?feeds.github.filter(x=>['critical','high'].includes(x.severity)).length:'—';$('kevTotal').textContent=feeds.kev.length||'—';const filtered=items.filter(a=>(!query||[a.id,a.title,a.package].join(' ').toLowerCase().includes(query))&&(source==='kev'||(!severity||a.severity===severity)&&(!ecosystem||a.ecosystems.includes(ecosystem))));const body=$('entries');body.replaceChildren();if(!filtered.length){const row=document.createElement('tr'),td=cell(statuses[source]==='error'?'Could not load the source. Try refreshing, or open the source catalog.':statuses[source]==='loading'?'Loading public advisories…':'No matching advisories in this fetched set.');td.colSpan=5;td.className='state';row.append(td);body.append(row);}for(const a of filtered){const row=document.createElement('tr');const info=document.createElement('td');const strong=document.createElement('strong');strong.textContent=a.title;info.append(strong,cell(a.id,'small'));const level=document.createElement('td'),badge=document.createElement('span');badge.className='severity '+(a.severity==='unknown'?'unknown':a.severity);badge.textContent=a.severity==='unknown'?'Not rated':a.severity;level.append(badge);const ref=document.createElement('td');if(a.url){const link=document.createElement('a');link.className='id';link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='View source ↗';ref.append(link);}else ref.textContent='Unavailable';row.append(info,level,cell(a.package),cell(when(a.date)),ref);body.append(row);}$('resultCount').textContent=filtered.length+' of '+items.length+' fetched entries displayed'+(statuses[source]==='error'?' · API error':'');}
-$('refresh').addEventListener('click',()=>load($('source').value));$('source').addEventListener('change',()=>{render();if(!loadedAt[$('source').value])load($('source').value);});for(const id of ['search','severity','ecosystem'])$(id).addEventListener(id==='search'?'input':'change',render);
-render();load('github');load('kev');
-</script>
-</body>
+  <body>
+    <!-- portfolio:header -->
+    <main class="wrap security-app" id="main-content">
+      <section class="hero">
+        <div class="eyebrow">Vulnerability intelligence / public sources</div>
+        <h1>Security <span class="accent">Radar.</span></h1>
+        <p>
+          Track published software security advisories and vulnerabilities known to be exploited.
+          Public intelligence is not proof that your portfolio is affected: verify installed
+          versions and reachable attack surfaces before taking action.
+        </p>
+        <div class="meta">
+          <span
+            ><span class="dot"></span
+            ><span id="stateLabel" role="status" aria-live="polite"
+              >Connecting to public feeds</span
+            ></span
+          ><span id="lastUpdated">Not yet refreshed</span
+          ><span>Read-only · No credentials stored</span>
+        </div>
+      </section>
+      <section class="grid" aria-label="Current feed summary">
+        <div class="metric"><span>Fetched advisories</span><strong id="total">—</strong></div>
+        <div class="metric">
+          <span>Critical + high advisories</span><strong id="urgent">—</strong>
+        </div>
+        <div class="metric">
+          <span>Newly added exploited CVEs</span><strong id="kevTotal">—</strong>
+        </div>
+        <div class="metric">
+          <span>Selected feed</span><strong id="feedLabel" style="font-size: 22px">GitHub</strong>
+        </div>
+      </section>
+      <section aria-labelledby="feedHeading">
+        <div class="section-head">
+          <div>
+            <h2 id="feedHeading">Vulnerability feed</h2>
+            <p>
+              GitHub global advisories or CISA KEV · each source has its own coverage and
+              timestamps.
+            </p>
+          </div>
+          <button id="refresh" class="action" type="button">↻ Refresh feed</button>
+        </div>
+        <div class="filters">
+          <label
+            ><span
+              class="visually-hidden"
+              style="
+                position: absolute;
+                clip: rect(0, 0, 0, 0);
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+              "
+              >Search CVEs, packages and descriptions</span
+            ><input
+              id="search"
+              class="field"
+              type="search"
+              placeholder="Search CVE, package, description…"
+              autocomplete="off"
+          /></label>
+          <label
+            ><span
+              class="visually-hidden"
+              style="
+                position: absolute;
+                clip: rect(0, 0, 0, 0);
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+              "
+              >Source</span
+            ><select id="source" class="field">
+              <option value="github">GitHub advisories</option>
+              <option value="kev">CISA exploited (KEV)</option>
+            </select></label
+          >
+          <label
+            ><span
+              class="visually-hidden"
+              style="
+                position: absolute;
+                clip: rect(0, 0, 0, 0);
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+              "
+              >Severity</span
+            ><select id="severity" class="field">
+              <option value="">All severities</option>
+              <option value="critical">Critical</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select></label
+          >
+          <label
+            ><span
+              class="visually-hidden"
+              style="
+                position: absolute;
+                clip: rect(0, 0, 0, 0);
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+              "
+              >Ecosystem</span
+            ><select id="ecosystem" class="field">
+              <option value="">All ecosystems</option>
+              <option>npm</option>
+              <option>pip</option>
+              <option>composer</option>
+              <option>go</option>
+              <option>maven</option>
+              <option>rubygems</option>
+              <option>rust</option>
+              <option>actions</option>
+              <option>other</option>
+            </select></label
+          >
+        </div>
+        <div class="panel">
+          <div class="tablewrap" tabindex="0" role="region" aria-label="Advisory table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Advisory / CVE</th>
+                  <th>Severity</th>
+                  <th>Package / product</th>
+                  <th>Published / added</th>
+                  <th>Reference</th>
+                </tr>
+              </thead>
+              <tbody id="entries">
+                <tr>
+                  <td colspan="5" class="state">Loading…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="resultCount" class="state" aria-live="polite" style="padding: 14px 16px"></div>
+        </div>
+        <p class="notice">
+          GitHub feed lists the latest 100 reviewed advisories returned by its API, not all known
+          vulnerabilities. The CISA view shows up to 100 most recently added KEV entries; its
+          severity values are not supplied by CISA and therefore display as “Not rated.” Search and
+          filters operate on the fetched subset. Public APIs may be rate-limited or unavailable.
+          <a
+            href="https://docs.github.com/en/rest/security-advisories/global-advisories"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub API documentation ↗</a
+          >
+          ·
+          <a
+            href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CISA catalog ↗</a
+          >
+        </p>
+      </section>
+      <section aria-labelledby="auditHeading">
+        <div class="section-head">
+          <div>
+            <h2 id="auditHeading">MNXTR portfolio posture</h2>
+            <p>
+              Repository inspection notes, not a live vulnerability scanner or attestation of
+              safety.
+            </p>
+          </div>
+        </div>
+        <div class="audit">
+          <article>
+            <h3>PHP <span class="pill">Not identified</span></h3>
+            <p>
+              The reviewed repository tree and source searches did not reveal a PHP application.
+              Hosting is built around static GitHub Pages and Vite, not a PHP runtime.
+            </p>
+          </article>
+          <article>
+            <h3>JavaScript dependencies <span class="pill">Review required</span></h3>
+            <p>
+              Node/Vite, Three.js and Supabase packages are present. Run
+              <code>npm ci &amp;&amp; npm audit</code> and audit the separate Tanvora app before
+              asserting package safety.
+            </p>
+          </article>
+          <article>
+            <h3>Contact &amp; third parties <span class="pill">Verify configuration</span></h3>
+            <p>
+              Contact submissions go to FormSubmit. Review spam protection and its data handling.
+              Check Supabase row-level security and never ship privileged server keys in browser
+              assets.
+            </p>
+          </article>
+        </div>
+      </section>
+      <div class="foot">
+        <span>MNXTR Security Radar · Informational, read-only intelligence</span
+        ><span>Feeds are refreshed only while this page is open or when you press Refresh.</span>
+      </div>
+    </main>
+    <!-- portfolio:footer -->
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/security/radar.js"></script>
+  </body>
 </html>

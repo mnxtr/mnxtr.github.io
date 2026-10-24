@@ -1,29 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Advanced techniques for optimizing PostgreSQL databases for machine learning workloads, including indexing strategies and query optimization." />
-  <meta name="keywords" content="PostgreSQL, optimization, machine learning, indexing, query performance, SQL" />
-  <meta name="author" content="Mohammad Mansib Newaz" />
-  <meta name="theme-color" content="#030507" />
-  
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://mnxtr.github.io/blog/posts/postgres-optimization.html" />
-  <meta property="og:title" content="PostgreSQL Optimization for AI/ML Applications" />
-  <meta property="og:description"
-    content="Advanced optimization techniques for PostgreSQL databases serving machine learning workloads." />
-  <meta property="og:site_name" content="Mohammad Mansib Newaz" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@Mnxtrr" />
-  <meta name="twitter:title" content="PostgreSQL Optimization for AI/ML Applications" />
-  
-  <link rel="canonical" href="https://mnxtr.github.io/blog/posts/postgres-optimization.html" />
-  
-  <script type="application/ld+json">
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PostgreSQL Optimization for AI/ML Applications | Blog</title><meta name="description" content="Advanced techniques for optimizing PostgreSQL databases for machine learning workloads, including indexing strategies and query optimization.">
+<meta name="theme-color" content="#030507"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/styles.css">
+<script>try { if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light'); } catch { /* Use the default theme if storage is blocked. */ }</script>
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -33,55 +14,10 @@
       "author": { "@type": "Person", "name": "Mohammad Mansib Newaz", "url": "https://mnxtr.github.io" },
       "wordCount": 2400
     }
-  </script>
-
-  <title>PostgreSQL Optimization for AI/ML Applications | Blog</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/styles.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#73F6D2", accent: "#8AA3FF", secondary: "#9C7CFF",
-            darkBg: "#030507", darkSurface: "#070B0F", darkText: "#EDF7F2", darkMuted: "#A5B5B0",
-          },
-        },
-      },
-    };
-  </script>
-  <style>
-    .prose h2 { @apply text-2xl font-bold mt-8 mb-4 text-white; }
-    .prose h3 { @apply text-xl font-bold mt-6 mb-3 text-white; }
-    .prose p { @apply text-darkMuted leading-relaxed mb-4; }
-    .prose ul, .prose ol { @apply mb-4 pl-6; }
-    .prose li { @apply text-darkMuted mb-2; }
-    .prose code { @apply bg-darkSurface px-2 py-1 rounded text-pink-400 font-mono text-sm; }
-    .light .prose h2, .light .prose h3 { @apply text-gray-900; }
-    .light .prose p, .light .prose li { @apply text-gray-700; }
-  </style>
-</head>
-
-<body class="bg-gradient-to-br from-darkBg via-slate-900 to-indigo-950 text-darkText min-h-screen flex flex-col">
-  <header class="bg-darkBg bg-opacity-70 backdrop-blur-xl sticky top-0 z-50 border-b border-white border-opacity-5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <nav class="flex justify-between items-center h-16">
-        <a href="/" class="text-primary font-bold text-xl tracking-tight font-['Space_Grotesk']">MN<span class="text-accent">.</span></a>
-        <div class="flex items-center gap-6">
-          <a href="/blog/" class="text-darkMuted hover:text-white text-sm">Back to Blog</a>
-          <button id="themeToggle" class="p-2.5 rounded-xl hover:bg-white hover:bg-opacity-10">
-            <svg id="sunIcon" class="w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1z" clip-rule="evenodd" /></svg>
-            <svg id="moonIcon" class="w-5 h-5 text-darkMuted" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg>
-          </button>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="relative z-10 flex-grow">
+  </script><link rel="manifest" href="/manifest.json">
+</head><body class="article-page">
+<!-- portfolio:header -->
+<main id="main-content">
     <div class="max-w-4xl mx-auto w-full px-4 sm:px-6 py-12 md:py-16">
       <article class="prose">
         <div class="mb-8">
@@ -97,7 +33,7 @@
         <h2>Index Strategy for ML Workloads</h2>
         <p>Proper indexing is critical for ML applications that query large datasets:</p>
         
-        <pre><code>-- B-tree index for equality and range queries
+        <pre tabindex="0" role="region" aria-label="Code example"><code>-- B-tree index for equality and range queries
 CREATE INDEX idx_user_id_created ON predictions(user_id, created_at);
 
 -- BRIN index for large tables with natural ordering
@@ -109,7 +45,7 @@ CREATE INDEX idx_location ON data_points USING GIST (location);</code></pre>
         <h2>Partitioning Large Tables</h2>
         <p>Range partitioning helps manage large time-series datasets common in ML:</p>
         
-        <pre><code>-- Create partitioned table for predictions
+        <pre tabindex="0" role="region" aria-label="Code example"><code>-- Create partitioned table for predictions
 CREATE TABLE predictions (
     id BIGSERIAL,
     user_id INT,
@@ -127,7 +63,7 @@ CREATE TABLE predictions_2026_02 PARTITION OF predictions
         <h2>Query Optimization Techniques</h2>
         <p>Understand query plans to identify bottlenecks:</p>
         
-        <pre><code>-- Analyze query performance
+        <pre tabindex="0" role="region" aria-label="Code example"><code>-- Analyze query performance
 EXPLAIN (ANALYZE, BUFFERS) 
 SELECT user_id, COUNT(*) as prediction_count, AVG(confidence)
 FROM predictions
@@ -147,7 +83,7 @@ LIMIT 100;</code></pre>
         <h2>Connection Pooling</h2>
         <p>Manage database connections efficiently with pgBouncer:</p>
         
-        <pre><code># pgbouncer.ini configuration
+        <pre tabindex="0" role="region" aria-label="Code example"><code># pgbouncer.ini configuration
 [databases]
 ml_app = host=localhost dbname=ml_database
 
@@ -170,7 +106,7 @@ min_pool_size = 10</code></pre>
         <h2>JSON/JSONB for Flexible Schemas</h2>
         <p>Store ML metadata flexibly with JSONB:</p>
         
-        <pre><code>CREATE TABLE model_results (
+        <pre tabindex="0" role="region" aria-label="Code example"><code>CREATE TABLE model_results (
     id BIGSERIAL PRIMARY KEY,
     user_id INT,
     predictions JSONB,
@@ -185,7 +121,7 @@ ON model_results USING GIN (predictions);</code></pre>
         <h2>Materialized Views for ML Pipelines</h2>
         <p>Cache expensive computations for faster access:</p>
         
-        <pre><code>CREATE MATERIALIZED VIEW user_ml_features AS
+        <pre tabindex="0" role="region" aria-label="Code example"><code>CREATE MATERIALIZED VIEW user_ml_features AS
 SELECT 
     user_id,
     COUNT(*) as interaction_count,
@@ -207,7 +143,7 @@ CREATE INDEX ON user_ml_features (user_id);</code></pre>
         <h2>Configuration Tuning</h2>
         <p>Key parameters for ML-heavy workloads:</p>
         
-        <pre><code># postgresql.conf
+        <pre tabindex="0" role="region" aria-label="Code example"><code># postgresql.conf
 shared_buffers = 40% of system RAM
 effective_cache_size = 60-75% of system RAM
 work_mem = shared_buffers / max_connections * 2
@@ -232,33 +168,6 @@ max_parallel_workers_per_gather = 4</code></pre>
       </article>
     </div>
   </main>
-
-  <footer class="relative z-10 bg-darkBg/80 backdrop-blur-xl border-t border-white/5 mt-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-      <p class="text-sm text-darkMuted text-center">&copy; 2026 <span class="text-primary font-medium">Mohammad Mansib Newaz</span>. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-    function setupTheme(toggleId, sunId, moonId) {
-      const btn = document.getElementById(toggleId);
-      if (!btn) return;
-      btn.addEventListener("click", () => {
-        document.body.classList.toggle("light");
-        const isLight = document.body.classList.contains("light");
-        localStorage.setItem("theme", isLight ? "light" : "dark");
-        document.getElementById(sunId)?.classList.toggle("hidden", !isLight);
-        document.getElementById(moonId)?.classList.toggle("hidden", isLight);
-      });
-    }
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    if (savedTheme === "light") {
-      document.body.classList.add("light");
-      document.getElementById("sunIcon")?.classList.remove("hidden");
-      document.getElementById("moonIcon")?.classList.add("hidden");
-    }
-    setupTheme("themeToggle", "sunIcon", "moonIcon");
-  </script>
-  <script type="module" src="/js/immersive.js"></script>
-</body>
-</html>
+<!-- portfolio:footer -->
+<script type="module" src="/js/main.js"></script>
+</body></html>

@@ -1,3 +1,5 @@
+> Historical implementation notes. See [README.md](README.md) for the current architecture, checks, and operational status.
+
 # SEO Optimization Implementation Summary
 
 **Date:** March 12, 2026  

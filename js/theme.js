@@ -1,68 +1,42 @@
-/**
- * Theme management module
- * Handles dark/light theme toggle and persistence
- */
-
-/**
- * Set up theme toggle for a specific button
- * @param {string} toggleId - ID of toggle button
- * @param {string} sunId - ID of sun icon
- * @param {string} moonId - ID of moon icon
- */
-export function setupTheme(toggleId, sunId, moonId) {
-  const btn = document.getElementById(toggleId);
-  const sun = document.getElementById(sunId);
-  const moon = document.getElementById(moonId);
-
-  if (!btn) {
-    console.warn(`Theme toggle button with ID "${toggleId}" not found`);
+function applyTheme(light) {
+  document.documentElement.classList.toggle('light', light);
+  document.body.classList.toggle('light', light);
+  for (const id of ['themeToggle', 'themeToggleMobile']) {
+    document
+      .getElementById(id)
+      ?.setAttribute('aria-label', `Switch to ${light ? 'dark' : 'light'} theme`);
+  }
+  for (const id of ['sunIcon', 'sunIconMobile']) {
+    document.getElementById(id)?.classList.toggle('hidden', !light);
+  }
+  for (const id of ['moonIcon', 'moonIconMobile']) {
+    document.getElementById(id)?.classList.toggle('hidden', light);
+  }
+}
+export function setupTheme(toggleId) {
+  const button = document.getElementById(toggleId);
+  if (!button) {
     return;
   }
-
-  btn.addEventListener('click', () => {
+  button.hidden = false;
+  button.addEventListener('click', () => {
+    const light = !document.body.classList.contains('light');
+    applyTheme(light);
     try {
-      document.body.classList.toggle('light');
-      const isLight = document.body.classList.contains('light');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-
-      if (sun) {
-        sun.classList.toggle('hidden', !isLight);
-      }
-      if (moon) {
-        moon.classList.toggle('hidden', isLight);
-      }
-    } catch (error) {
-      console.error('Error toggling theme:', error);
+      localStorage.setItem('theme', light ? 'light' : 'dark');
+    } catch {
+      // A blocked storage API must not prevent theme changes.
     }
   });
 }
-
-/**
- * Initialize theme on page load
- */
 export function initTheme() {
+  let light = document.documentElement.classList.contains('light');
   try {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-
-    if (savedTheme === 'light') {
-      document.body.classList.add('light');
-      ['sunIcon', 'sunIconMobile'].forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.classList.remove('hidden');
-        }
-      });
-      ['moonIcon', 'moonIconMobile'].forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.classList.add('hidden');
-        }
-      });
-    }
-
-    setupTheme('themeToggle', 'sunIcon', 'moonIcon');
-    setupTheme('themeToggleMobile', 'sunIconMobile', 'moonIconMobile');
-  } catch (error) {
-    console.error('Error initializing theme:', error);
+    light = localStorage.getItem('theme') === 'light';
+  } catch {
+    // Retain the initial theme when storage is unavailable.
   }
+  applyTheme(light);
+  setupTheme('themeToggle');
+  setupTheme('themeToggleMobile');
 }

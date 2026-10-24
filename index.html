@@ -2,783 +2,355 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI &amp; Automation | Mohammad Mansib Newaz</title>
     <meta
       name="description"
-      content="Mohammad Mansib Newaz — full-stack developer building responsive web products, secure APIs, data-driven backends, and practical AI integrations."
+      content="Practical AI, workflow automation, and useful integrations by Mohammad Mansib Newaz. Explore public project evidence and send a brief for your next build."
     />
-    <meta
-      name="keywords"
-      content="full-stack developer, web development, React, JavaScript, FastAPI, PostgreSQL, secure APIs, AI integration, Mohammad Mansib Newaz"
-    />
-    <meta name="author" content="Mohammad Mansib Newaz" />
     <meta name="theme-color" content="#030507" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mnxtr.github.io/" />
-    <meta property="og:title" content="Mohammad Mansib Newaz — Full-Stack Developer" />
-    <meta
-      property="og:description"
-      content="Full-stack web development portfolio featuring responsive interfaces, reliable backends, secure APIs, and useful AI-enabled features."
-    />
-    <meta property="og:site_name" content="Mohammad Mansib Newaz" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="https://mnxtr.github.io/img/og-image.png" />
-    <meta property="og:image:width" content="1920" />
-    <meta property="og:image:height" content="1080" />
-    <meta
-      property="og:image:alt"
-      content="Mohammad Mansib Newaz full-stack development portfolio preview"
-    />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Mnxtrr" />
-    <meta name="twitter:creator" content="@Mnxtrr" />
-    <meta name="twitter:title" content="Mohammad Mansib Newaz — Full-Stack Developer" />
-    <meta
-      name="twitter:description"
-      content="Building end-to-end web products with React, FastAPI, PostgreSQL, secure APIs, and practical AI integrations."
-    />
-    <meta name="twitter:image" content="https://mnxtr.github.io/img/og-image.png" />
-    <meta
-      name="twitter:image:alt"
-      content="Mohammad Mansib Newaz full-stack development portfolio preview"
-    />
-
-    <link rel="canonical" href="https://mnxtr.github.io/" />
-    <link
-      rel="preload"
-      as="image"
-      href="img/optimized/avatar.webp"
-      type="image/webp"
-      fetchpriority="high"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%2373F6D2' width='32' height='32' rx='8'/><text x='16' y='22' font-size='18' font-weight='bold' text-anchor='middle' fill='%23030507'>M</text></svg>"
-    />
-
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light')
+          document.documentElement.classList.add('light');
+      } catch {
+        /* Use the default theme if storage is blocked. */
+      }
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://mnxtr.github.io/#person",
         "name": "Mohammad Mansib Newaz",
-        "url": "https://mnxtr.github.io",
-        "jobTitle": "Full-Stack Developer",
-        "description": "Full-stack developer focused on responsive interfaces, reliable APIs, data-driven backends, and practical AI integrations.",
-        "sameAs": [
-          "https://github.com/mnxtr",
-          "https://linkedin.com/in/mansibnewaz",
-          "https://twitter.com/Mnxtrr"
-        ]
+        "url": "https://mnxtr.github.io/",
+        "jobTitle": "Developer",
+        "sameAs": ["https://github.com/mnxtr", "https://linkedin.com/in/mansibnewaz"]
       }
     </script>
-
-    <title>Mohammad Mansib Newaz — Full-Stack Developer</title>
+    <link rel="manifest" href="/manifest.json" />
   </head>
-
-  <body class="has-3d landing-page">
-    <svg class="icon-sprite" width="0" height="0" aria-hidden="true" focusable="false">
-      <symbol id="icon-sparkles" viewBox="0 0 24 24">
-        <path d="M12 2l1.66 5.26L19 9l-5.34 1.74L12 16l-1.66-5.26L5 9l5.34-1.74L12 2z" />
-        <path d="M19 14l.9 2.85L23 18l-3.1 1.15L19 22l-.9-2.85L15 18l3.1-1.15L19 14z" />
-        <path d="M5 13l.7 2.2L8 16l-2.3.8L5 19l-.7-2.2L2 16l2.3-.8L5 13z" />
-      </symbol>
-      <symbol id="icon-brain" viewBox="0 0 24 24">
-        <path
-          d="M8.5 3.5a3 3 0 00-3 3v.33A3.5 3.5 0 004 13.1V15a4 4 0 004 4h1V3.8a2.96 2.96 0 00-.5-.3z"
-        />
-        <path
-          d="M15.5 3.5a3 3 0 013 3v.33A3.5 3.5 0 0120 13.1V15a4 4 0 01-4 4h-1V3.8c.16-.12.33-.22.5-.3z"
-        />
-        <path d="M9 7h6M9 12h6M9 17h6" />
-      </symbol>
-      <symbol id="icon-code" viewBox="0 0 24 24">
-        <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 5l-3 14" />
-      </symbol>
-      <symbol id="icon-cube" viewBox="0 0 24 24">
-        <path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z" />
-        <path d="M4 6.5l8 4.5 8-4.5M12 11v9" />
-      </symbol>
-      <symbol id="icon-database" viewBox="0 0 24 24">
-        <path d="M4 6c0-2.2 3.58-4 8-4s8 1.8 8 4-3.58 4-8 4-8-1.8-8-4z" />
-        <path d="M4 6v6c0 2.2 3.58 4 8 4s8-1.8 8-4V6" />
-        <path d="M4 12v6c0 2.2 3.58 4 8 4s8-1.8 8-4v-6" />
-      </symbol>
-      <symbol id="icon-shield" viewBox="0 0 24 24">
-        <path d="M12 2l7 3v6c0 5-3.05 8.68-7 10-3.95-1.32-7-5-7-10V5l7-3z" />
-        <path d="M9 12l2 2 4-5" />
-      </symbol>
-      <symbol id="icon-cloud" viewBox="0 0 24 24">
-        <path d="M7 18a4 4 0 11.78-7.92A5.5 5.5 0 0118 12a3 3 0 010 6H7z" />
-      </symbol>
-      <symbol id="icon-rocket" viewBox="0 0 24 24">
-        <path d="M13 4c3.5.33 5.67 2.5 6 6l-5 5-5-5 4-6z" />
-        <path d="M9 10l-4 1-2 5 5-2M14 15l-1 4-5 2 2-5M15 9h.01" />
-      </symbol>
-      <symbol id="icon-terminal" viewBox="0 0 24 24">
-        <path d="M4 5h16v14H4z" />
-        <path d="M7 9l3 3-3 3M12 16h5" />
-      </symbol>
-      <symbol id="icon-arrow-right" viewBox="0 0 24 24">
-        <path d="M5 12h14M13 6l6 6-6 6" />
-      </symbol>
-      <symbol id="icon-command" viewBox="0 0 24 24">
-        <path
-          d="M9 9H5.5A2.5 2.5 0 119 5.5V9zm0 0h6m0 0h3.5A2.5 2.5 0 1015 5.5V9zm0 0v6m0 0v3.5A2.5 2.5 0 1018.5 15H15zm0 0H9m0 0H5.5A2.5 2.5 0 109 18.5V15zm0 0V9"
-        />
-      </symbol>
-      <symbol id="icon-sun" viewBox="0 0 24 24">
-        <path
-          d="M12 7a5 5 0 100 10 5 5 0 000-10zM12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"
-        />
-      </symbol>
-      <symbol id="icon-moon" viewBox="0 0 24 24">
-        <path d="M21 14.5A8.5 8.5 0 119.5 3 6.5 6.5 0 0021 14.5z" />
-      </symbol>
-      <symbol id="icon-github" viewBox="0 0 24 24">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.41 1.02.01 2.04.14 3 .41 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.42.36.81 1.1.81 2.22 0 1.61-.02 2.9-.02 3.29 0 .32.21.69.83.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
-        />
-      </symbol>
-      <symbol id="icon-linkedin" viewBox="0 0 24 24">
-        <path
-          d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0z"
-        />
-      </symbol>
-    </svg>
-
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <div class="scroll-progress" aria-hidden="true"><span></span></div>
-
-    <div id="hero-canvas" aria-hidden="true"></div>
-    <div class="ambient-bg" aria-hidden="true">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-
-    <header class="site-header">
-      <div class="page-shell">
-        <nav class="site-nav" aria-label="Main navigation">
-          <a href="index.html" class="brand-mark" aria-label="Mohammad Mansib Newaz — Home">
-            <span>MN</span>
-            <span class="brand-dot">.</span>
-          </a>
-
-          <div class="desktop-nav">
-            <a href="#expertise-heading" class="nav-link">Expertise</a>
-            <a href="#work-heading" class="nav-link">Work</a>
-            <a href="#stack-heading" class="nav-link">Stack</a>
-            <a href="project.html" class="nav-link">Projects</a>
-            <a href="resume.html" class="nav-link">Resume</a>
-            <a href="contact.html" class="nav-link nav-cta">Contact</a>
-          </div>
-
-          <div class="nav-actions">
-            <button
-              type="button"
-              class="command-trigger"
-              data-command-open
-              aria-label="Open command palette"
-            >
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-command"></use>
-              </svg>
-              <span>Search</span>
-              <kbd>⌘K</kbd>
-            </button>
-
-            <button
-              id="themeToggle"
-              type="button"
-              class="theme-button"
-              aria-label="Toggle light/dark theme"
-            >
-              <svg id="sunIcon" class="icon hidden" aria-hidden="true">
-                <use href="#icon-sun"></use>
-              </svg>
-              <svg id="moonIcon" class="icon" aria-hidden="true">
-                <use href="#icon-moon"></use>
-              </svg>
-            </button>
-
-            <button
-              id="themeToggleMobile"
-              type="button"
-              class="theme-button mobile-theme-toggle"
-              aria-label="Toggle light/dark theme"
-            >
-              <svg id="sunIconMobile" class="icon hidden" aria-hidden="true">
-                <use href="#icon-sun"></use>
-              </svg>
-              <svg id="moonIconMobile" class="icon" aria-hidden="true">
-                <use href="#icon-moon"></use>
-              </svg>
-            </button>
-
-            <button
-              id="menuToggle"
-              type="button"
-              class="hamburger"
-              aria-label="Toggle mobile menu"
-              aria-expanded="false"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </nav>
-
-        <div
-          id="mobileMenu"
-          class="mobile-menu"
-          role="navigation"
-          aria-label="Mobile navigation"
-          tabindex="-1"
-        >
-          <a href="#expertise-heading">Expertise</a>
-          <a href="#work-heading">Work</a>
-          <a href="#stack-heading">Stack</a>
-          <a href="project.html">Projects</a>
-          <a href="resume.html">Resume</a>
-          <a href="contact.html">Contact</a>
-          <button type="button" class="command-mobile-trigger" data-command-open>
-            Command palette <span>⌘K</span>
-          </button>
-        </div>
-      </div>
-    </header>
-
+  <body class="landing-page">
+    <!-- portfolio:header -->
     <main id="main-content">
-      <section class="hero-section" aria-label="Full-stack development landing page">
-        <div class="page-shell hero-grid">
-          <div class="hero-copy">
-            <div class="reveal aurora-eyebrow">
-              <span class="status-light" aria-hidden="true"></span>
-              Available for full-stack web projects
-            </div>
-
-            <h1 class="reveal reveal-delay-1">
-              Web products built
-              <span class="gradient-text">from idea to launch.</span>
-            </h1>
-
-            <p class="reveal reveal-delay-2 hero-subtitle">
-              I turn product ideas into responsive interfaces, secure APIs, and reliable data
-              layers—adding AI where it creates real value.
-            </p>
-
-            <p class="reveal reveal-delay-2 typewriter-line">
-              <span id="typewriter" class="typewriter-cursor" aria-live="polite"></span>
-            </p>
-
-            <div class="reveal reveal-delay-3 hero-actions">
-              <a href="contact.html" class="btn-glow primary-action">
-                Plan a build
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-arrow-right"></use>
-                </svg>
-              </a>
-              <a href="project.html" class="btn-outline secondary-action">
-                See the work
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-cube"></use>
-                </svg>
-              </a>
-              <a
-                href="mohammad-mansib-newaz-resume.pdf"
-                download="Mohammad-Mansib-Newaz-Resume.pdf"
-                class="btn-outline secondary-action"
-                aria-label="Download Mohammad Mansib Newaz resume as a PDF"
-              >
-                Download resume PDF
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-terminal"></use>
-                </svg>
-              </a>
-            </div>
-
-            <dl class="reveal reveal-delay-4 hero-metrics" aria-label="Portfolio metrics">
-              <div>
-                <dt>01</dt>
-                <dd>Frontend</dd>
-              </div>
-              <div>
-                <dt>02</dt>
-                <dd>Backend &amp; data</dd>
-              </div>
-              <div>
-                <dt>03</dt>
-                <dd>AI integration</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div
-            class="reveal reveal-delay-2 hero-visual"
-            aria-label="Interactive full-stack system visualization"
-          >
-            <div class="aurora-device glass-card tilt-card">
-              <div class="device-toolbar" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-                <strong>product-stack.tsx</strong>
-              </div>
-
-              <div class="visual-stage">
-                <div id="skills-3d" class="visual-scene" aria-hidden="true"></div>
-
-                <div class="profile-orbit glass-panel">
-                  <div id="avatar-3d" aria-hidden="true"></div>
-                  <picture>
-                    <source srcset="img/optimized/avatar.webp" type="image/webp" />
-                    <img
-                      src="img/optimized/avatar.jpg"
-                      alt="Mohammad Mansib Newaz"
-                      width="144"
-                      height="144"
-                      fetchpriority="high"
-                      decoding="async"
-                    />
-                  </picture>
-                </div>
-
-                <div class="floating-chip chip-top">
-                  <svg class="icon" aria-hidden="true">
-                    <use href="#icon-brain"></use>
-                  </svg>
-                  React UI
-                </div>
-                <div class="floating-chip chip-right">
-                  <svg class="icon" aria-hidden="true">
-                    <use href="#icon-code"></use>
-                  </svg>
-                  FastAPI
-                </div>
-                <div class="floating-chip chip-bottom">
-                  <svg class="icon" aria-hidden="true">
-                    <use href="#icon-shield"></use>
-                  </svg>
-                  AI APIs
-                </div>
-              </div>
-
-              <div class="device-footer">
-                <div>
-                  <span>Focus</span>
-                  <strong>Full stack</strong>
-                </div>
-                <div>
-                  <span>Delivery</span>
-                  <strong>End to end</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="landing-section" aria-labelledby="expertise-heading">
-        <div class="page-shell">
-          <div class="section-heading reveal">
-            <p class="section-label">What I build</p>
-            <h2 id="expertise-heading">From user interface to reliable backend.</h2>
-            <p>
-              I work across the web stack so the interface, API, database, and deployment feel like
-              one coherent product.
-            </p>
-          </div>
-
-          <div class="feature-grid">
-            <article class="feature-card glass-card reveal reveal-delay-1">
-              <span class="icon-badge">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-code"></use>
-                </svg>
-              </span>
-              <h3>Frontend experiences</h3>
-              <p>
-                Accessible, responsive interfaces that turn product requirements into clear user
-                journeys.
-              </p>
-              <ul>
-                <li>React and JavaScript</li>
-                <li>Responsive UI systems</li>
-                <li>Performance and accessibility</li>
-              </ul>
-            </article>
-
-            <article class="feature-card glass-card reveal reveal-delay-2">
-              <span class="icon-badge violet">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-code"></use>
-                </svg>
-              </span>
-              <h3>Backend and data</h3>
-              <p>
-                Secure APIs and structured data layers designed for maintainability, integration,
-                and growth.
-              </p>
-              <ul>
-                <li>FastAPI and REST APIs</li>
-                <li>PostgreSQL data layers</li>
-                <li>Authentication and testing</li>
-              </ul>
-            </article>
-
-            <article class="feature-card glass-card reveal reveal-delay-3">
-              <span class="icon-badge blue">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-sparkles"></use>
-                </svg>
-              </span>
-              <h3>Practical AI integration</h3>
-              <p>
-                Useful AI features connected to real interfaces and workflows—not AI for its own
-                sake.
-              </p>
-              <ul>
-                <li>LLM and RAG features</li>
-                <li>Computer-vision endpoints</li>
-                <li>Evaluation and guardrails</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="landing-section section-muted" aria-labelledby="work-heading">
-        <div class="page-shell">
-          <div class="section-heading split-heading reveal">
-            <div>
-              <p class="section-label">Selected work</p>
-              <h2 id="work-heading">Proof over decoration.</h2>
-            </div>
-            <a href="project.html" class="text-link">
-              All projects
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
-
-          <div class="work-grid">
-            <article class="work-card glass-card reveal reveal-delay-1">
-              <picture>
-                <source srcset="img/optimized/crm.webp" type="image/webp" />
-                <img
-                  src="img/optimized/crm.jpg"
-                  alt="CRM dashboard and API project preview"
-                  loading="lazy"
-                  width="520"
-                  height="320"
-                  decoding="async"
-                />
-              </picture>
-              <div class="work-body">
-                <span class="work-tag">Full Stack</span>
-                <h3>CRM Platform</h3>
-                <p>
-                  Role-aware backend and dashboard architecture for customer workflows, structured
-                  data, and operational reporting.
-                </p>
-                <a href="project.html" class="text-link">View case study</a>
-              </div>
-            </article>
-
-            <article class="work-card glass-card reveal reveal-delay-2">
-              <picture>
-                <source srcset="img/optimized/manufactureDBMS.webp" type="image/webp" />
-                <img
-                  src="img/optimized/manufactureDBMS.jpg"
-                  alt="Manufacturing database management interface preview"
-                  loading="lazy"
-                  width="520"
-                  height="320"
-                  decoding="async"
-                />
-              </picture>
-              <div class="work-body">
-                <span class="work-tag violet">Web Application</span>
-                <h3>Manufacturing Database System</h3>
-                <p>
-                  Responsive management interface for organizing manufacturing records and making
-                  operational data easier to use.
-                </p>
-                <a href="project.html" class="text-link">View case study</a>
-              </div>
-            </article>
-
-            <article class="work-card glass-card reveal reveal-delay-3">
-              <picture>
-                <source srcset="img/optimized/traffic-signs.webp" type="image/webp" />
-                <img
-                  src="img/optimized/traffic-signs.jpg"
-                  alt="Traffic sign recognition system preview"
-                  loading="lazy"
-                  width="520"
-                  height="320"
-                  decoding="async"
-                />
-              </picture>
-              <div class="work-body">
-                <span class="work-tag blue">AI Integration</span>
-                <h3>Traffic Sign Detection</h3>
-                <p>
-                  YOLO11 Nano detection with augmentation tooling for lighting variation, rotation,
-                  flipping, and noise injection, plus documented spatial translation.
-                </p>
-                <a href="project.html#traffic-sign-detection" class="text-link"
-                  >View project details</a
+      <section class="container hero">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="signal" aria-hidden="true"></span>Mohammad Mansib Newaz · Bangladesh /
+            Remote
+          </p>
+          <h1>Practical AI for your <em>business workflows.</em></h1>
+          <p class="lead">
+            I help turn repetitive work into clear, useful tools — from workflow automation to
+            knowledge assistants and AI integrations.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="/contact.html"
+              >Send a project brief
+              <span aria-hidden="true"
+                ><svg
+                  class="inline-icon"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
                 >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></span></a
+            ><a class="text-link" href="/project.html"
+              >Explore the work <span aria-hidden="true">↓</span></a
+            >
+          </div>
+          <p class="small">A focused first scope. Clear limitations. A documented handover.</p>
+        </div>
+        <aside class="instrument" aria-label="A typical project path">
+          <div class="instrument-heading">
+            <span class="eyebrow">Workflow / 01</span
+            ><span class="small mono">From task to tool</span>
+          </div>
+          <div id="workflow-scene" aria-hidden="true"></div>
+          <ol class="workflow-steps">
+            <li>
+              <span class="step-index">01</span>
+              <div>
+                <strong>Your existing workflow</strong
+                ><span>Documents · data · everyday tools</span>
               </div>
-            </article>
-          </div>
-        </div>
+            </li>
+            <li>
+              <span class="step-index">02</span>
+              <div>
+                <strong>A focused integration</strong><span>Connect · automate · review</span>
+              </div>
+            </li>
+            <li>
+              <span class="step-index">03</span>
+              <div>
+                <strong>A useful next step</strong><span>Tested against your real examples</span>
+              </div>
+            </li>
+          </ol>
+          <p class="instrument-note">Keep people in control of the decisions that matter.</p>
+        </aside>
       </section>
-
-      <section class="landing-section" aria-labelledby="stack-heading">
-        <div class="page-shell">
-          <div class="section-heading reveal">
-            <p class="section-label">Core stack</p>
-            <h2 id="stack-heading">A practical stack for shipping web products.</h2>
-            <p>Frontend, backend, data, deployment, and AI tools selected to work well together.</p>
-          </div>
-
-          <div class="stack-grid reveal reveal-delay-1" aria-label="Technology stack">
-            <span class="stack-pill">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-terminal"></use>
-              </svg>
-              JavaScript
-            </span>
-            <span class="stack-pill">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-brain"></use>
-              </svg>
-              React
-            </span>
-            <span class="stack-pill">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-sparkles"></use>
-              </svg>
-              FastAPI
-            </span>
-            <span class="stack-pill">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-code"></use>
-              </svg>
-              PostgreSQL
-            </span>
-            <span class="stack-pill">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-cube"></use>
-              </svg>
-              Python
-            </span>
-            <span class="stack-pill">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-database"></use>
-              </svg>
-              Docker
-            </span>
-            <span class="stack-pill">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-cloud"></use>
-              </svg>
-              OpenAI API
-            </span>
-            <span class="stack-pill">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-shield"></use>
-              </svg>
-              Security
-            </span>
-          </div>
+      <section class="container section" id="services" aria-labelledby="expertise-heading">
+        <div class="section-heading">
+          <p class="eyebrow">01 / Services</p>
+          <h2 id="expertise-heading">Start with a bottleneck.<br />Build something useful.</h2>
+          <p>Small, clearly defined engagements with a concrete workflow to improve.</p>
         </div>
-      </section>
-
-      <section class="landing-section section-muted" aria-labelledby="current-heading">
-        <div class="page-shell insight-grid">
-          <div class="section-heading reveal">
-            <p class="section-label">Current focus</p>
-            <h2 id="current-heading">Engineering work that stays clear under pressure.</h2>
-            <p>
-              The focus is practical: clear interfaces, maintainable application logic, dependable
-              data, and deliberate deployment.
-            </p>
-          </div>
-
-          <div class="insight-list reveal reveal-delay-1">
-            <article class="insight-card glass-card">
-              <span>01</span>
-              <h3>Product architecture</h3>
+        <div class="service-list">
+          <article class="service-row">
+            <span class="mono">A /</span>
+            <div>
+              <h3>Workflow automation</h3>
               <p>
-                Turn requirements into connected frontend, backend, database, and deployment
-                decisions.
+                Connect tools, route information, and reduce repetitive steps in your everyday
+                process.
               </p>
-            </article>
-            <article class="insight-card glass-card">
-              <span>02</span>
-              <h3>Secure backend systems</h3>
+            </div>
+            <ul>
+              <li>Workflow mapping &amp; integration</li>
+              <li>Validation, retries &amp; human review</li>
+              <li>Setup notes &amp; handover</li>
+            </ul>
+          </article>
+          <article class="service-row">
+            <span class="mono">B /</span>
+            <div>
+              <h3>Knowledge assistants</h3>
               <p>
-                Build authenticated APIs, predictable data flows, and testable services that are
-                easier to maintain.
+                Explore a focused assistant that helps your team find answers in its own documents.
               </p>
-            </article>
-            <article class="insight-card glass-card">
-              <span>03</span>
-              <h3>AI where it helps</h3>
+            </div>
+            <ul>
+              <li>Document &amp; retrieval prototype</li>
+              <li>Source references &amp; evaluation</li>
+              <li>Access and limitation review</li>
+            </ul>
+          </article>
+          <article class="service-row">
+            <span class="mono">C /</span>
+            <div>
+              <h3>AI integrations</h3>
               <p>
-                Add search, assistants, vision, or automation only when they improve the user’s
+                Bring a model or AI API into a usable interface, with a clear place in your existing
                 workflow.
               </p>
-            </article>
-          </div>
+            </div>
+            <ul>
+              <li>Model or API integration</li>
+              <li>Usable interfaces &amp; error states</li>
+              <li>Testing, documentation &amp; delivery</li>
+            </ul>
+          </article>
         </div>
       </section>
-
-      <section class="landing-section" aria-labelledby="articles-heading">
-        <div class="page-shell cta-panel glass-card reveal">
-          <div>
-            <p class="section-label">Next step</p>
-            <h2 id="articles-heading">Need a web product built end to end?</h2>
+      <section class="container section" id="work" aria-labelledby="work-heading">
+        <div class="section-heading">
+          <p class="eyebrow">02 / Public work</p>
+          <span id="stack-heading" aria-hidden="true"></span>
+          <h2 id="work-heading">Inspect the evidence.</h2>
+          <p>
+            Research and interface projects, with the implementation status and limitations made
+            explicit.
+          </p>
+        </div>
+        <div class="work-list">
+          <article class="work-row" id="traffic-sign-detection">
+            <span class="work-number" aria-hidden="true">01</span>
+            <div>
+              <p class="eyebrow">Computer vision · Research prototype</p>
+              <h3>
+                <a href="/projects/traffic-sign-detection.html"
+                  >Traffic Sign Detection<span aria-hidden="true">
+                    <svg
+                      class="inline-icon"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                    >
+                      <path d="M7 17 17 7M7 7h10v10" /></svg></span
+                ></a>
+              </h3>
+              <p>
+                YOLO11 Nano training and a Gradio interface for image, video, and webcam inference.
+              </p>
+              <p class="small mono">Python / PyTorch / OpenCV</p>
+            </div>
+            <a
+              class="text-link"
+              href="/projects/traffic-sign-detection.html"
+              aria-label="Read the Traffic Sign Detection case study"
+              >Read case study <span aria-hidden="true">→</span></a
+            >
+          </article>
+          <article class="work-row" id="crm-interface">
+            <span class="work-number" aria-hidden="true">02</span>
+            <div>
+              <p class="eyebrow">Workflow design · Interface prototype</p>
+              <h3>
+                <a href="/projects/crm-interface.html"
+                  >Customer relationship management<span aria-hidden="true">
+                    <svg
+                      class="inline-icon"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                    >
+                      <path d="M7 17 17 7M7 7h10v10" /></svg></span
+                ></a>
+              </h3>
+              <p>
+                A set of customer, sales, and support screens for exploring a connected business
+                workflow.
+              </p>
+              <p class="small mono">HTML / CSS / JavaScript</p>
+            </div>
+            <a
+              class="text-link"
+              href="/projects/crm-interface.html"
+              aria-label="Read the Customer relationship management case study"
+              >Read case study <span aria-hidden="true">→</span></a
+            >
+          </article>
+          <article class="work-row" id="manufacturing-interface">
+            <span class="work-number" aria-hidden="true">03</span>
+            <div>
+              <p class="eyebrow">Operations · Interface prototype</p>
+              <h3>
+                <a href="/projects/manufacturing-interface.html"
+                  >Manufacturing management<span aria-hidden="true">
+                    <svg
+                      class="inline-icon"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                    >
+                      <path d="M7 17 17 7M7 7h10v10" /></svg></span
+                ></a>
+              </h3>
+              <p>
+                A manufacturing interface exploring products, orders, and dashboard views, with an
+                AI roadmap kept separate.
+              </p>
+              <p class="small mono">HTML / CSS / JavaScript</p>
+            </div>
+            <a
+              class="text-link"
+              href="/projects/manufacturing-interface.html"
+              aria-label="Read the Manufacturing management case study"
+              >Read case study <span aria-hidden="true">→</span></a
+            >
+          </article>
+        </div>
+      </section>
+      <section class="container section" id="process" aria-labelledby="current-heading">
+        <div class="section-heading">
+          <p class="eyebrow">03 / Working together</p>
+          <h2 id="current-heading">Clarity at every step.</h2>
+        </div>
+        <ol class="process-grid">
+          <li>
+            <span class="eyebrow">01 / Scope</span>
+            <h3>Map the workflow</h3>
             <p>
-              Bring the brief. I can help shape it into a responsive interface, reliable backend,
-              and deployable product—with AI features when they fit.
+              Agree on the task, sample inputs, constraints, and what a successful first version
+              should do.
+            </p>
+          </li>
+          <li>
+            <span class="eyebrow">02 / Build</span>
+            <h3>Test a focused version</h3>
+            <p>
+              Review working increments against your examples, including mistakes, missing data, and
+              failure cases.
+            </p>
+          </li>
+          <li>
+            <span class="eyebrow">03 / Handover</span>
+            <h3>Make it understandable</h3>
+            <p>
+              Document setup, operation, limitations, and the next improvements so the work can keep
+              moving.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <section class="container section faq" aria-labelledby="faq-heading">
+        <div class="section-heading">
+          <p class="eyebrow">04 / Before we start</p>
+          <h2 id="faq-heading">A few practical details.</h2>
+        </div>
+        <div>
+          <details>
+            <summary>What makes a good first project?</summary>
+            <p>
+              One recurring task with clear inputs, a person who can review the output, and a
+              manageable set of tools. We can start with a prototype before agreeing on a larger
+              rollout.
+            </p>
+          </details>
+          <details>
+            <summary>What if AI is not the right fit?</summary>
+            <p>
+              A simple integration or rule-based workflow may be enough. The scope should follow the
+              problem, the data, and the cost of mistakes.
+            </p>
+          </details>
+          <details>
+            <summary>How are timing and cost agreed?</summary>
+            <p>
+              After reviewing the workflow, access requirements, and expected output, we can agree
+              on a scope and estimate. API and hosting costs should be discussed before
+              implementation.
+            </p>
+          </details>
+          <details>
+            <summary>What should I send in the brief?</summary>
+            <p>
+              A short description of the workflow, the tools involved, and your preferred timeframe.
+              Use fictional examples in the first message; please leave out credentials and
+              sensitive customer data.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="container section">
+        <div class="brief-cta">
+          <div>
+            <p class="eyebrow">Start with one workflow</p>
+            <h2 id="articles-heading">What would you like to make easier?</h2>
+            <p>
+              Describe the task, the tools you use, and where you get stuck. We can turn that into a
+              practical first scope.
             </p>
           </div>
-          <div class="cta-actions">
-            <a href="contact.html" class="btn-glow primary-action">
-              Plan a build
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow-right"></use>
-              </svg>
-            </a>
-            <a href="resume.html" class="btn-outline secondary-action"> View resume </a>
-          </div>
+          <a class="button" href="/contact.html"
+            >Send a project brief
+            <span aria-hidden="true"
+              ><svg
+                class="inline-icon"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <path d="M7 17 17 7M7 7h10v10" /></svg></span
+          ></a>
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="page-shell footer-grid">
-        <p>
-          &copy; 2026 <span>Mohammad Mansib Newaz</span>. Full-stack web development with practical
-          AI integration.
-        </p>
-        <div class="footer-social" aria-label="Social media links">
-          <a
-            href="https://github.com/mnxtr"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-github"></use>
-            </svg>
-          </a>
-          <a
-            href="https://linkedin.com/in/mansibnewaz"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-linkedin"></use>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </footer>
-
-    <div
-      id="commandPalette"
-      class="command-palette"
-      aria-hidden="true"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Command palette"
-    >
-      <button
-        type="button"
-        class="command-backdrop"
-        data-command-close
-        aria-label="Close command palette"
-      ></button>
-      <div class="command-panel">
-        <div class="command-search-row">
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-command"></use>
-          </svg>
-          <input
-            id="commandSearch"
-            type="search"
-            placeholder="Search pages, projects, and articles..."
-            aria-label="Search commands"
-            autocomplete="off"
-          />
-          <button type="button" data-command-close>Esc</button>
-        </div>
-        <div class="command-content">
-          <p class="command-title">Navigate</p>
-          <p class="command-hint">Use arrow keys and Enter, or click a result.</p>
-          <div id="commandResults" class="command-results" role="listbox"></div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      window.typewriterPhrases = [
-        'React · JavaScript · Responsive Interfaces.',
-        'FastAPI · PostgreSQL · Secure APIs.',
-        'Docker · Testing · Deployment.',
-        'AI features when they add value.',
-      ];
-
-      document.addEventListener('DOMContentLoaded', function () {
-        var counters = document.querySelectorAll('[data-counter]');
-        if (!counters.length) return;
-
-        var observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (!entry.isIntersecting) return;
-
-              var el = entry.target;
-              var target = parseInt(el.dataset.counter, 10);
-              var suffix = el.dataset.suffix || '';
-              var startTime = null;
-              var duration = 1300;
-
-              observer.unobserve(el);
-
-              function step(now) {
-                if (!startTime) startTime = now;
-                var progress = Math.min((now - startTime) / duration, 1);
-                var eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = Math.floor(eased * target) + suffix;
-                if (progress < 1) requestAnimationFrame(step);
-              }
-
-              requestAnimationFrame(step);
-            });
-          },
-          { threshold: 0.45 },
-        );
-
-        counters.forEach(function (counter) {
-          observer.observe(counter);
-        });
-      });
-    </script>
-    <script type="module" src="./js/main.js"></script>
-    <script type="module" src="/js/immersive.js"></script>
+    <!-- portfolio:footer -->
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>

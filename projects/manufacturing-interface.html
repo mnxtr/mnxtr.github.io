@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manufacturing management | MNXTR Case Study</title>
+    <meta
+      name="description"
+      content="An interface prototype for exploring products, orders, and manufacturing operations in one place. Inspect the public source, implementation choices, and limitations."
+    />
+    <meta name="theme-color" content="#030507" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light')
+          document.documentElement.classList.add('light');
+      } catch {
+        /* Use the default theme if storage is blocked. */
+      }
+    </script>
+  <link rel="manifest" href="/manifest.json">
+</head>
+  <body class="">
+    <!-- portfolio:header -->
+    <main id="main-content">
+      <section class="container page-intro">
+        <a class="text-link" href="/project.html">← All projects</a>
+        <p class="eyebrow">Operations / Interface prototype</p>
+        <h1>Manufacturing management<span class="accent">.</span></h1>
+        <p class="lead">
+          An interface prototype for exploring products, orders, and manufacturing operations in one
+          place.
+        </p>
+        <div class="case-meta">
+          <span>Public project</span><span>Source reviewed: October 24, 2026</span
+          ><a href="https://github.com/mnxtr/mdbms-html">View repository <svg class="inline-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </section>
+      <div class="container case-grid section compact">
+        <article class="prose">
+          <h2>The problem</h2>
+          <p>
+            Manufacturing operations involve related information about products and orders. This
+            project explores an interface for organizing those views and a documented direction for
+            future development.
+          </p>
+          <h2>What the source shows</h2>
+          <p>
+            The public repository includes HTML, CSS, and JavaScript interfaces for a dashboard,
+            products, and orders, plus a PHP processing file and architecture documentation. The
+            available artifacts demonstrate the interface direction; they do not establish a
+            complete production system.
+          </p>
+          <figure class="flow-figure">
+            <ol>
+              <li><span class="step-index">01</span>Product information</li>
+              <li><span class="step-index">02</span>Order workflow</li>
+              <li><span class="step-index">03</span>Operations overview</li>
+            </ol>
+            <figcaption>
+              Workflow schematic based on the public source. This is not a product screenshot.
+            </figcaption>
+          </figure>
+          <h2>Implementation choices</h2>
+          <p>
+            Dedicated product, order, and dashboard views separate operational tasks. Documentation
+            describes a broader architecture and possible AI capabilities, which are treated as a
+            roadmap rather than delivered functionality.
+          </p>
+          <h2>Limitations and status</h2>
+          <p>
+            Production authentication, backend behavior, deployment readiness, and an end-to-end
+            database system have not been verified. RAG and AI assistant capabilities described in
+            planning material are future work. No operational efficiency gains are claimed.
+          </p>
+          <h2>What would come next</h2>
+          <p>
+            A practical next step would be to validate one order workflow with representative sample
+            data, define its backend contract, and decide whether an AI feature adds value after
+            that workflow is reliable.
+          </p>
+        </article>
+        <aside class="evidence-panel">
+          <p class="eyebrow">Inspect the artifacts</p>
+          <h2>Source evidence</h2>
+          <ul class="link-list">
+            <li>
+              <a
+                href="https://github.com/mnxtr/mdbms-html/blob/fb2934f923ef9405204349465a4e98d837907fa8/dashboard.html"
+                ><code>dashboard.html</code><span aria-hidden="true"> <svg class="inline-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a
+              ><span>Dashboard interface</span>
+            </li>
+            <li>
+              <a
+                href="https://github.com/mnxtr/mdbms-html/blob/fb2934f923ef9405204349465a4e98d837907fa8/orders.html"
+                ><code>orders.html</code><span aria-hidden="true"> <svg class="inline-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a
+              ><span>Order interface</span>
+            </li>
+            <li>
+              <a
+                href="https://github.com/mnxtr/mdbms-html/blob/fb2934f923ef9405204349465a4e98d837907fa8/products.html"
+                ><code>products.html</code><span aria-hidden="true"> <svg class="inline-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a
+              ><span>Product interface</span>
+            </li>
+            <li>
+              <a
+                href="https://github.com/mnxtr/mdbms-html/blob/fb2934f923ef9405204349465a4e98d837907fa8/documentation.md"
+                ><code>documentation.md</code><span aria-hidden="true"> <svg class="inline-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a
+              ><span>Architecture and planning</span>
+            </li>
+          </ul>
+          <p class="small">
+            Links point to the reviewed repository snapshot: <code>fb2934f</code>.
+          </p>
+        </aside>
+      </div>
+      <section class="container section">
+        <div class="brief-cta">
+          <div>
+            <p class="eyebrow">Start with one workflow</p>
+            <h2>What would you like to make easier?</h2>
+            <p>
+              Describe the task, the tools you use, and where you get stuck. We can turn that into a
+              practical first scope.
+            </p>
+          </div>
+          <a class="button" href="/contact.html"
+            >Send a project brief <span aria-hidden="true"><svg class="inline-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a
+          >
+        </div>
+      </section>
+    </main>
+    <!-- portfolio:footer -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

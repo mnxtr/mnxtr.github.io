@@ -1,22 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./*.html",
-    "./blog/**/*.html",
-    "./website/**/*.{html,js}",
-    "./js/**/*.js",
+    './*.html',
+    './blog/**/*.html',
+    './projects/**/*.html',
+    './partials/**/*.html',
+    './js/**/*.js',
   ],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: '#00F5D4',
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
         secondary: '#7C3AED',
         accent: '#00D9FF',
-        darkBg: '#080B14',
-        darkSurface: '#0F1419',
-        darkText: '#E0E7FF',
-        darkMuted: '#64748B',
+        darkBg: 'rgb(var(--color-bg) / <alpha-value>)',
+        darkSurface: 'rgb(var(--color-surface) / <alpha-value>)',
+        darkText: 'rgb(var(--color-text) / <alpha-value>)',
+        darkMuted: 'rgb(var(--color-muted) / <alpha-value>)',
         lightBg: '#F8FAFC',
         lightText: '#1E293B',
       },
@@ -42,4 +43,4 @@ export default {
     },
   },
   plugins: [],
-}
+};
