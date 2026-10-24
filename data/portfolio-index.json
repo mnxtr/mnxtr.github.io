@@ -24,12 +24,12 @@
     },
     {
       "id": "project-traffic-sign-recognition",
-      "title": "Traffic Symbol Recognition",
-      "description": "Real-time traffic-sign detection and classification using YOLO-style computer-vision workflows.",
-      "content": "A computer-vision project focused on traffic signs, real-time inference, object detection, model evaluation, PyTorch, OpenCV, and deployment-oriented optimization.",
+      "title": "Traffic Sign Detection",
+      "description": "YOLO11 Nano traffic-sign detection with augmentation tooling and a Gradio inference interface.",
+      "content": "Python, PyTorch, and OpenCV project with brightness and contrast variation, flips, rotations, Gaussian-noise injection, documented spatial translation, and image, video, and webcam inference. Resource-constrained model development; augmentation improvements require evaluation.",
       "sourceType": "project",
       "sourceLabel": "Project \u00b7 Computer Vision",
-      "url": "project.html",
+      "url": "project.html#traffic-sign-detection",
       "tags": [
         "computer vision",
         "YOLO",
@@ -38,7 +38,11 @@
         "real time",
         "edge AI",
         "object detection",
-        "traffic signs"
+        "traffic signs",
+        "augmentation",
+        "translation",
+        "noise injection",
+        "Gradio"
       ]
     },
     {
@@ -182,15 +186,7 @@
       "sourceType": "contact",
       "sourceLabel": "Contact \u00b7 Opportunities",
       "url": "contact.html",
-      "tags": [
-        "contact",
-        "hire",
-        "internship",
-        "job",
-        "collaboration",
-        "project",
-        "opportunity"
-      ]
+      "tags": ["contact", "hire", "internship", "job", "collaboration", "project", "opportunity"]
     }
   ]
 }
