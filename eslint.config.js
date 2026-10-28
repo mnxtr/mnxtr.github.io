@@ -18,6 +18,8 @@ export default [
         localStorage: 'readonly',
         IntersectionObserver: 'readonly',
         KeyboardEvent: 'readonly',
+        URL: 'readonly',
+        fetch: 'readonly',
         requestAnimationFrame: 'readonly',
         setTimeout: 'readonly',
         setInterval: 'readonly',
